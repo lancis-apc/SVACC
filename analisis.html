@@ -1,0 +1,324 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="es" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="es" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Análisis de sensibilidad &mdash; documentación de SVACC - 1.0</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Verificación de capas" href="verificacion.html" />
+    <link rel="prev" title="Welcome to SVACC’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> SVACC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Códigos en Python - Qgis</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Análisis de sensibilidad</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#requerimientos-generales">Requerimientos generales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#requerimientos-generales-de-los-insumos">Requerimientos generales de los insumos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejemplo">Ejemplo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#insumos">Insumos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#procedimiento">Procedimiento</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#abrir-el-codigo">1. Abrir el código</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#actualizar-el-diccionario">2. Actualizar el diccionario</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#indicar-el-direcctorio-de-salida">3. Indicar el direcctorio de salida</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ejecutar-el-codigo">4. Ejecutar el código</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#bibliografia">Bibliografía</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#documentacion-dentro-del-codigo">Documentación dentro del código</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="verificacion.html">Verificación de capas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="owa.html">OWA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clp.html">Combinación líneal ponderada</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webershape.html">Categorización de capas shape con Weber-Fechner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="weberraster.html">Categorización de capas raster con Weber-Fechner</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Manuales</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="sigfunction.html">SIGfunction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sigfunctiond.html">SIGfunctiond</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sigindex.html">SIGIndex</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sigclassifier.html">SIGclassifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="signature.html">SIGnature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="significance.html">SIGnificance</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SVACC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Análisis de sensibilidad</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/analisis.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="analisis-de-sensibilidad">
+<h1>Análisis de sensibilidad<a class="headerlink" href="#analisis-de-sensibilidad" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Aliquam at turpis lacus. Pellentesque vitae efficitur lacus.
+Proin eu lectus ultrices mauris viverra vehicula. Proin ante justo,
+ultrices eu leo ac, vulputate tristique sapien. Aenean vel enim a elit mollis commodo.
+Proin laoreet quis quam quis auctor. Vestibulum nec nisl pretium, bibendum ligula in,
+suscipit neque. Nunc placerat ac ipsum vel pellentesque. Phasellus lacinia cursus porttitor.
+Donec viverra faucibus nisl, non vestibulum quam posuere sit amet. Nulla a sodales urna.
+Donec vestibulum purus purus, iaculis pellentesque eros cursus quis. Maecenas ac maximus sem.</p>
+<p>Descargar el código de ejemplo</p>
+<p><code class="xref download docutils literal notranslate"><span class="pre">sensibilidad.py</span></code>.</p>
+<div class="section" id="requerimientos-generales">
+<h2>Requerimientos generales<a class="headerlink" href="#requerimientos-generales" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Para asegurar la ejecución correcta del código es importante
+verificar la instalación y funcionamiento de los siguientes elementos:</p>
+<ul class="simple">
+<li>Qgis 3.4 o superior y librerías de Osgeo4W</li>
+<li>Librerías python:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>copy</li>
+<li>pprint</li>
+<li>string</li>
+<li>osgeo/gdal</li>
+<li>gdal_calc</li>
+<li>os</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="requerimientos-generales-de-los-insumos">
+<h2>Requerimientos generales de los insumos<a class="headerlink" href="#requerimientos-generales-de-los-insumos" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Es importante que todas las capas raster cumplan con las siguientes condiciones:</p>
+<ul class="simple">
+<li>Misma proyección cartográfica</li>
+<li>Mismo tamaño de pixel</li>
+<li>Misma extensión de capa</li>
+<li>Mismo valor de NoData</li>
+</ul>
+</div>
+<div class="section" id="ejemplo">
+<h2>Ejemplo<a class="headerlink" href="#ejemplo" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="insumos">
+<h3>Insumos<a class="headerlink" href="#insumos" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Crear una (1)carpeta en el directorio raíz o en la unidad C que se llame <strong>analisis_sensibilidad</strong>,
+para descargar los insumos hacer clic <a class="reference download internal" download="" href="_downloads/b4579997a55864decb605dee976250ff/insumos.zip"><code class="xref download docutils literal notranslate"><span class="pre">aqui</span></code></a> (2)guarde el archivo <strong>insumos.zip</strong>
+en la carpeta <strong>analisis_sensibilidad</strong>, posteriormente hacer clic derecho sobre el archivo  y elegir la opción (3)Extract to insumos</p>
+<img alt="_images/crear_carpeta.JPG" src="_images/crear_carpeta.JPG" />
+<p>Una vez terminado el proceso, crear en la carpeta <strong>analisis_sensibilidad</strong> una (4)c arpeta con el nombre <strong>salida</strong></p>
+<img alt="_images/c_salida.JPG" src="_images/c_salida.JPG" />
+</div>
+<div class="section" id="procedimiento">
+<h3>Procedimiento<a class="headerlink" href="#procedimiento" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="section" id="abrir-el-codigo">
+<h4>1. Abrir el código<a class="headerlink" href="#abrir-el-codigo" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Abrir el código <strong>sensibilidad.py</strong> en Qgis 3.4 o superior,
+Para resolver cualquier duda al respecto, consultar la <a class="reference external" href="https://vichdzgeo.github.io/geo_lancis/ejecucion.html">guia</a></p>
+</div>
+<div class="section" id="actualizar-el-diccionario">
+<h4>2. Actualizar el diccionario<a class="headerlink" href="#actualizar-el-diccionario" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Ingresar la (1) ponderación del compontente según corresponda (Exposición, Susceptibilidad, Resiliencia), posteriormente
+ingresar la (2)ponderación del subcomponente (biológico,físico),
+Ingresar el (3)nombre de la capa raster de entrada con su respectiva (4)ponderación y su (5)ruta
+repita los pasos siguiendo la estructura y hasta ingresar cada una de las capas.</p>
+<img alt="_images/diccionario.JPG" src="_images/diccionario.JPG" />
+</div>
+<div class="section" id="indicar-el-direcctorio-de-salida">
+<h4>3. Indicar el direcctorio de salida<a class="headerlink" href="#indicar-el-direcctorio-de-salida" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Indicar el directorio donde guardarán los archivos necesarios para realizar el análisis de sensibilidad
+y el archivo  <strong>analisis_sensibilidad.csv</strong> que contendrá los resultados.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p_procesamiento</span> <span class="o">=</span> <span class="s1">&#39;C:/analisis_sensibilidad/salida/&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ejecutar-el-codigo">
+<h4>4. Ejecutar el código<a class="headerlink" href="#ejecutar-el-codigo" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>hacer clic en el (1) botón de ejecutar código, puede demorar 10 minutos o más dependiendo el procesador y
+memoria RAM que tenga el equipo en donde se ejecute, al concluir aparecerá en la (2) consola una lista que indica que
+ha procesado cada una de las capas.</p>
+<img alt="_images/ejecucion.JPG" src="_images/ejecucion.JPG" />
+</div>
+</div>
+<div class="section" id="bibliografia">
+<h3>Bibliografía<a class="headerlink" href="#bibliografia" title="Enlazar permanentemente con este título">¶</a></h3>
+</div>
+<div class="section" id="documentacion-dentro-del-codigo">
+<h3>Documentación dentro del código<a class="headerlink" href="#documentacion-dentro-del-codigo" title="Enlazar permanentemente con este título">¶</a></h3>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="verificacion.html" class="btn btn-neutral float-right" title="Verificación de capas" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to SVACC’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, LANCIS
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
