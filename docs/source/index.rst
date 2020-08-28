@@ -7,12 +7,24 @@ Welcome to SVACC's documentation!
 =================================
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :maxdepth: 1
+   :caption: Códigos en Python - Qgis
+
+   owa
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Manuales
+
+   sigfunction
+   sigfunctiond
+   sigindex
+   sigclassifier
+   signature
+   significance
 
 
-
-Indices and tables
+Indices y tablas
 ==================
 
 * :ref:`genindex`

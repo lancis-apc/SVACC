@@ -1,0 +1,537 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="es" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="es" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Siginficance &mdash; documentación de SVACC - 1.0</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="prev" title="Signature" href="signature.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> SVACC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Códigos en Python - Qgis</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="owa.html">OWA</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Manuales</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="sigfunction.html">Sigfunction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sigfunctiond.html">Sigfunctiond</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sigindex.html">Sigindex</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sigclassifier.html">Sigclassifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sigclassifier.html#guia-de-usuario-de-significance">Guía de usuario de SIGnificance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="signature.html">Signature</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Siginficance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#guia-de-usuario-de-significance">Guía de usuario de SIGnificance</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduccion">1 Introducción</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#por-que-es-necesario-significance">1.1     ¿Por qué es necesario SIGnificance?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#organizacion-del-manual">2 Organización del manual</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#organizacion-de-la-interfaz">3 Organización de la interfaz</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#funciones-basicas">3.1     Funciones básicas</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#boton-de-inicio">3.1.1 Botón de inicio</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exportar">3.1.2 Exportar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#regresar">3.1.3 Regresar</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#visualizador-de-capas">3.2     Visualizador de capas</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mover-el-mapa">3.2.1 Mover el mapa</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rotar-el-mapa">3.2.2   Rotar el mapa</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hacer-acercamientos">3.2.3 Hacer acercamientos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#seleccionar-poligonos">3.2.4 Seleccionar polígonos</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ajustes-de-despliegue-de-capas">3.3     Ajustes de despliegue de capas</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#activar-o-desactivar-capas">3.3.1   Activar o desactivar capas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cambiar-el-orden-de-sobreposicion-de-las-capas">3.3.2   Cambiar el orden de sobreposición de las capas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cambiar-la-opacidad-de-las-capas">3.3.3   Cambiar la opacidad de las capas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cambiar-la-capa-base">3.3.4   Cambiar la capa base</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ajustes-de-visualizacion">3.4     Ajustes de visualización</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#poner-el-mapa-en-pantalla-completa">3.4.1   Poner el mapa en pantalla completa</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#acercar-o-alejar-el-mapa">3.4.2   Acercar o alejar el mapa</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ajustar-el-norte-del-mapa">3.4.3   Ajustar el norte del mapa</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#guia-rapida-de-controles-de-despliegue">3.4.4   Guía rápida de controles de despliegue</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#barra-de-herramientas">3.5     Barra de herramientas</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#agregacion">3.5.1   Agregación</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#indicadores-de-impacto">3.5.2   Indicadores de impacto</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#combo">3.5.3 Combo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#paletas-de-colores">3.5.4 Paletas de colores</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#requerimientos">4 Requerimientos</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#insumos-integrados">4.1     Insumos integrados</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#shapefile-de-unidades-naturales-comprimido-en-formato-zip">4.1.1 Shapefile de unidades naturales comprimido en formato .zip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#shapefile-del-plan-maestro-o-proyecto-arquitectonico-insumo-opcional">4.1.2 Shapefile del plan maestro o proyecto arquitectónico (insumo opcional)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#insumos-desagregados">4.2     Insumos desagregados</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">4.2.1 Shapefile de unidades naturales comprimido en formato .zip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#archivo-csv-de-indicadores">4.2.2 Archivo .csv de indicadores</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">4.2.3 Shapefile del plan maestro o proyecto arquitectónico (insumo opcional)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ejemplo-de-uso">5 Ejemplo de uso</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#referencias">6 Referencias</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SVACC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Siginficance</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/significance.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="siginficance">
+<h1>Siginficance<a class="headerlink" href="#siginficance" title="Enlazar permanentemente con este título">¶</a></h1>
+</div>
+<div class="section" id="guia-de-usuario-de-significance">
+<h1>Guía de usuario de SIGnificance<a class="headerlink" href="#guia-de-usuario-de-significance" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="introduccion">
+<h2>1 Introducción<a class="headerlink" href="#introduccion" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>SIGnificance es una herramienta que agrega y sintetiza indicadores de impacto de distintos componentes ambientales en un índice único de significancia.</p>
+<p>SIGnificance emplea un algoritmo para incorporar la incertidumbre inherente durante la determinación de la significancia de impactos mediante una interfaz amigable.</p>
+<p>La aplicación permite explorar interactivamente los distintos enfoques o posiciones respecto a los impactos ambientales de un proyecto en un territorio.</p>
+<div class="section" id="por-que-es-necesario-significance">
+<h3>1.1     ¿Por qué es necesario SIGnificance?<a class="headerlink" href="#por-que-es-necesario-significance" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>SIGnificance facilita una discusión organizada de los principales impactos ambientales y sus implicaciones en el territorio.</p>
+<p>SIGnificance propicia un entorno para alcanzar acuerdos sobre cómo prevenir, mitigar o compensar impactos ambientales específicos.</p>
+</div>
+</div>
+<div class="section" id="organizacion-del-manual">
+<h2>2 Organización del manual<a class="headerlink" href="#organizacion-del-manual" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Este manual tiene el propósito de mostrar el uso del módulo SIGnificance mediante (1) la explicación de todas las funciones de la plataforma (Sección 3. Organización de la Interfaz) y (2) la ilustración de un ejemplo de uso (Sección 4. Ejemplo de uso). Asimismo, se incluye bibliografía relevante como complemento teórico.</p>
+</div>
+<div class="section" id="organizacion-de-la-interfaz">
+<h2>3 Organización de la interfaz<a class="headerlink" href="#organizacion-de-la-interfaz" title="Enlazar permanentemente con este título">¶</a></h2>
+<img alt="_images/fi_org_interfaz.png" src="_images/fi_org_interfaz.png" />
+<p>La interfaz está organizada en las siguientes secciones: <a class="reference internal" href="_images/fi_uno.png"><img alt="no_1" src="_images/fi_uno.png" style="width: 22.5px; height: 26.5px;" /></a> el encabezado contiene al título y las funciones básicas, <a class="reference internal" href="_images/fi_dos.png"><img alt="no_2" src="_images/fi_dos.png" style="width: 22.0px; height: 27.0px;" /></a> en el panel izquierdo se ubica la barra de herramientas, y <a class="reference internal" href="_images/fi_tres.png"><img alt="no_3" src="_images/fi_tres.png" style="width: 22.5px; height: 27.0px;" /></a> el visualizador de capas incluye <a class="reference internal" href="_images/fi_cuatro.png"><img alt="no_4" src="_images/fi_cuatro.png" style="width: 22.5px; height: 27.0px;" /></a> los ajustes de despliegue de capas y <a class="reference internal" href="_images/fi_cinco.png"><img alt="no_5" src="_images/fi_cinco.png" style="width: 22.5px; height: 27.0px;" /></a> los ajustes de visualización.</p>
+<div class="section" id="funciones-basicas">
+<h3>3.1     Funciones básicas<a class="headerlink" href="#funciones-basicas" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Las funciones básicas son tres: botón de inicio, exportar resultados y regresar.</p>
+<div class="section" id="boton-de-inicio">
+<h4>3.1.1 Botón de inicio<a class="headerlink" href="#boton-de-inicio" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Al hacer clic en el botón de inicio <a class="reference internal" href="_images/boton_inicio.png"><img alt="b_inicio" src="_images/boton_inicio.png" style="width: 25px; height: 25px;" /></a>, se despliega una ventana con tres opciones: <a class="reference internal" href="_images/fi_uno.png"><img alt="no_1" src="_images/fi_uno.png" style="width: 22.5px; height: 26.5px;" /></a> redirecciona al <strong>inicio</strong> (home) de la plataforma SIGplanning, <a class="reference internal" href="_images/fi_dos.png"><img alt="no_2" src="_images/fi_dos.png" style="width: 22.0px; height: 27.0px;" /></a> muestra el <strong>nombre del usuario</strong> activo y <a class="reference internal" href="_images/fi_tres.png"><img alt="no_3" src="_images/fi_tres.png" style="width: 22.5px; height: 27.0px;" /></a> <strong>cierra la sesión</strong> del usuario activo.</p>
+<img alt="_images/mapa_b_inicio.png" src="_images/mapa_b_inicio.png" />
+</div>
+<div class="section" id="exportar">
+<h4>3.1.2 Exportar<a class="headerlink" href="#exportar" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Al hacer clic en el botón de exportar <a class="reference internal" href="_images/fi_b_exportar.png"><img alt="b_exportar" src="_images/fi_b_exportar.png" style="width: 25px; height: 25px;" /></a>, se descarga un shapefile de las unidades naturales en formato <strong>.zip</strong> con los resultados del uso de SIGnificance. Para que se generen el shapefile de resultados, el usuario debió haber seleccionado un enfoque y factor de progresión (ver apartados 3.5.1.1 y 3.5.1.2).</p>
+<img alt="_images/mapa_b_exportar.png" src="_images/mapa_b_exportar.png" />
+</div>
+<div class="section" id="regresar">
+<h4>3.1.3 Regresar<a class="headerlink" href="#regresar" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>SIGnificance tiene dos opciones para regresar al catálogo de proyectos y al resto de los módulos de SIGplanning: <a class="reference internal" href="_images/fi_uno.png"><img alt="no_1" src="_images/fi_uno.png" style="width: 22.5px; height: 26.5px;" /></a> el botón de regresar <a class="reference internal" href="_images/fi_b_regresar.png"><img alt="b_regresar" src="_images/fi_b_regresar.png" style="width: 25px; height: 25px;" /></a> y <a class="reference internal" href="_images/fi_dos.png"><img alt="no_2" src="_images/fi_dos.png" style="width: 22.0px; height: 27.0px;" /></a> el ícono del módulo <a class="reference internal" href="_images/fi_b_icono.png"><img alt="b_icono" src="_images/fi_b_icono.png" style="width: 25px; height: 25px;" /></a>.</p>
+<img alt="_images/mapa_b_regresar.png" src="_images/mapa_b_regresar.png" />
+</div>
+</div>
+<div class="section" id="visualizador-de-capas">
+<h3>3.2     Visualizador de capas<a class="headerlink" href="#visualizador-de-capas" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>En el visualizador de capas <a class="reference internal" href="_images/fi_uno.png"><img alt="no_1" src="_images/fi_uno.png" style="width: 22.5px; height: 26.5px;" /></a> se muestran los resultados de SIGnificance, así como, <a class="reference internal" href="_images/fi_dos.png"><img alt="no_2" src="_images/fi_dos.png" style="width: 22.0px; height: 27.0px;" /></a> los ajustes de despliegue de capas y <a class="reference internal" href="_images/fi_tres.png"><img alt="no_3" src="_images/fi_tres.png" style="width: 22.5px; height: 27.0px;" /></a> los ajustes de visualización. En el visualizador se puede mover el mapa, rotar el mapa, hacer acercamientos y seleccionar atributos.</p>
+<img alt="_images/mapa_visualizador_capas.png" src="_images/mapa_visualizador_capas.png" />
+<div class="section" id="mover-el-mapa">
+<h4>3.2.1 Mover el mapa<a class="headerlink" href="#mover-el-mapa" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Al hacer clic en cualquier parte del visualizador de capas, mover el ratón en cualquier dirección hasta que el mapa esté en la ubicación deseada.</p>
+<img alt="_images/mapa_mover.png" src="_images/mapa_mover.png" />
+</div>
+<div class="section" id="rotar-el-mapa">
+<h4>3.2.2   Rotar el mapa<a class="headerlink" href="#rotar-el-mapa" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Al hacer clic en cualquier parte del visualizador de capas, sin soltar el ratón, oprimir la tecla Shift y rotar la capa hasta llegar a la orientación deseada.
+Al rotar el mapa, <a class="reference internal" href="_images/fi_uno.png"><img alt="no_1" src="_images/fi_uno.png" style="width: 22.5px; height: 26.5px;" /></a> aparece el botón del norte geográfico rotado <a class="reference internal" href="_images/fi_norte_rotado.png"><img alt="b_norterotado" src="_images/fi_norte_rotado.png" style="width: 25px; height: 25px;" /></a>. Al hacer clic sobre el norte geográfico, se reposiciona el mapa a la orientación original.</p>
+<img alt="_images/mapa_rotado.png" src="_images/mapa_rotado.png" />
+</div>
+<div class="section" id="hacer-acercamientos">
+<h4>3.2.3 Hacer acercamientos<a class="headerlink" href="#hacer-acercamientos" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Al hacer clic en cualquier parte del visualizador de capas, mover la barra de desplazamiento del ratón para acercarse o alejarse.</p>
+<img alt="_images/mapa_acercar.png" src="_images/mapa_acercar.png" />
+</div>
+<div class="section" id="seleccionar-poligonos">
+<h4>3.2.4 Seleccionar polígonos<a class="headerlink" href="#seleccionar-poligonos" title="Enlazar permanentemente con este título">¶</a></h4>
+<div class="section" id="seleccion-de-un-poligono">
+<h5>3.2.4.1 Selección de un polígono<a class="headerlink" href="#seleccion-de-un-poligono" title="Enlazar permanentemente con este título">¶</a></h5>
+<p>Al hacer clic en un polígono de la capa de unidades naturales, <a class="reference internal" href="_images/fi_uno.png"><img alt="no_1" src="_images/fi_uno.png" style="width: 22.5px; height: 26.5px;" /></a> se resalta con un contorno azul y <a class="reference internal" href="_images/fi_dos.png"><img alt="no_2" src="_images/fi_dos.png" style="width: 22.0px; height: 27.0px;" /></a> se despliega una ventana con el valor de significancia.</p>
+<img alt="_images/mapa_seleccion_poligono.png" src="_images/mapa_seleccion_poligono.png" />
+</div>
+<div class="section" id="seleccion-de-varios-poligonos">
+<h5>3.2.4.2 Selección de varios polígonos<a class="headerlink" href="#seleccion-de-varios-poligonos" title="Enlazar permanentemente con este título">¶</a></h5>
+<p>Crear una ventana de selección sobre el visualizador de capas, <a class="reference internal" href="_images/fi_uno.png"><img alt="no_1" src="_images/fi_uno.png" style="width: 22.5px; height: 26.5px;" /></a> al oprimir la tecla Ctrl, hacer clic en la esquina superior izquierda del inicio de la ventana, <a class="reference internal" href="_images/fi_dos.png"><img alt="no_2" src="_images/fi_dos.png" style="width: 22.0px; height: 27.0px;" /></a> desplazar el ratón hacia la derecha y abajo hasta seleccionar el número de polígonos deseados y <a class="reference internal" href="_images/fi_tres.png"><img alt="no_3" src="_images/fi_tres.png" style="width: 22.5px; height: 27.0px;" /></a> verificar el resultado.</p>
+<img alt="_images/mapa_selecc_variospo.png" src="_images/mapa_selecc_variospo.png" />
+<img alt="_images/mapa_selecc_variospo2.png" src="_images/mapa_selecc_variospo2.png" />
+<p>Para eliminar cualquier selección oprimir el botón izquierdo del ratón en cualquier lugar fuera de la capa de unidades naturales.
+Nota: Todas las selecciones generan un filtro de los polígonos seleccionados en la tabla de Indicadores de impacto (ver Sección 3.5.2).</p>
+</div>
+</div>
+</div>
+<div class="section" id="ajustes-de-despliegue-de-capas">
+<h3>3.3     Ajustes de despliegue de capas<a class="headerlink" href="#ajustes-de-despliegue-de-capas" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Al hacer clic en el botón de ajustes de despliegue de capas <a class="reference internal" href="_images/fi_b_despliegue_capa.png"><img alt="b_ajuste_capas" src="_images/fi_b_despliegue_capa.png" style="width: 25px; height: 25px;" /></a>, se despliega una ventana con las opciones: <a class="reference internal" href="_images/fi_uno.png"><img alt="no_1" src="_images/fi_uno.png" style="width: 22.5px; height: 26.5px;" /></a> activar o desactivar capas, <a class="reference internal" href="_images/fi_dos.png"><img alt="no_2" src="_images/fi_dos.png" style="width: 22.0px; height: 27.0px;" /></a> cambiar el orden de sobreposición de las capas, <a class="reference internal" href="_images/fi_tres.png"><img alt="no_3" src="_images/fi_tres.png" style="width: 22.5px; height: 27.0px;" /></a> cambiar la transparencia de las capas y <a class="reference internal" href="_images/fi_cuatro.png"><img alt="no_4" src="_images/fi_cuatro.png" style="width: 22.5px; height: 27.0px;" /></a> cambiar la capa base.</p>
+<img alt="_images/mapa_despliegue_capas.png" src="_images/mapa_despliegue_capas.png" />
+<div class="section" id="activar-o-desactivar-capas">
+<h4>3.3.1   Activar o desactivar capas<a class="headerlink" href="#activar-o-desactivar-capas" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Al hacer clic sobre las casillas de verificación <a class="reference internal" href="_images/fi_b_activar.png"><img alt="b_activar_capas" src="_images/fi_b_activar.png" style="width: 25px; height: 25px;" /></a>, se activan o desactivan las capas deseadas.</p>
+<img alt="_images/mapa_b_activarcapas.png" src="_images/mapa_b_activarcapas.png" />
+</div>
+<div class="section" id="cambiar-el-orden-de-sobreposicion-de-las-capas">
+<h4>3.3.2   Cambiar el orden de sobreposición de las capas<a class="headerlink" href="#cambiar-el-orden-de-sobreposicion-de-las-capas" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Al hacer clic sobre el botón del orden de sobreposición de capas <a class="reference internal" href="_images/fi_b_sobreposicion.png"><img alt="b_sobreposicion" src="_images/fi_b_sobreposicion.png" style="width: 25px; height: 25px;" /></a>, deslizar hacia arriba o abajo hasta que se ubiquen en el orden deseado.</p>
+<img alt="_images/mapa_sobreposicion.png" src="_images/mapa_sobreposicion.png" />
+</div>
+<div class="section" id="cambiar-la-opacidad-de-las-capas">
+<h4>3.3.3   Cambiar la opacidad de las capas<a class="headerlink" href="#cambiar-la-opacidad-de-las-capas" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Al hacer clic sobre el control deslizante de opacidad de capas <a class="reference internal" href="_images/fi_opacidad.png"><img alt="b_opacidad" src="_images/fi_opacidad.png" style="width: 25px; height: 25px;" /></a>, desplazar a la derecha o izquierda hasta llegar a la opacidad deseada.</p>
+<img alt="_images/mapa_opacidad.png" src="_images/mapa_opacidad.png" />
+</div>
+<div class="section" id="cambiar-la-capa-base">
+<h4>3.3.4   Cambiar la capa base<a class="headerlink" href="#cambiar-la-capa-base" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Los ajustes de despliegue de capas tienen cuatro opciones de capa base: <a class="reference internal" href="_images/fi_uno.png"><img alt="no_1" src="_images/fi_uno.png" style="width: 22.5px; height: 26.5px;" /></a> OpenLayer, <a class="reference internal" href="_images/fi_dos.png"><img alt="no_2" src="_images/fi_dos.png" style="width: 22.0px; height: 27.0px;" /></a> Stamen, <a class="reference internal" href="_images/fi_tres.png"><img alt="no_3" src="_images/fi_tres.png" style="width: 22.5px; height: 27.0px;" /></a> Mapa o <a class="reference internal" href="_images/fi_cuatro.png"><img alt="no_4" src="_images/fi_cuatro.png" style="width: 22.5px; height: 27.0px;" /></a> Satélite.  Al hacer clic en el botón de selección <a class="reference internal" href="_images/fi_b_cambiarcapab.png"><img alt="b_seleccion" src="_images/fi_b_cambiarcapab.png" style="width: 25px; height: 25px;" /></a>, se selecciona la capa base deseada.</p>
+<img alt="_images/mapa_cambiar_capab.png" src="_images/mapa_cambiar_capab.png" />
+<p>Nota: La opción predeterminada es Satélite.</p>
+</div>
+</div>
+<div class="section" id="ajustes-de-visualizacion">
+<h3>3.4     Ajustes de visualización<a class="headerlink" href="#ajustes-de-visualizacion" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>La sección de ajustes de visualización se compone de seis botones: <a class="reference internal" href="_images/fi_uno.png"><img alt="no_1" src="_images/fi_uno.png" style="width: 22.5px; height: 26.5px;" /></a> cambiar al visualizador de capas en pantalla completa, <a class="reference internal" href="_images/fi_dos.png"><img alt="no_2" src="_images/fi_dos.png" style="width: 22.0px; height: 27.0px;" /></a> acercar el mapa, <a class="reference internal" href="_images/fi_tres.png"><img alt="no_3" src="_images/fi_tres.png" style="width: 22.5px; height: 27.0px;" /></a> alejar el mapa, <a class="reference internal" href="_images/fi_cuatro.png"><img alt="no_4" src="_images/fi_cuatro.png" style="width: 22.5px; height: 27.0px;" /></a> reajustar el norte geográfico, <a class="reference internal" href="_images/fi_cinco.png"><img alt="no_5" src="_images/fi_cinco.png" style="width: 22.5px; height: 27.0px;" /></a> ver la guía rápida de controles de despliegue y <a class="reference internal" href="imagenes/fi_seis.png"><img alt="no_6" src="imagenes/fi_seis.png" /></a> ver la licencia de la capa base.</p>
+<img alt="_images/mapa_ajustes_vis.png" src="_images/mapa_ajustes_vis.png" />
+<div class="section" id="poner-el-mapa-en-pantalla-completa">
+<h4>3.4.1   Poner el mapa en pantalla completa<a class="headerlink" href="#poner-el-mapa-en-pantalla-completa" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Al hacer clic <a class="reference internal" href="_images/fi_uno.png"><img alt="no_1" src="_images/fi_uno.png" style="width: 22.5px; height: 26.5px;" /></a> en el botón de pantalla completa <a class="reference internal" href="_images/fi_b_pantalla_comp.png"><img alt="b_pantalla_comp" src="_images/fi_b_pantalla_comp.png" style="width: 25px; height: 25px;" /></a>, <a class="reference internal" href="_images/fi_dos.png"><img alt="no_2" src="_images/fi_dos.png" style="width: 22.0px; height: 27.0px;" /></a> se muestra el área de visualización en la pantalla sin el resto de las secciones.</p>
+<img alt="_images/mapa_pantalla_comp.png" src="_images/mapa_pantalla_comp.png" />
+<img alt="_images/mapa_pantalla_comp2.png" src="_images/mapa_pantalla_comp2.png" />
+<p>Para salir de la pantalla completa, volver a oprimir el botón de los ajustes de visualización o la tecla Esc.</p>
+</div>
+<div class="section" id="acercar-o-alejar-el-mapa">
+<h4>3.4.2   Acercar o alejar el mapa<a class="headerlink" href="#acercar-o-alejar-el-mapa" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Al hacer clic sobre el botón de acercar <a class="reference internal" href="_images/fi_b_mas.png"><img alt="b_mas" src="_images/fi_b_mas.png" style="width: 25px; height: 25px;" /></a>, <a class="reference internal" href="_images/fi_uno.png"><img alt="no_1" src="_images/fi_uno.png" style="width: 22.5px; height: 26.5px;" /></a> se aumenta el zoom en el visualizador de capas.
+Al hacer clic sobre el botón de alejar <a class="reference internal" href="_images/fi_b_menos.png"><img alt="b_menos" src="_images/fi_b_menos.png" style="width: 25px; height: 25px;" /></a>, <a class="reference internal" href="_images/fi_dos.png"><img alt="no_2" src="_images/fi_dos.png" style="width: 22.0px; height: 27.0px;" /></a> se disminuye el zoom en el visualizador de capas.</p>
+<img alt="_images/mapa_acercar_alejar.png" src="_images/mapa_acercar_alejar.png" />
+</div>
+<div class="section" id="ajustar-el-norte-del-mapa">
+<h4>3.4.3   Ajustar el norte del mapa<a class="headerlink" href="#ajustar-el-norte-del-mapa" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Al hacer clic en el botón de norte geográfico <a class="reference internal" href="_images/fi_b_norte.png"><img alt="b_norte" src="_images/fi_b_norte.png" style="width: 25px; height: 25px;" /></a>, se reajusta la orientación del visualizador de capas a la posición original.</p>
+<img alt="_images/mapa_ajustar_norte.png" src="_images/mapa_ajustar_norte.png" />
+</div>
+<div class="section" id="guia-rapida-de-controles-de-despliegue">
+<h4>3.4.4   Guía rápida de controles de despliegue<a class="headerlink" href="#guia-rapida-de-controles-de-despliegue" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Al hacer clic en el botón de guía rápida de controles de despliegue <a class="reference internal" href="_images/fi_b_interrogacion.png"><img alt="b_interrogacion" src="_images/fi_b_interrogacion.png" style="width: 25px; height: 25px;" /></a>, se despliega una ventana con tres opciones: <a class="reference internal" href="_images/fi_uno.png"><img alt="no_1" src="_images/fi_uno.png" style="width: 22.5px; height: 26.5px;" /></a> rotar el mapa, <a class="reference internal" href="_images/fi_dos.png"><img alt="no_2" src="_images/fi_dos.png" style="width: 22.0px; height: 27.0px;" /></a> seleccionar un polígono, y <a class="reference internal" href="_images/fi_tres.png"><img alt="no_3" src="_images/fi_tres.png" style="width: 22.5px; height: 27.0px;" /></a> hacer zoom a una ventana específica.</p>
+<img alt="_images/mapa_guia.png" src="_images/mapa_guia.png" />
+</div>
+</div>
+<div class="section" id="barra-de-herramientas">
+<h3>3.5     Barra de herramientas<a class="headerlink" href="#barra-de-herramientas" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="section" id="agregacion">
+<h4>3.5.1   Agregación<a class="headerlink" href="#agregacion" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Al hace clic en el botón de <strong>Agregación</strong> <a class="reference internal" href="_images/fi_b_agregacion.png"><img alt="b_agregacion" src="_images/fi_b_agregacion.png" style="width: 25px; height: 25px;" /></a>, se despliega una ventana con dos paneles: <a class="reference internal" href="_images/fi_uno.png"><img alt="no_1" src="_images/fi_uno.png" style="width: 22.5px; height: 26.5px;" /></a> <strong>Enfoques</strong> y <a class="reference internal" href="_images/fi_dos.png"><img alt="no_2" src="_images/fi_dos.png" style="width: 22.0px; height: 27.0px;" /></a> <strong>Factor de progresión</strong>.</p>
+<img alt="_images/mapa_agregacion.png" src="_images/mapa_agregacion.png" />
+<div class="section" id="ver-el-enfoque-seleccionado">
+<h5>3.5.1.1 Ver el enfoque seleccionado<a class="headerlink" href="#ver-el-enfoque-seleccionado" title="Enlazar permanentemente con este título">¶</a></h5>
+<p>El enfoque seleccionado en la agregación de significancia se muestra <a class="reference internal" href="_images/fi_uno.png"><img alt="no_1" src="_images/fi_uno.png" style="width: 22.5px; height: 26.5px;" /></a> en la matriz más grande del panel y <a class="reference internal" href="_images/fi_dos.png"><img alt="no_2" src="_images/fi_dos.png" style="width: 22.0px; height: 27.0px;" /></a> en el cuadro de texto.</p>
+<img alt="_images/fi_enfoque_selec.png" src="_images/fi_enfoque_selec.png" />
+</div>
+<div class="section" id="cambiar-el-enfoque">
+<h5>3.5.1.2 Cambiar el enfoque<a class="headerlink" href="#cambiar-el-enfoque" title="Enlazar permanentemente con este título">¶</a></h5>
+<p>Al hacer clic en cualquiera de los botones de enfoques <a class="reference internal" href="_images/fi_b_conservacionista.png"><img alt="b_conservacionista" src="_images/fi_b_conservacionista.png" style="width: 25px; height: 25px;" /></a>, <a class="reference internal" href="_images/fi_b_neutral.png"><img alt="b_neutral" src="_images/fi_b_neutral.png" style="width: 25px; height: 25px;" /></a>, o <a class="reference internal" href="_images/fi_b_desarrollista.png"><img alt="b_desarrollista" src="_images/fi_b_desarrollista.png" style="width: 25px; height: 25px;" /></a>, se selecciona el enfoque. La primera opción <a class="reference internal" href="_images/fi_uno.png"><img alt="no_1" src="_images/fi_uno.png" style="width: 22.5px; height: 26.5px;" /></a> corresponde al enfoque <strong>conservacionista</strong>, la segunda opción <a class="reference internal" href="_images/fi_dos.png"><img alt="no_2" src="_images/fi_dos.png" style="width: 22.0px; height: 27.0px;" /></a> al enfoque <strong>neutral</strong> y la tercera opción <a class="reference internal" href="_images/fi_tres.png"><img alt="no_3" src="_images/fi_tres.png" style="width: 22.5px; height: 27.0px;" /></a> al enfoque <strong>desarrollista</strong>.</p>
+<img alt="_images/fi_cambiar_enfoque.png" src="_images/fi_cambiar_enfoque.png" />
+<p>Los enfoques se pueden identificar al posicionar el cursor sobre de ellos.</p>
+<img alt="_images/fi_cambiar_enfoque2.png" src="_images/fi_cambiar_enfoque2.png" />
+<p>Nota: La opción predeterminada es <strong>neutral</strong>.</p>
+</div>
+<div class="section" id="cambiar-el-nombre-del-enfoque">
+<h5>3.5.1.3 Cambiar el nombre del enfoque<a class="headerlink" href="#cambiar-el-nombre-del-enfoque" title="Enlazar permanentemente con este título">¶</a></h5>
+<p>Al escribir en el cuadro de texto <a class="reference internal" href="_images/fi_neutral.png"><img alt="b_selec_neutral" src="_images/fi_neutral.png" style="width: 25px; height: 25px;" /></a>, se sobrescribe el nombre original. Al hacer clic en el botón de guardar <a class="reference internal" href="_images/fi_b_guardar.png"><img alt="b_guardar" src="_images/fi_b_guardar.png" style="width: 25px; height: 25px;" /></a>, se salva el nuevo nombre del enfoque.</p>
+<img alt="_images/fi_cambiar_nombre_enfoque.png" src="_images/fi_cambiar_nombre_enfoque.png" />
+<p>Nota: No se recomienda cambiar los nombres predeterminados, a menos de que se haya determinado que éstos dificultan el proceso de facilitación.</p>
+</div>
+<div class="section" id="cambiar-el-factor-de-progresion">
+<h5>3.5.1.4 Cambiar el factor de progresión<a class="headerlink" href="#cambiar-el-factor-de-progresion" title="Enlazar permanentemente con este título">¶</a></h5>
+<p>Al hacer clic en el botón del control deslizante y deslizar hacia la izquierda o derecha <a class="reference internal" href="_images/fi_b_factorp.png"><img alt="b_factor_progre" src="_images/fi_b_factorp.png" style="width: 25px; height: 25px;" /></a>, <a class="reference internal" href="_images/fi_uno.png"><img alt="no_1" src="_images/fi_uno.png" style="width: 22.5px; height: 26.5px;" /></a> se selecciona el factor de progresión. Al seleccionar el factor de progresión, <a class="reference internal" href="_images/fi_dos.png"><img alt="no_2" src="_images/fi_dos.png" style="width: 22.0px; height: 27.0px;" /></a> se actualizan la gráfica y panel de colores con los nuevos cortes de las categorías de significancia. C.E. <a class="reference internal" href="_images/fi_tres.png"><img alt="no_3" src="_images/fi_tres.png" style="width: 22.5px; height: 27.0px;" /></a> corresponde a una <strong>clasificación equidistante</strong>.</p>
+<img alt="_images/fi_factor_progre.png" src="_images/fi_factor_progre.png" />
+</div>
+<div class="section" id="categorias-de-significancia">
+<h5>3.5.1.5 Categorías de significancia<a class="headerlink" href="#categorias-de-significancia" title="Enlazar permanentemente con este título">¶</a></h5>
+<p>Significance usa una paleta de colores de semáforo durante la clasificación de la significancia. Esta paleta se usa tanto en los enfoques como en la selección de factores de progresión.</p>
+<img alt="_images/fi_significancia.png" src="_images/fi_significancia.png" />
+</div>
+</div>
+<div class="section" id="indicadores-de-impacto">
+<h4>3.5.2   Indicadores de impacto<a class="headerlink" href="#indicadores-de-impacto" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Al hacer clic en el botón de indicadores de impacto <a class="reference internal" href="_images/fi_b_indica_impac.png"><img alt="b_indicadores" src="_images/fi_b_indica_impac.png" style="width: 25px; height: 25px;" /></a>, se despliega una ventana con <a class="reference internal" href="_images/fi_uno.png"><img alt="no_1" src="_images/fi_uno.png" style="width: 22.5px; height: 26.5px;" /></a> los valores de la tabla de indicadores tal como se agregaron al proyecto y <a class="reference internal" href="_images/fi_dos.png"><img alt="no_2" src="_images/fi_dos.png" style="width: 22.0px; height: 27.0px;" /></a> los resultados de la agregación <a class="reference internal" href="_images/fi_b_r.png"><img alt="b_r" src="_images/fi_b_r.png" style="width: 25px; height: 25px;" /></a>.</p>
+<img alt="_images/fi_indica_impacto.png" src="_images/fi_indica_impacto.png" />
+<div class="section" id="ordenar-columnas">
+<h5>3.5.2.1 Ordenar columnas<a class="headerlink" href="#ordenar-columnas" title="Enlazar permanentemente con este título">¶</a></h5>
+<p>Al hacer clic en la flecha <a class="reference internal" href="_images/fi_flecha_arriba.png"><img alt="b_f_arriba" src="_images/fi_flecha_arriba.png" style="width: 25px; height: 25px;" /></a> del encabezado de una columna, <a class="reference internal" href="_images/fi_uno.png"><img alt="no_1" src="_images/fi_uno.png" style="width: 22.5px; height: 26.5px;" /></a> se ordena <strong>ascendentemente</strong> esa columna.</p>
+<p>Al hacer clic en la flecha <a class="reference internal" href="_images/fi_flecha_abajo.png"><img alt="b_f_abajo" src="_images/fi_flecha_abajo.png" style="width: 25px; height: 25px;" /></a> del encabezado de una columna, <a class="reference internal" href="_images/fi_dos.png"><img alt="no_2" src="_images/fi_dos.png" style="width: 22.0px; height: 27.0px;" /></a> se ordena <strong>descendentemente</strong> esa columna.</p>
+<img alt="_images/fi_ordenar_colum.png" src="_images/fi_ordenar_colum.png" />
+</div>
+<div class="section" id="aumentar-o-disminuir-el-tamano-de-los-caracteres">
+<h5>3.5.2.2 Aumentar o disminuir el tamaño de los caracteres<a class="headerlink" href="#aumentar-o-disminuir-el-tamano-de-los-caracteres" title="Enlazar permanentemente con este título">¶</a></h5>
+<p>Al hacer clic en el botón <a class="reference internal" href="_images/fi_amas.png"><img alt="b_amas" src="_images/fi_amas.png" style="width: 25px; height: 25px;" /></a>, <a class="reference internal" href="_images/fi_uno.png"><img alt="no_1" src="_images/fi_uno.png" style="width: 22.5px; height: 26.5px;" /></a> se aumenta el tamaño de los caracteres en la tabla de indicadores.
+Al hacer clic en el botón <a class="reference internal" href="_images/fi_amenos.png"><img alt="b_amenos" src="_images/fi_amenos.png" style="width: 25px; height: 25px;" /></a>, <a class="reference internal" href="_images/fi_dos.png"><img alt="no_2" src="_images/fi_dos.png" style="width: 22.0px; height: 27.0px;" /></a> se disminuye el tamaño de los caracteres en la tabla de indicadores.</p>
+<img alt="_images/fi_ventana_tama_carac.png" src="_images/fi_ventana_tama_carac.png" />
+</div>
+<div class="section" id="ver-el-nombre-de-los-campos-originales-en-la-tabla-de-indicadores">
+<h5>3.5.2.3 Ver el nombre de los campos originales en la tabla de indicadores<a class="headerlink" href="#ver-el-nombre-de-los-campos-originales-en-la-tabla-de-indicadores" title="Enlazar permanentemente con este título">¶</a></h5>
+<p>Los encabezados en la tabla de indicadores son nombrados con <a class="reference internal" href="_images/fi_uno.png"><img alt="no_1" src="_images/fi_uno.png" style="width: 22.5px; height: 26.5px;" /></a> los primeros dos caracteres de los nombres de los campos del archivo original para los indicadores de impacto y <a class="reference internal" href="_images/fi_dos.png"><img alt="no_2" src="_images/fi_dos.png" style="width: 22.0px; height: 27.0px;" /></a> las letras <a class="reference internal" href="_images/fi_vu.png"><img alt="b_vu" src="_images/fi_vu.png" style="width: 25px; height: 25px;" /></a> para los indicadores de vulnerabilidad. Al posicionar el ratón sobre cualquier encabezado, <a class="reference internal" href="_images/fi_tres.png"><img alt="no_3" src="_images/fi_tres.png" style="width: 22.5px; height: 27.0px;" /></a> se despliega el nombre de los campos del archivo original.</p>
+<img alt="_images/fi_campos_original.png" src="_images/fi_campos_original.png" />
+</div>
+<div class="section" id="seleccionar-poligonos-renglones-especificos">
+<h5>3.5.2.4 Seleccionar polígonos (renglones) específicos<a class="headerlink" href="#seleccionar-poligonos-renglones-especificos" title="Enlazar permanentemente con este título">¶</a></h5>
+<p>Al hacer clic en cualquier renglón de la tabla de indicadores, <a class="reference internal" href="_images/fi_uno.png"><img alt="no_1" src="_images/fi_uno.png" style="width: 22.5px; height: 26.5px;" /></a> se selecciona ese renglón y <a class="reference internal" href="_images/fi_dos.png"><img alt="no_2" src="_images/fi_dos.png" style="width: 22.0px; height: 27.0px;" /></a> se selecciona su polígono correspondiente en el visualizador de capas.</p>
+<img alt="_images/fi_polig_orig_esp.png" src="_images/fi_polig_orig_esp.png" />
+<p>Al hacer clic en cualquier área del visualizador de capas fuera del mapa, se elimina la selección.</p>
+<img alt="_images/fi_polig_orig_esp2.png" src="_images/fi_polig_orig_esp2.png" />
+</div>
+</div>
+<div class="section" id="combo">
+<h4>3.5.3 Combo<a class="headerlink" href="#combo" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>El combo <a class="reference internal" href="_images/fi_b_combo.png"><img alt="b_combo" src="_images/fi_b_combo.png" style="width: 25px; height: 25px;" /></a> integra la funcionalidad de las herramientas <a class="reference internal" href="_images/fi_uno.png"><img alt="no_1" src="_images/fi_uno.png" style="width: 22.5px; height: 26.5px;" /></a> <strong>Agregación</strong> e <a class="reference internal" href="_images/fi_dos.png"><img alt="no_2" src="_images/fi_dos.png" style="width: 22.0px; height: 27.0px;" /></a> <strong>Indicadores de impacto</strong> en la misma ventana con el fin de facilitar el proceso de facilitación. Las funciones específicas de <strong>Agregación</strong> e <strong>Indicadores de impacto</strong> son explicadas en las herramientas 3.5.1 y 3.5.2.</p>
+<img alt="_images/fi_combo.png" src="_images/fi_combo.png" />
+</div>
+<div class="section" id="paletas-de-colores">
+<h4>3.5.4 Paletas de colores<a class="headerlink" href="#paletas-de-colores" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Al hacer clic en el botón <strong>paletas de colores</strong> <a class="reference internal" href="imagenes/fi_b_paleta.png"><img alt="b_paleta" src="imagenes/fi_b_paleta.png" style="width: 25px; height: 25px;" /></a>, <a class="reference internal" href="_images/fi_uno.png"><img alt="no_1" src="_images/fi_uno.png" style="width: 22.5px; height: 26.5px;" /></a> se despliega una ventana que muestra el color de la capa plano arquitectónico.</p>
+<img alt="_images/mapa_paleta.png" src="_images/mapa_paleta.png" />
+<div class="section" id="cambiar-el-color-del-proyecto-arquitectonico">
+<h5>3.5.4.1 Cambiar el color del proyecto arquitectónico<a class="headerlink" href="#cambiar-el-color-del-proyecto-arquitectonico" title="Enlazar permanentemente con este título">¶</a></h5>
+<p>Al hacer clic en el botón de paletas de colores, <a class="reference internal" href="_images/fi_uno.png"><img alt="no_1" src="_images/fi_uno.png" style="width: 22.5px; height: 26.5px;" /></a> se despliega una ventana con dos secciones, <a class="reference internal" href="_images/fi_dos.png"><img alt="no_2" src="_images/fi_dos.png" style="width: 22.0px; height: 27.0px;" /></a> deslizar el cursor hacia arriba o abajo para seleccionar el tono en el panel derecho (en la rampa de colores) y <a class="reference internal" href="_images/fi_tres.png"><img alt="no_3" src="_images/fi_tres.png" style="width: 22.5px; height: 27.0px;" /></a> deslizar el cursor hasta seleccionar la saturación y brillo en el panel izquierdo.</p>
+<img alt="_images/fi_cambiar_color.png" src="_images/fi_cambiar_color.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="requerimientos">
+<h2>4 Requerimientos<a class="headerlink" href="#requerimientos" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>SIGnificance tiene dos opciones de importación: insumos integrados o insumos desagregados.</p>
+<div class="section" id="insumos-integrados">
+<h3>4.1     Insumos integrados<a class="headerlink" href="#insumos-integrados" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="section" id="shapefile-de-unidades-naturales-comprimido-en-formato-zip">
+<h4>4.1.1 Shapefile de unidades naturales comprimido en formato .zip<a class="headerlink" href="#shapefile-de-unidades-naturales-comprimido-en-formato-zip" title="Enlazar permanentemente con este título">¶</a></h4>
+<ul class="simple">
+<li>Shapefile de unidades naturales que se compone de un mínimo de cinco archivos con las extensiones: nombre**.shp**, nombre**.shx**, nombre**.dbf**, nombre**.prj** y nombre.**xml**. Puede contener más archivos con extensiones adicionales dependiendo de la forma como se creó el shapefile. Para más información revisar: <a class="reference external" href="https://desktop.arcgis.com/es/arcmap/10.3/manage-data/shapefiles/shapefile-file-extensions.htm">https://desktop.arcgis.com/es/arcmap/10.3/manage-data/shapefiles/shapefile-file-extensions.htm</a></li>
+<li>Archivo <strong>.dbf</strong> que contiene la tabla de atributos debe incluir: <a class="reference internal" href="_images/fi_uno.png"><img alt="no_1" src="_images/fi_uno.png" style="width: 22.5px; height: 26.5px;" /></a> un campo de número identificador, <a class="reference internal" href="_images/fi_dos.png"><img alt="no_2" src="_images/fi_dos.png" style="width: 22.0px; height: 27.0px;" /></a> un campo con el nombre descriptivo de las unidades naturales y <a class="reference internal" href="_images/fi_tres.png"><img alt="no_3" src="_images/fi_tres.png" style="width: 22.5px; height: 27.0px;" /></a> un campo por cada índice de impacto y su contraparte de índice de vulnerabilidad. <strong>Los valores de los campos de los índices de impacto y vulnerabilidad deben ser numéricos y normalizados entre cero y uno.</strong></li>
+</ul>
+<img alt="_images/fi_shape.png" src="_images/fi_shape.png" />
+</div>
+<div class="section" id="shapefile-del-plan-maestro-o-proyecto-arquitectonico-insumo-opcional">
+<h4>4.1.2 Shapefile del plan maestro o proyecto arquitectónico (insumo opcional)<a class="headerlink" href="#shapefile-del-plan-maestro-o-proyecto-arquitectonico-insumo-opcional" title="Enlazar permanentemente con este título">¶</a></h4>
+<ul class="simple">
+<li>El shapefile que se compone de un mínimo de cinco archivos con las extensiones: nombre**.shp**, nombre**.shx**, nombre**.dbf**, nombre**.prj** y nombre**.xml.**</li>
+</ul>
+</div>
+</div>
+<div class="section" id="insumos-desagregados">
+<h3>4.2     Insumos desagregados<a class="headerlink" href="#insumos-desagregados" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="section" id="id1">
+<h4>4.2.1 Shapefile de unidades naturales comprimido en formato .zip<a class="headerlink" href="#id1" title="Enlazar permanentemente con este título">¶</a></h4>
+<ul class="simple">
+<li>Shapefile de unidades naturales que se compone de un mínimo de cinco archivos con las extensiones: nombre**.shp**, nombre**.shx**, nombre**.dbf**, nombre**.prj** y nombre**.xml**. Puede contener más archivos con extensiones adicionales dependiendo de la forma como se creó el shapefile. Para más información revisar: <a class="reference external" href="https://desktop.arcgis.com/es/arcmap/10.3/manage-data/shapefiles/shapefile-file-extensions.htm">https://desktop.arcgis.com/es/arcmap/10.3/manage-data/shapefiles/shapefile-file-extensions.htm</a></li>
+<li>Archivo <strong>.dbf</strong> que contiene la tabla de atributos debe incluir: (1) un campo de número identificador, y (2) nombre descriptivo de las unidades naturales</li>
+</ul>
+</div>
+<div class="section" id="archivo-csv-de-indicadores">
+<h4>4.2.2 Archivo .csv de indicadores<a class="headerlink" href="#archivo-csv-de-indicadores" title="Enlazar permanentemente con este título">¶</a></h4>
+<ul class="simple">
+<li>Archivo .csv debe incluir: <a class="reference internal" href="_images/fi_uno.png"><img alt="no_1" src="_images/fi_uno.png" style="width: 22.5px; height: 26.5px;" /></a> un campo del número identificador de la unidad natural (el mismo identificador usado en el shapefile para cada unidad natural) y <a class="reference internal" href="_images/fi_dos.png"><img alt="no_2" src="_images/fi_dos.png" style="width: 22.0px; height: 27.0px;" /></a> un campo por cada índice de impacto y su contraparte de índice de vulnerabilidad. <strong>Los valores de los campos de los índices de impacto y vulnerabilidad deben ser numéricos y normalizados entre cero y uno.</strong></li>
+</ul>
+<img alt="_images/fi_csv.png" src="_images/fi_csv.png" />
+</div>
+<div class="section" id="id2">
+<h4>4.2.3 Shapefile del plan maestro o proyecto arquitectónico (insumo opcional)<a class="headerlink" href="#id2" title="Enlazar permanentemente con este título">¶</a></h4>
+<ul class="simple">
+<li>Shapefile que se compone de un mínimo de cinco archivos con las extensiones: nombre**.shp**, nombre**.shx**, nombre**.dbf**, nombre**.prj** y nombre**.xml.**</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="ejemplo-de-uso">
+<h2>5 Ejemplo de uso<a class="headerlink" href="#ejemplo-de-uso" title="Enlazar permanentemente con este título">¶</a></h2>
+</div>
+<div class="section" id="referencias">
+<h2>6 Referencias<a class="headerlink" href="#referencias" title="Enlazar permanentemente con este título">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="signature.html" class="btn btn-neutral float-left" title="Signature" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, LANCIS
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
