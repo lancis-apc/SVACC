@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Lizmap &mdash; documentación de SVACC - 1.0</title>
+  <title>Lizmap-QGIS &mdash; documentación de SVACC - 1.0</title>
   
 
   
@@ -98,12 +98,33 @@
 <li class="toctree-l1"><a class="reference internal" href="sigclassifier.html">Guía de usuario de SIGclassifier</a></li>
 <li class="toctree-l1"><a class="reference internal" href="signature.html">SIGnature</a></li>
 <li class="toctree-l1"><a class="reference internal" href="significance.html">SIGnificance</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Lizmap</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#preparar-un-proyecto-qgis-para-publicarlo-en-la-web">1 Preparar un proyecto QGIS para publicarlo en la Web</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#configurar-el-proyecto-para-lizmap">1.1     Configurar el proyecto para Lizmap</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Lizmap-QGIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#guia-de-usuario-de-lizmap-qgis">Guía de usuario de Lizmap-QGIS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduccion">1 Introducción</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#por-que-es-necesario-lizmap">1.1 ¿Por qué es necesario Lizmap?</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#configurar-las-capas-y-los-grupos">3 Configurar las capas y los grupos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#organizacion-del-manual">2 Organización del manual</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#preparar-un-proyecto-qgis-para-publicarlo-en-la-web">3 Preparar un proyecto QGIS para publicarlo en la Web</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#crear-un-proyecto">3.1 Crear un proyecto</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configurar-el-proyecto-para-la-web">3.2 Configurar el proyecto para la web</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configurar-las-capas-para-la-web">3.3 Configurar las capas para la web</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#configurar-el-proyecto-para-lizmap">4 Configurar el proyecto para Lizmap</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#instalar-el-complemento-lizmap">4.1 Instalar el complemento Lizmap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#organizacion-del-complemento-lizmap">4.2 Organización del complemento Lizmap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configurar-las-capas-y-los-grupos">4.3 Configurar las capas y los grupos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configurar-el-mapa">4.4 Configurar el mapa</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configurar-las-capas-base">4.5 Configurar las capas base</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#las-capas-base-disponibles">4.5.1 Las capas base disponibles</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#publicar-el-mapa-por-ftp-server">5 Publicar el mapa por FTP Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#utilizar-un-ftp-para-clientes">6 Utilizar un FTP para clientes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#referencias">7       Referencias</a></li>
 </ul>
 </li>
 </ul>
@@ -151,7 +172,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Lizmap</li>
+      <li>Lizmap-QGIS</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -170,101 +191,364 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="lizmap">
-<h1>Lizmap<a class="headerlink" href="#lizmap" title="Enlazar permanentemente con este título">¶</a></h1>
+  <div class="section" id="lizmap-qgis">
+<h1>Lizmap-QGIS<a class="headerlink" href="#lizmap-qgis" title="Enlazar permanentemente con este título">¶</a></h1>
+</div>
+<div class="section" id="guia-de-usuario-de-lizmap-qgis">
+<h1>Guía de usuario de Lizmap-QGIS<a class="headerlink" href="#guia-de-usuario-de-lizmap-qgis" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="introduccion">
+<h2>1 Introducción<a class="headerlink" href="#introduccion" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="por-que-es-necesario-lizmap">
+<h3>1.1 ¿Por qué es necesario Lizmap?<a class="headerlink" href="#por-que-es-necesario-lizmap" title="Enlazar permanentemente con este título">¶</a></h3>
+</div>
+</div>
+<div class="section" id="organizacion-del-manual">
+<h2>2 Organización del manual<a class="headerlink" href="#organizacion-del-manual" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Este manual tiene el propósito de mostrar como publicar proyectos mediante el complemento de QGIS: Lizmap, mediante (1) la explicación de como preparar un proyecto QGIS para publicarlo en la web, (2) como configurar un proyecto para Lizmap y (3) una explicación de las funciones avanzadas.</p>
+</div>
 <div class="section" id="preparar-un-proyecto-qgis-para-publicarlo-en-la-web">
-<h2>1 Preparar un proyecto QGIS para publicarlo en la Web<a class="headerlink" href="#preparar-un-proyecto-qgis-para-publicarlo-en-la-web" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>1.1 Crear un proyecto
-Crear un proyecto en QGIS y agregar los datos necesarios estos pueden ser de diferente tipo, por ejemplo:
-- Archivos vectoriales de datos geográficos</p>
+<h2>3 Preparar un proyecto QGIS para publicarlo en la Web<a class="headerlink" href="#preparar-un-proyecto-qgis-para-publicarlo-en-la-web" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="crear-un-proyecto">
+<h3>3.1 Crear un proyecto<a class="headerlink" href="#crear-un-proyecto" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Crear un proyecto en QGIS y agregar los datos necesarios estos pueden ser de diferente tipo, por ejemplo:</p>
 <blockquote>
-<div>ESRI Shapefile
-MapInfo TAB and MIF/MID
-GeoJSON</div></blockquote>
-<ul class="simple">
-<li><dl class="first docutils">
-<dt>Archivos de datos geográficos RASTER</dt>
-<dd>GeoTIFF
-Arc/Info ASCII Grid
-netCDF</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>Bases de datos geográficas</dt>
-<dd>PostgreSQL / PostGIS
-MSSQL spatial
-Oracle locator / spatial</dd>
-</dl>
-</li>
-</ul>
-<p>..imagen:: /imagenes/lz_data.png</p>
-<p>1.2 Organice y manipule las capas en la leyenda</p>
-<p>-_Agregar <a href="#id1"><span class="problematic" id="id2">grupos_</span></a> dando clic derecho en la sección vacía de la leyenda y seleccionar añadir grupo <a class="reference internal" href="_images/lz_grupo.png"><img alt="lz_grupo" src="_images/lz_grupo.png" style="width: 90.5px; height: 33.5px;" /></a>
--_Mover las capas y los grupos arrastrandolos y soltandandolos
--_Cambie el nombre de las <a href="#id3"><span class="problematic" id="id4">capas_</span></a> y grupos con la tecla F2 o en la ventana de propiedades de la capa
--Manipule el orden de representación de las capas:</p>
+<div><ul>
+<li><p class="first">Archivos vectoriales de datos geográficos</p>
 <blockquote>
 <div><ul class="simple">
-<li>modificando el orden de las capas de la leyenda: las capas superiores se visualizan sobre las demás</li>
-<li>especificando el orden de las capas desde menú Ver&gt; Paneles&gt; Orden de capas</li>
+<li>ESRI Shapefilec</li>
+<li>MapInfo TAB and MIF/MID</li>
+<li>GeoJSON</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Archivos de datos geográficos RASTER</p>
+<blockquote>
+<div><ul class="simple">
+<li>GeoTIFF</li>
+<li>Arc/Info ASCII Grid</li>
+<li>netCDF</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Bases de datos geográficas</p>
+<blockquote>
+<div><ul class="simple">
+<li>PostgreSQL / PostGIS</li>
+<li>MSSQL spatial</li>
+<li>Oracle locator / spatial</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<p>Organizar y manipular las capas en la leyenda</p>
+<p>Para organizar las capas en la leyenda se puede hacer uso de cualquiera de las siguientes instrucciones:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Agregar grupos dando clic derecho en la sección vacía de la leyenda y seleccionar añadir grupo</p>
+</li>
+<li><p class="first">Mover las capas y los grupos arrastrandolos y soltandandolos</p>
+</li>
+<li><p class="first">Cambiar el nombre de las capas y grupos con la tecla F2 o en la ventana de propiedades de la capa</p>
+</li>
+<li><p class="first">Manipular el orden de representación de las capas:</p>
+<blockquote>
+<div><ul class="simple">
+<li>modificar el orden de las capas de la leyenda: las capas superiores se visualizan sobre las demás</li>
+<li>especificar el orden de las capas desde menú Ver&gt; Paneles&gt; Orden de capas</li>
+</ul>
+</div></blockquote>
+</li>
 </ul>
 </div></blockquote>
 <p>Agregar un título al proyecto y guardarlo en formato .qgs en el directorio de trabajo.</p>
-<div class="section" id="configurar-el-proyecto-para-lizmap">
-<h3>1.1     Configurar el proyecto para Lizmap<a class="headerlink" href="#configurar-el-proyecto-para-lizmap" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>1.1.1 Instalar el complemento Lizmap</p>
-<p>El complemento Lizmap está disponible a través del repositorio oficial del proyecto QGIS: <a class="reference external" href="http://plugins.qgis.org/plugins/lizmap/">http://plugins.qgis.org/plugins/lizmap/</a>
-Para instalarlo, simplemente hágalo como cualquier complemento de QGIS:</p>
-<p>Menú ‣ Complementos ‣ Administrar e instalar complementos <a class="reference internal" href="_images/adm_comp.png"><img alt="adm_comp" src="_images/adm_comp.png" style="width: 569.0px; height: 49.5px;" /></a>
-Buscar Lizmap
-Instalar el complemento
-..imagen:: /imagenes/comp_liz.png</p>
-<p>El complemento ya aparecerá en el menú y en a barra de herramientas Web <a class="reference internal" href="_images/icono_lizmap.png"><img alt="icono_lizmap" src="_images/icono_lizmap.png" style="width: 21.5px; height: 17.5px;" /></a></p>
-<p>1.1.2 Organización del complemento Lizmap</p>
-<p>El complemento está organizado en 6 pestañas:</p>
-<p>Map options: las opciones generales del mapa
-Layers: las opciones de cada capa
-Baselayers: las capas base utilizadas en la Web
-Locate by layer:
-Attribute table:
-Layer editing:
-Tooltip layers:
-Filter layer by user:
-Dataviz:
-Time manager:
-Atlas:
-Filter data with form:
-Log:</p>
-<p>Y tiene 4 botones de acción:</p>
-<p>Aceptar
-Cancelar
-Aplicar
-Ayuda</p>
-<p>..imagen:: /imagenes/vista_lm.png</p>
 </div>
+<div class="section" id="configurar-el-proyecto-para-la-web">
+<h3>3.2 Configurar el proyecto para la web<a class="headerlink" href="#configurar-el-proyecto-para-la-web" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Configurar el sistema de referencia de coordenadas, CRS, del proyecto:</p>
+<p>Seleccionar el CRS del mapa web, por ejemplo:</p>
+<blockquote>
+<div><ul class="simple">
+<li>EPSG: 3857 para Google Mercator</li>
+<li>EPSG: 2154 para Lambert 93</li>
+<li>etc</li>
+</ul>
+</div></blockquote>
+<p>Configurar los parámetros de la Web de Servicios Geográficos (Web Map Services (WMS)) con la pestaña del servidor de QGIS (acceder a ella desde el menú Proyecto ‣ Propiedades del proyecto ‣ Servidor de QGIS):</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Establecer el título de los servicios geograficos de la WMS</p>
+</li>
+<li><p class="first">Agregar información como el nombre de la organización, el propietario de la publicación, el resumen, etc.</p>
+</li>
+<li><p class="first">Establecer la extensión máxima del servicio WMS</p>
+</li>
+<li><p class="first">Restringir la lista de CRS del servicio WMS:</p>
+<blockquote>
+<div><ul class="simple">
+<li>al menos seleccione el de la proyección utilizada en el proyecto</li>
+<li>puede usar el botón «Usado» para obtener todos los CRS de las capas y la del proyecto</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Excluir composiciones y capas si los datos no se pueden publicar en WMS</p>
+</li>
+<li><p class="first">Habilitar las capas que desea publicar WFS y WCS</p>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="configurar-las-capas-para-la-web">
+<h3>3.3 Configurar las capas para la web<a class="headerlink" href="#configurar-las-capas-para-la-web" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>En la ventana Propiedades de capa, la pestaña Metadatos permite configurar mucha información para los Servicios Geográficos Web:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Proporcionar un título, una descripción y palabras clave</li>
+<li>Especificar la atribución para respetar la licencia de los datos</li>
+<li>Agregar la URL del registro de metadatos si está disponible</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="configurar-el-proyecto-para-lizmap">
+<h2>4 Configurar el proyecto para Lizmap<a class="headerlink" href="#configurar-el-proyecto-para-lizmap" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="instalar-el-complemento-lizmap">
+<h3>4.1 Instalar el complemento Lizmap<a class="headerlink" href="#instalar-el-complemento-lizmap" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>El complemento Lizmap está disponible a través del repositorio oficial del proyecto QGIS: <a class="reference external" href="http://plugins.qgis.org/plugins/lizmap/">http://plugins.qgis.org/plugins/lizmap/</a>
+Para instalarlo seguir el mismo procedimiento de instalación que el de cualquier complemento de QGIS:</p>
+<ul class="simple">
+<li>Menú ‣ Complementos ‣ Administrar e instalar complementos</li>
+<li>Buscar Lizmap</li>
+<li>Instalar el complemento</li>
+</ul>
+<p>El complemento aparecerá en el menú y en la barra de herramientas Web</p>
+</div>
+<div class="section" id="organizacion-del-complemento-lizmap">
+<h3>4.2 Organización del complemento Lizmap<a class="headerlink" href="#organizacion-del-complemento-lizmap" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>El complemento está organizado en 13 pestañas:</p>
+<ul class="simple">
+<li>Map options: las opciones generales del mapa</li>
+<li>Layers: las opciones de cada capa</li>
+<li>Baselayers: las capas base utilizadas en la Web</li>
+<li>Locate by layer:</li>
+<li>Attribute table: las tablas de atributos de las capas agregadas</li>
+<li>Layer editing:</li>
+<li>Tooltip layers:</li>
+<li>Filter layer by user:</li>
+<li>Dataviz:</li>
+<li>Time manager:</li>
+<li>Atlas:</li>
+<li>Filter data with form:</li>
+<li>Log: muestra información de las acciones realizadas</li>
+</ul>
+<p>Y tiene 4 botones de acción:</p>
+<ul class="simple">
+<li>Aceptar</li>
+<li>Cancelar</li>
+<li>Aplicar</li>
+<li>Ayuda</li>
+</ul>
 </div>
 <div class="section" id="configurar-las-capas-y-los-grupos">
-<h2>3 Configurar las capas y los grupos<a class="headerlink" href="#configurar-las-capas-y-los-grupos" title="Enlazar permanentemente con este título">¶</a></h2>
-<p>3.1 La configuración de la capas se realiza en la pestaña Layers</p>
-<p>Esta pestaña muestra el árbol de capas del proyecto con la misma organización que se define en el panel Capas. Puede seleccionar uno de los elementos del árbol, una capa o grupo, y luego configurar las opciones para el grupo o capa seleccionados.</p>
+<h3>4.3 Configurar las capas y los grupos<a class="headerlink" href="#configurar-las-capas-y-los-grupos" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>La configuración de la capas se realiza en la pestaña Layers
+Esta pestaña muestra el árbol de capas del proyecto con la misma organización que se define en el panel Capas. Puede seleccionar uno de los elementos del árbol, una capa o grupo, y luego configurar las opciones para el grupo o capa seleccionados.</p>
 <p>Información sobre grupos y capas:</p>
-<p>Título: se utilizará en el árbol de capas web en lugar del nombre. Para las capas, el campo de título está vinculado al de la pestaña Metadatos en la ventana de propiedades de la capa.
-Resumen: permite describir la capa o grupo. Se muestra en el mouseover. Para las capas, el Campo abstracto está vinculado al de la pestaña Metadatos en la ventana de propiedades de la capa.
-Enlace: la dirección web de un documento o una página web que describe la capa o el grupo. Aparece un icono (i) en la leyenda si se ha enviado el enlace. Puede utilizar la carpeta multimedia, consulte Medios en Lizmap.</p>
-<p>..imagen:: /imagenes/lz_layers.png</p>
+<ul class="simple">
+<li>Título: se utilizará en el árbol de capas web en lugar del nombre. Para las capas, el campo de título está vinculado al de la pestaña Metadatos en la ventana de propiedades de la capa.</li>
+<li>Resumen: permite describir la capa o grupo. Para las capas, el campo resumen está vinculado al de la pestaña Metadatos en la ventana de propiedades de la capa.</li>
+<li>Enlace: la dirección web de un documento o una página web que describe la capa o el grupo. Aparece un icono (i) en la leyenda si se ha enviado el enlace.</li>
+</ul>
 <p>Opciones de capas:</p>
-<p>Conmutado: le permite especificar si una capa se muestra por defecto
-Activar ventana emergente: habilita ventanas emergentes de información sobre el interrogatorio del mapa haciendo clic. Ver Cómo configurar ventanas emergentes
-Ocultar imagen de leyenda: le permite ocultar la leyenda de la capa en la interfaz web
-Mostrar en árbol de leyendas: alterna la visibilidad de la capa en el árbol de capas; cuando está desactivado, no permite al usuario administrar su visualización
-Capa base: establece la capa como mapa base. Esto será accesible a través de la lista de mapa base.
-Mosaico único: selecciona el modo de visualización de la capa. Puede mostrarse como varias imágenes, mosaicos o una sola imagen generada por el servidor
-Formato de imagen:
-png: formato de imagen completo, gama completa de colores con transparencia
-png; modo = 16 bits: formato de imagen más claro, color del panel restringido con transparencia
-png; mode = 8bit: formato de imagen muy ligero, el panel de color se restringe al máximo con transparencia, posible degradación de la imagen
-jpeg: formato de imagen claro sin transparencia con pérdida de calidad</p>
-<p>7       Referencias</p>
+<ul class="simple">
+<li>Toggled: permite especificar si una capa se muestra por defecto</li>
+<li>Activate popup: habilita ventanas emergentes de información sobre el mapa haciendo clic</li>
+<li>Hide legend image: permite ocultar la leyenda de la capa en la interfaz web</li>
+<li>Display in legend tree: alterna la visibilidad de la capa en el árbol de capas; cuando está desactivado, no permite al usuario administrar su visualización</li>
+<li>Base layer: establece la capa como mapa base. Esto será accesible a través de la lista de mapa base</li>
+<li>Single Tile: selecciona el modo de visualización de la capa. Puede mostrarse como varias imágenes, mosaicos o una sola imagen generada por el servidor</li>
+<li>Image format:<ul>
+<li>png: formato de imagen completo, gama completa de colores con transparencia</li>
+<li>png; modo = 16 bits: formato de imagen más claro, color del panel restringido con transparencia</li>
+<li>png; mode = 8bit: formato de imagen muy ligero, el panel de color se restringe al máximo con transparencia, posible degradación de la imagen</li>
+<li>jpeg: formato de imagen claro sin transparencia con pérdida de calidad</li>
+</ul>
+</li>
+</ul>
+<p>Si la capa la proporciona un servicio WMS y es compatible con el sistema de referencia de coordenadas del mapa web, es posible solicitar imágenes directamente al servidor WMS. Esto reduce la carga de QGIS-Server y optimiza Lizmap. Esta opción está disponible en el grupo de capas WMS de terceros.</p>
+<p>Opciones de grupo:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Agrupar como capa:</p>
+<blockquote>
+<div><ul class="simple">
+<li>transforma un grupo en una sola capa en la interfaz web</li>
+<li>utilizado para agrupar capas con visibilidad dependiente de la escala</li>
+<li>simplifica la interfaz a los usuarios del mapa web</li>
+<li>para crear un mapa base a partir de varias capas</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">si el grupo es una capa, se le aplican otras opciones</p>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="configurar-el-mapa">
+<h3>4.4 Configurar el mapa<a class="headerlink" href="#configurar-el-mapa" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>La pestaña Mapa le permite habilitar o deshabilitar las herramientas básicas de Lizmap, eligiendo escalas y la extensión inicial.</p>
+<p>Las opciones genéricas (generic options):</p>
+<blockquote>
+<div><ul class="simple">
+<li>ocultar el proyecto en Lizmap Web Client:<ul>
+<li>si esta opción está habilitada, el proyecto se ocultará en la página de inicio de Lizmap que muestra miniaturas de todos los directorios y proyectos de la aplicación. Puede utilizar esta opción para ocultar el proyecto.</li>
+<li>el proyecto seguirá siendo accesible para clientes WMS o WFS en función de los derechos de directorio</li>
+<li>esta característica es interesante en el caso de utilizar este proyecto como un proyecto externo para otros.</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+<p>Las herramientas de mapa (map tools):</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Print: permite el uso de composiciones QGIS para mapas de generación de PDF</p>
+</li>
+<li><p class="first">Measure tools: habilita las herramientas de medición en el mapa (longitud, área, perímetro)</p>
+</li>
+<li><p class="first">Zoom history: habilita los botones de navegación en el historial de zoom y moverse en el mapa</p>
+</li>
+<li><p class="first">Automatic geolocation: habilita las funciones para utilizar la geolocalización HTML5 basada en Wifi y / o GPS</p>
+</li>
+<li><p class="first">Adress search: para agregar un motor de búsqueda de direcciones que se base en uno de estos servicios:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Nominatim (OpenStreetMap)</li>
+<li>Google</li>
+<li>Ban</li>
+<li>Ign</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<p>Las escalas (scales):</p>
+<blockquote>
+<div><ul class="simple">
+<li>una lista de valores enteros separados por comas (y espacios en blanco opcionales), por ejemplo: 250000, 100000, 50000.</li>
+<li>Lizmap también usa estas escalas para restringir la visualización entre las escalas de datos mínima y máxima. Por eso es obligatorio ingresar al menos 2 escalas en la lista.</li>
+</ul>
+</div></blockquote>
+<p>La extensión del mapa inicial (inicial map extent)</p>
+<blockquote>
+<div><ul class="simple">
+<li>una lista de coordenadas del mapa en el Sistema de Coordenadas de referencia en el formato: xmin, ymin, xmax, ymax, estableciendo la extensión del mapa inicial</li>
+<li>la extensión máxima del mapa está especificada en la pestaña del servidor OWS de la ventana Propiedades del proyecto. Los datos no se mostrarán si están fuera de él</li>
+<li>de forma predeterminada, la extensión inicial es la máxima.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="configurar-las-capas-base">
+<h3>4.5 Configurar las capas base<a class="headerlink" href="#configurar-las-capas-base" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>A menudo es útil separar las capas base como referencia y las capas temáticas en un mapa web. En Lizmap, se pueden usar grupos o capas como capas base. También es posible utilizar servicios externos en el mapa web.
+Las capas base no forman parte de la leyenda y se presentan como una lista.</p>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Si se configura una sola capa base (capa de proyecto, servicio externo o capa base vacía), la interfaz del cliente web Lizmap no muestra el cuadro Capas base, pero la capa será visible debajo de las otras capas.</p>
+</div>
+<p>La pestaña Baselayers permite agregar servicios externos como capa base y una capa base vacía. La capa base vacía mostrará capas temáticas sobre el color de fondo del proyecto.</p>
+<div class="section" id="las-capas-base-disponibles">
+<h4>4.5.1 Las capas base disponibles<a class="headerlink" href="#las-capas-base-disponibles" title="Enlazar permanentemente con este título">¶</a></h4>
+<blockquote>
+<div><ul>
+<li><p class="first">OpenStreetMap, proyecto de mapeo bajo licencias libres y abiertas:</p>
+<blockquote>
+<div><ul class="simple">
+<li>OSM Mapnik: servicio disponible en openstreetmap.org</li>
+<li>OSM Mapquest: servicio proporcionado por la empresa Mapquest</li>
+<li>Cycle Map: mapa de promoción de datos de ciclismo de OpenStreetMap, incluida información de altitud</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Google, requiere licencia:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Streets: la capa de fondo predeterminada de Google Maps</li>
+<li>Satellite: el mapa de fondo que incorpora imágenes aéreas y de satélite</li>
+<li>Hybrid: el mapa de fondo que mezcla calles y satélite</li>
+<li>Terrain</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Bing Map, requiere el cumplimiento del contrato de licencia de Microsoft y por lo tanto una clave:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Streets: la capa de fondo predeterminada de Bing Map</li>
+<li>Satellite: el mapa de fondo que incorpora imágenes aéreas y de satélite</li>
+<li>Hybrid: el mapa de fondo que mezcla calles y satélite</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">IGN Géoportail, requiere el cumplimiento del contrato de licencia IGN y por lo tanto una clave:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Plan: la representación de IGN para la Web</li>
+<li>Satellite: el mapa de fondo que incorpora imágenes aéreas y de satélite del IGN</li>
+<li>Scan: el mapa de fondo que mezcla los diversos escaneos IGN</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Si elige una capa base externa, el mapa se mostrará en Google Mercator (EPSG: 3857 o EPSG: 900913), las escalas son las de los servicios externos y QGIS-Server realizará una reproyección al vuelo.</p>
+</div>
+<p>Por lo tanto, es necesario preparar el proyecto QGIS en consecuencia.</p>
+</div>
+</div>
+</div>
+<div class="section" id="publicar-el-mapa-por-ftp-server">
+<h2>5 Publicar el mapa por FTP Server<a class="headerlink" href="#publicar-el-mapa-por-ftp-server" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Lizmap se basa en el sistema de repositorios. Para publicar un mapa en Lizmap, es suficiente con asegurarse de que el contenido del directorio local que contiene los datos y los proyectos QGIS se reproduzca exactamente idéntico en el repositorio del servidor correspondiente.
+Para ello, es necesario sincronizar el directorio local con el del servidor cada vez que actualice el proyecto QGIS, modifique la configuración de Lizmap con el complemento o agregue archivos en el directorio local.</p>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Si está trabajando localmente, dado que Lizmap Web Client está instalado en la misma máquina que usa para QGIS, no necesita sincronizar sus archivos con FTP. Esta configuración solo debe existir para realizar pruebas.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Puede utilizar cualquier herramienta y protocolo de sincronización (FTP, FTPS, SFTP, rsync, unison, etc.).</p>
+</div>
+</div>
+<div class="section" id="utilizar-un-ftp-para-clientes">
+<h2>6 Utilizar un FTP para clientes<a class="headerlink" href="#utilizar-un-ftp-para-clientes" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>FTP permite acceder a archivos desde un servidor, recuperarlos y agregar documentos y/o carpetas. Por lo tanto, se puede utilizar para sincronizar el directorio local con el del servidor donde se encuentra Lizmap Web Client. Este protocolo es un estándar web que puede explotarse a través de muchos clientes FTP.
+Puede utilizar alguna de las siguientes extensiones o alguna que utilice habitualmente:</p>
+<blockquote>
+<div><blockquote>
+<div><ul class="simple">
+<li>FireFTP: complemento de Firefox</li>
+<li>Filezilla: software multiplataforma gratuito (Windows, MacOS, Linux)</li>
+<li>WinSCP: software gratuito para Windows</li>
+</ul>
+</div></blockquote>
+<dl class="docutils">
+<dt>Puede utilizar estas herramientas para realizar cambios manuales en el directorio remoto:</dt>
+<dd><ul class="first last simple">
+<li>hacer una copia de seguridad</li>
+<li>eliminar contenido</li>
+<li>sobrescribir archivos manualmente: proyecto QGIS (.qgs) y configuración de Lizmap (.qgs.cfg).</li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="referencias">
+<h2>7       Referencias<a class="headerlink" href="#referencias" title="Enlazar permanentemente con este título">¶</a></h2>
+<ul class="simple">
+<li>Lizmap 3.2. Publisher guide. (2014). Lizmap Documentation. <a class="reference external" href="https://docs.lizmap.com/current/es/publish/index.html">https://docs.lizmap.com/current/es/publish/index.html</a></li>
+</ul>
 </div>
 </div>
 
