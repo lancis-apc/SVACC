@@ -10,7 +10,13 @@ Welcome to SVACC's documentation!
    :maxdepth: 1
    :caption: Códigos en Python - Qgis
 
+   analisis
+   verificacion
    owa
+   clp 
+   webershape
+   weberraster
+   
 
 .. toctree::
    :maxdepth: 1
