@@ -1,8 +1,8 @@
-Sigindex
+SIGIndex
 ###############
 
 Guía de usuario de SIGIndex
-****************
+***********************************
 
 1 Introducción
 ****************

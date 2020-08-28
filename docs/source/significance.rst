@@ -1,7 +1,7 @@
-Siginficance
+SIGnificance
 ###############
 Guía de usuario de SIGnificance
-***********************************
+*********************************
 
 1 Introducción
 ****************
