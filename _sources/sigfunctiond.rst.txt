@@ -1,2 +1,2 @@
-Sigfunctiond
+SIGfunctiond
 ###############

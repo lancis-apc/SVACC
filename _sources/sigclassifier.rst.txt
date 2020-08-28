@@ -1,8 +1,8 @@
-Sigclassifier
+SIGclassifier
 ###############
 
 Guía de usuario de SIGnificance
-###############################
+*************************************
 
 1 Introducción
 ***************
