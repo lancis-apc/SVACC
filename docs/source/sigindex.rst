@@ -1,8 +1,6 @@
-SIGIndex
-###############
 
 Guía de usuario de SIGIndex
-***********************************
+****************
 
 1 Introducción
 ****************
@@ -48,7 +46,7 @@ Al hacer clic en el botón exportar |b_exportar| se despliega una ventana que de
 3.1.3 Regresar 
 --------------
 
-SIGIndex tiene dos opciones para regresar al catálogo de proyectos y al resto de los módulos de SIGplaning: |no_1| el botón regresar |b_regresar| y |no_2| el ícono del módulo |b_icono_sigindex|.
+SIGIndex tiene dos opciones para regresar al catálogo de proyectos y al resto de los módulos de SIGplaning: |no_1| el botón regresar |b_regresar| y |no_2| el ícono del módulo |b_icono|.
 
 .. imagen:: /imagenes/mapa_b_regresar_sigindex.png
 
@@ -128,7 +126,7 @@ Nota: La opción predeterminada es satélite.
 3.4	Ajustes de visualización
 ==============================
 
-La sección de ajustes de visualización se compone de seis botones: |no_1| cambiar al visualizador de capas en pantalla completa, |no_2| acercar el mapa, |no_3| alejar el mapa, |no_4| reajustar el norte geográfico, |no_5| ver la guía rápida de controles de despliegue y |no_6| ver la licencia de la capa base. 
+La sección de ajustes de visualización se compone de ocho botones: |no_1| mostrar/ocultar ventana de valores, |no_2| cambiar al visualizador de capas en pantalla completa, |no_3| acercar el mapa, |no_4| alejar el mapa, |no_5| reajustar el norte geográfico, |no_6| ver la guía rápida de controles de despliegue, |no_7| ocultar gradientes de capas, y |no_8| ver la licencia de la capa base. 
 
 .. imagen:: /imagenes/mapa_ajustes_vis_sigindex.png
 
@@ -138,6 +136,8 @@ La sección de ajustes de visualización se compone de seis botones: |no_1| camb
 Al hacer clic en el botón mostrar/ocultar ventana de valores |b_valores|, el fondo del botón cambia a verde indicando que la ventana de valores esta activa |b_valores_activ|, |no_1| al hacer clic en un píxel de cualquier se despliega una ventana que muestra el valor del píxel del mapa de aptitud, y |no_2| al hacer clic en el botón de la ventana de valores |b_pestaña|, se despliegan los valores de las funciones de valor (atributos). 
 
 .. imagen:: /imagenes/mapa_ventana_val_sigindex.png 
+
+.. imagen:: /imagenes/mapa_ventana_val_sigindex2.png 
 
 3.4.2 Poner el mapa en pantalla completa
 ------------------------------------------
@@ -168,14 +168,23 @@ Al hacer clic en el botón de norte geográfico |b_norte|, se reajusta la orient
 3.4.5 Guía rápida de ajustes de visualización 
 -----------------------------------------------
  
-Al hacer clic en el botón de guía rápida de controles de despliegue |b_interrogacion|, se despliega una ventana con tres opciones: |no_1| rotar el mapa, |no_2| seleccionar un polígono, y |no_3| hacer zoom a una ventana específica. 
+Al hacer clic en el botón de guía rápida de controles de despliegue |b_interrogacion|, se despliega una ventana con dos opciones: |no_1| rotar el mapa y |no_2| hacer zoom a una ventana específica. 
 
 .. imagen:: /imagenes/mapa_guia_sigindex.png
  
+3.4.6 Ocultar gradientes de capas
+-----------------------------------
+
+Al hacer clic |no_1| en el botón mostrar/ocultar gradientes de capas |b_gradiente_azul|, |no_2| el fondo del botón cambia a verde desplegando la ventana de gradientes |b_gradiente_verde|. 
+
+.. imagen:: /imagenes/mapa_guia_sigindex.png
+
+.. imagen:: /imagenes/mapa_guia_sigindex.png
+
 3.5	Barra de herramientas 
 ===========================
 
-Cuenta con tres herramientas, |no_1| Atributos |b_atributos|, |no_2| Factor de progresión |b_factor_progre| y |no_3| Paleta de colores |b_paleta|.
+Cuenta con tres herramientas, |no_1| Atributos |b_atributos|, |no_2| Clasificación progresiva |b_factor_progre| y |no_3| Paleta de colores |b_paleta|.
   
 .. imagen:: /imagenes/mapa_barra_herramienta.png
 
@@ -196,7 +205,7 @@ Al hacer clic en la lista de despliegue |b_list| se muestran cuatro opciones: |n
 3.5.1.2	Selección y ponderación de atributos
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-En la ventana |no_1| se despliegan todos los atributos (funciones de valor) preseleccionados y su ponderación, |no_2| al hacer clic en el recuadro en blanco se puede modificar el peso de cada atributo manualmente o |no_3| al hacer clic en las flechas para incrementar o disminuir hasta el valor deseado, así como |no_4| seleccionar/deseleccionar al hacer clic en la casilla de verificación.
+En la ventana |no_1| se despliegan todos los atributos (funciones de valor) preseleccionados y su ponderación, |no_2| al seleccionar/deseleccionar haciendo clic en la casilla de verificación |no_3| se modifican los pesos de los atributos seleccionados automáticamente.   
 
 .. imagen:: /imagenes/fi_selec_atributos.png 
 
@@ -205,14 +214,14 @@ Obsérvese que la suma de los pesos debe ser igual a 1
 3.5.1.3	Generar mapa de aptitud
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Al hacer clic en el botón |no_1| **Generar mapa de aptitud** |no_2| se desplegará en el visualizador de capas, el mapa de aptitud con el nombre |no_3| **Proyecto**.
+Al hacer clic en el botón |no_1| **Generar mapa de aptitud** |no_2| se desplegará en el visualizador de capas, el mapa de aptitud con el nombre |no_3| **Capa resultado**.
 
 .. imagen:: /imagenes/mapa_actitud.png 
 
 3.5.2 Factor de progresión
 ----------------------------
 
-Al hacer clic en el botón **factor de progresión** se despliega una ventana con el control deslizante. Al hacer clic en el botón del control deslizante y deslizar hacia la izquierda o derecha |b_factor_progre|, |no_1| se selecciona el factor de progresión. C.E. |no_2| corresponde a una **clasificación equidistante**. 
+Al hacer clic en el botón **clasificación progresiva** se despliega una ventana con el control deslizante. Al hacer clic en el botón del control deslizante y deslizar hacia la izquierda o derecha |b_factor_progre|, |no_1| se selecciona el factor de progresión. C.E. |no_2| corresponde a una **clasificación equidistante**. 
 
 .. imagen:: /imagenes/fi_ventana_fprogresion.png 
 
@@ -240,7 +249,7 @@ Al hacer clic en el botón paleta de colores |b_paleta|, |no_1| se despliegan lo
 
 Alvarez-Yépiz, J.C., Martínez-Yrízar, A., Búrquez, A., Lindquist, C. 2008. Variation in vegetation structure and soil properties related to land use history of old-growth and secondary tropical dry forests in northwestern Mexico. Forest Ecology and Management 256: 355-366. 
 
-Bye, R., Cervantes, L., Rendón, B. 2002. Etnobotánica en la región de Chamela, Jalisco, México. En: No-guera, F., Vega-Rivera, J., García-Aldrete A., Quesada-Avendaño, M. Historia Natural de Chamela, pp. 545-559. Instituto de Biología, UNAM, México, DF.
+Bye, R., Cervantes, L., Rendón, B. 2002. Etnobotánica en la región de Chamela, Jalisco, México. En: Noguera, F., Vega-Rivera, J., García-Aldrete A., Quesada-Avendaño, M. Historia Natural de Chamela, pp. 545-559. Instituto de Biología, UNAM, México, DF.
 
 Chao, A. 1987. Estimating the population size for capture-recapture data with unequal catchability. Biometrics 43, 783-791. 
 
@@ -248,13 +257,13 @@ César Dachary, Alfredo y Stella Maris Arnaiz Burne (Eds.) (2005) Turismo rural.
 
 CENAPRED. 2003. Integración de información para la estimación del Peligro Sísmico. Pág 61-74 En: Guía Básica para la Elaboración de Atlas Estatales y Municipales de Peligros y Riesgos, Sistema nacional de Protección Civil, 385pp. 
 
-Colín-García, G., Ibáñez-Castillo, L., Reyes-Sánchez, J. y R. Arteaga-Ramírez. 2013. Diagnóstico de la ero-sión hídrica de la cuenca del Río Pichucalco. Ingeniería agrícola y biosistemas 5(1): 23-31. 
+Colín-García, G., Ibáñez-Castillo, L., Reyes-Sánchez, J. y R. Arteaga-Ramírez. 2013. Diagnóstico de la erosión hídrica de la cuenca del Río Pichucalco. Ingeniería agrícola y biosistemas 5(1): 23-31. 
 
 CONAGUA, 2012. Cobertura de agua potable por municipios y cobertura de alcantarillado por munici-pio. Atlas Digital del Agua de México, 2012. Sistema Nacional de Información del Agua. Consultado el 25/07/2014 en: http://www.conagua.gob.mx/atlas/mapa/28/index_svg.html y http://www.conagua.gob.mx/atlas/mapa/30/index_svg.html.
 
-CONABIO 2012. Portal de Geoinformación, Sistema Nacional de Información sobre Biodiversidad. Con-sultado el 1/09/2014 en http://www.conabio.gob.mx/informacion/gis/
+CONABIO 2012. Portal de Geoinformación, Sistema Nacional de Información sobre Biodiversidad. Consultado el 1/09/2014 en http://www.conabio.gob.mx/informacion/gis/
 
-CONAGUA. 2012. Atlas Digital del Agua México 2012. Sistema Nacional de Información del Agua. Subdi-rección General Técnica. Gerencia de Aguas Subterráneas. Representación gráfica y espacial de las Zonas de Veda. Consultado el 7 de julio de 2014: http://www.conagua.gob.mx/atlas/mapa/36/index_svg.html.
+CONAGUA. 2012. Atlas Digital del Agua México 2012. Sistema Nacional de Información del Agua. Subdirección General Técnica. Gerencia de Aguas Subterráneas. Representación gráfica y espacial de las Zonas de Veda. Consultado el 7 de julio de 2014: http://www.conagua.gob.mx/atlas/mapa/36/index_svg.html.
 
 
 .. |no_1| image:: /imagenes/fi_uno.png
@@ -275,9 +284,23 @@ CONAGUA. 2012. Atlas Digital del Agua México 2012. Sistema Nacional de Informac
 .. |no_6| image:: /imagenes/fi_seis.png
             :scale: 50
 
+.. |no_7| image:: /imagenes/fi_siete.png
+            :scale: 50
+
+.. |no_8| image:: /imagenes/fi_ocho.png
+            :scale: 50
+
 .. |b_inicio| image:: /imagenes/boton_inicio.png            
             :height: 25px
             :width: 25px
+
+.. |b_gradiente_azul| image:: /imagenes/boton_gradientea.png            
+            :height: 25px
+            :width: 25px
+
+.. |b_gradiente_verde| image:: /imagenes/boton_gradientev.png            
+            :height: 25px
+            :width: 25px  
 
 .. |b_exportar| image:: /imagenes/fi_b_exportar.png
             :height: 25px
@@ -287,7 +310,7 @@ CONAGUA. 2012. Atlas Digital del Agua México 2012. Sistema Nacional de Informac
             :height: 25px
             :width: 25px         
 
-.. |b_icono| image:: /imagenes/fi_b_icono_sigindex.png
+.. |b_icono| image:: /imagenes/fi_b_iconosigindex.png
             :height: 25px
             :width: 25px         
 

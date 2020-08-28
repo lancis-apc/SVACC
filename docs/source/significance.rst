@@ -1,8 +1,6 @@
-SIGnificance
-###############
 
 Guía de usuario de SIGnificance
-*********************************
+###############################
 
 1 Introducción
 ****************
@@ -93,7 +91,7 @@ Al hacer clic en cualquier parte del visualizador de capas, mover la barra de de
 3.2.4.1	Selección de un polígono
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Al hacer clic en un polígono de la capa de unidades naturales, |no_1| se resalta con un contorno azul y |no_2| se despliega una ventana con el valor de significancia.  
+Al hacer clic en un polígono de la capa de unidades naturales, |no_1| se resalta con el color con el que está marcado y |no_2| se despliega una ventana con el valor de significancia.  
 
 .. imagen:: /imagenes/mapa_seleccion_poligono.png
 
@@ -384,6 +382,10 @@ SIGnificance tiene dos opciones de importación: insumos integrados o insumos de
             :height: 25px
             :width: 25px         
 
+.. |b_icono| image:: /imagenes/fi_b_icono.png
+            :height: 25px
+            :width: 25px 
+            
 .. |b_norterotado| image:: /imagenes/fi_norte_rotado.png
             :height: 25px
             :width: 25px 
@@ -401,9 +403,8 @@ SIGnificance tiene dos opciones de importación: insumos integrados o insumos de
             :width: 25px 
 
 .. |b_opacidad| image:: /imagenes/fi_opacidad.png
-            :height: 25px
-            :width: 25px 
-
+            :scale: 40
+ 
 .. |b_seleccion| image:: /imagenes/fi_b_cambiarcapab.png
             :height: 25px
             :width: 25px 

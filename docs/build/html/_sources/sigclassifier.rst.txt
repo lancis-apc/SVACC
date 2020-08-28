@@ -1,8 +1,6 @@
-SIGclassifier
-###############
 
-Guía de usuario de SIGnificance
-*************************************
+Guía de usuario de SIGclassifier
+################################
 
 1 Introducción
 ***************
@@ -24,7 +22,7 @@ La interfaz está organizada en las siguientes secciones: |no_1| el encabezado c
 3.1	Funciones básicas
 =====================
 
-Las funciones básicas son tres: botón de inicio, exportar resultados y regresar. 
+Las funciones básicas son cuatro: botón de inicio, aplicar clasificador, exportar resultados y regresar.
 
 3.1.1 Botón de inicio
 ---------------------
@@ -32,6 +30,13 @@ Las funciones básicas son tres: botón de inicio, exportar resultados y regresa
 Al hacer clic en el botón de inicio |b_inicio|, se despliega una ventana con tres opciones: |no_1| redirecciona al **inicio** (home) de la plataforma SIGplanning, |no_2| muestra el **nombre del usuario** activo y |no_3| **cierra la sesión** del usuario activo. 
 
 .. imagen:: /imagenes/mapa_b_inicio_sigclassifier.png
+
+3.1.2 Aplicar clasificador
+--------------------------
+
+Al hacer clic en el botón de aplicar clasificador |b_aplicar|, se despliega el mapa con el clasificador seleccionado. Para que se genere este archivo, el usuario debe haber seleccionado un tipo de clasificador y los parámetros correspondientes (ver apartado 3.5.1.1).
+
+.. imagen:: /imagenes/mapa_aplica_clasificador.png
 
 3.1.2 Exportar
 --------------
@@ -43,7 +48,7 @@ Al hacer clic en el botón de exportar |b_exportar|, se descarga un shapefile de
 3.1.3 Regresar
 --------------
 
-SIGclassifier tiene dos opciones para regresar al catálogo de proyectos y al resto de los módulos de SIGplanning: |no_1| el botón de regresar |b_regresar| y |no_2| el ícono del módulo |b_icono|. 
+SIGclassifier tiene dos opciones para regresar al catálogo de proyectos y al resto de los módulos de SIGplanning: |no_1| el botón de regresar |b_regresar| y |no_2| el ícono del módulo |b_icono_classifier|. 
 
 .. imagen:: /imagenes/mapa_b_regresar_sigclassifier.png
 
@@ -78,7 +83,7 @@ Hacer clic en cualquier parte del visualizador de capas y mover la barra de desp
 3.2.4 Visualizar el resultado de la clasificación
 -------------------------------------------------
 
-Al hacer clic en un pixel de la capa, se despliega |no_1| una ventana con el valor del pixel resultado de la clasificación. 
+Al hacer clic en un pixel de la capa, se despliega |no_1| una ventana con el valor del pixel de la capa original y la capa resultado de la clasificación. 
 
 .. imagen:: /imagenes/mapa_vis_clasif_sigclassifier.png 
 
@@ -92,7 +97,7 @@ Al hacer clic en el botón de ajustes de despliegue de capas |b_ajuste_capas|, s
 3.3.1 Activar o desactivar capas
 --------------------------------
 
-Al hacer clic sobre las casillas de verificación |b_activar_capas|, se activan o desactivan las capas deseadas. 
+Al hacer clic sobre las casillas de verificación |b_activar_capas|, |no_1| se activan o desactivan las capas deseadas. Si se desactiva la capa resultado o la capa original |no_2| se cierran o despliegan las ventanas de los gradientes de estas capas.  
 
 .. imagen:: /imagenes/mapa_b_activarcapa_sigclassifier.png
 
@@ -106,7 +111,7 @@ Al hacer clic sobre el botón del orden de sobreposición de capas |b_sobreposic
 3.3.3	Cambiar la opacidad de las capas
 ----------------------------------------
 
-Al hacer clic sobre el control deslizante de opacidad de capas |b_opacidad|, desplazar a la de-recha o izquierda hasta llegar a la opacidad deseada.
+Al hacer clic sobre el control deslizante de opacidad de capas |b_opacidad|, desplazar a la derecha o izquierda hasta llegar a la opacidad deseada.
 
 .. imagen:: /imagenes/mapa_opacidad_sigclassifier.png
  
@@ -156,21 +161,21 @@ Al hacer clic en el botón de norte geográfico |b_norte|, se reajusta la orient
 3.4.4	Guía rápida de controles de despliegue
 ----------------------------------------------
 
-Al hacer clic en el botón de guía rápida de controles de despliegue |b_interrogacion|, se despliega una ventana con tres opciones: |no_1| rotar el mapa, |no_2| seleccionar un polígono, y |no_3| hacer zoom a una ventana específica. 
+Al hacer clic en el botón de guía rápida de controles de despliegue |b_interrogacion|, se despliega una ventana con dos opciones: |no_1| rotar el mapa y |no_2| hacer zoom a una ventana específica. 
 
 .. imagen:: /imagenes/mapa_guia_sigclassifier.png
 
 3.5	Barra de herramientas 
 =========================
 
-3.5.1 Factor de progresión 
+3.5.1 Clasificador 
 --------------------------
 
-Al hacer clic en el botón de **Factor Progresión** |b_atributos| se despliega una ventana con dos paneles: |no_1| **Clasificador** y |no_2| **Parámetros**.
+Al hacer clic en el botón **Clasificador** |b_atributos| se despliega una ventana con dos paneles: |no_1| **Clasificador** y |no_2| **Parámetros**.
 
-.. imagen:: /imagenes/mapa_b_fact_progre.png
+.. imagen:: /imagenes/mapa_b_clasificador.png
 
-El primer panel tiene la función de |no_1|, seleccionar el tipo de clasificador. El segundo panel tiene dos funciones: |no_2| seleccionar parámetros según el clasificador elegido y |no_3| aplicar el clasificador.
+El primer panel tiene la función de |no_1|, seleccionar el tipo de clasificador. El segundo panel tiene la función de |no_2| seleccionar parámetros según el clasificador elegido.
 
 .. imagen:: /imagenes/fi_ventana_clasif.png
 
@@ -181,48 +186,58 @@ Al hacer clic en la lista de despliegue |b_seleccionar| del clasificador se desp
 
 .. imagen:: /imagenes/fi_ventana_selec_clasif.png            
  
-Al hacer clic en el clasificador |b_weber|, en el panel de **Parámetros** se muestran los valores **Máximo** y **Mínimo** predeterminados, los cuales no pueden ser modificados. El usuario debe elegir |no_1| el valor del factor de progresión que aparece |no_2| en la casilla del **Factor**. 
+Al hacer clic en el clasificador |b_weber|, en el panel de **Parámetros** se muestran los valores **Máximo** y **Mínimo** predeterminados, los cuales no pueden ser modificados. El usuario debe elegir |no_1| el valor del factor de progresión que aparece |no_2| en la casilla del **Factor** y |no_3| el **número de categorías**.
 
 .. imagen:: /imagenes/fi_ventana_clasif_weber.png    
 
 Para cambiar el factor de progresión, hacer clic en el botón del control deslizante |b_factor_progre|, desplazar hacia la derecha o izquierda hasta llegar al valor deseado. Automáticamente se muestra el valor en la casilla del **Factor** que puede ir de la **clasificación equidistante** (C. E.) hasta el valor 3. 
 
-.. imagen:: /imagenes/fi_ventana_clas_equid.png               
+.. imagen:: /imagenes/fi_ventana_clas_equid.png 
 
-Hacer clic en el botón |b_aplicar| en la parte inferior del panel, se despliega en el visualizador de capas el mapa resultado de la aplicación del clasificador seleccionado. 
+Para cambiar el número de categorías hacer clic en los botones |boton_mas| y |boton_menos| para aumentar o disminuir la cantidad de las categorías seleccionadas. 
+
+.. imagen:: /imagenes/fi_ventana_num_catego.png 
+
+Hacer clic en el botón de **Aplicar clasificador** |b_aplicar| que se encuentra en la parte superior de las funciones básicas de la interfaz, y se despliega en el visualizador de capas el mapa resultado de la aplicación del clasificador seleccionado.  
 
 .. imagen:: /imagenes/mapa_aplic_clas_weber.png 
 
-Al hacer clic en el clasificador |b_bojorquez| en el panel de **Parámetros** se muestran los valores **Máximo** y **Mínimo** predeterminados, los cuales no pueden ser modificados. El usuario debe elegir |no_1| el valor del factor de progresión que aparece |no_2| en la casilla del **Factor**. 
+Al hacer clic en el clasificador |b_progresiva| en el panel de **Parámetros** se muestran los valores **Máximo** y **Mínimo** predeterminados, los cuales no pueden ser modificados. El usuario debe elegir |no_1| el valor del factor de progresión que aparece |no_2| en la casilla del **Factor**, y |no_3| el **número de categorías**. 
 
-.. imagen:: /imagenes/fi_ventana_clasif_bojorq.png    
+.. imagen:: /imagenes/fi_ventana_clasif_progre.png    
 
 Para cambiar el factor de progresión, hacer clic en el botón del control deslizante |b_factor_progre|, desplazar hacia la derecha o izquierda hasta llegar al valor deseado. Automáticamente se muestra el valor en la casilla del **Factor** que puede ir de la **clasificación equidistante** (C. E.) hasta el valor 3. 
 
-.. imagen:: /imagenes/fi_ventana_ce_bojorquez.png   
+.. imagen:: /imagenes/fi_ventana_ce_progre.png   
 
-Hacer clic en el botón |b_aplicar| en la parte inferior del panel, se despliega en el visualizador de capas el mapa resultado de la aplicación del clasificador seleccionado. 	
- 
-.. imagen:: /imagenes/mapa_aplic_clas_bojorquez.png 
+Para cambiar el número de categorías hacer clic en los botones |boton_mas| y |boton_menos| para aumentar o disminuir la cantidad de las categorías seleccionadas. 
 
-Al hacer clic en el clasificador |b_cuantiles| en el panel de **Parámetros** se muestran los valores **Máximo** y **Mínimo** predeterminados, los cuales no pueden ser modificados. En la parte inferior del panel se muestra una lista desplegable con los tipos de cuantiles a elegir: |no_1| Cuartiles, |no_2| Quintiles, |no_3| Deciles y |no_4| Percentiles.
+.. imagen:: /imagenes/fi_ventana_num_catego_progre.png 
+
+Hacer clic en el botón de **Aplicar clasificador** |b_aplicar| que se encuentra en la parte superior de las funciones básicas de la interfaz, y se despliega en el visualizador de capas el mapa resultado de la aplicación del clasificador seleccionado.  
+
+.. imagen:: /imagenes/mapa_aplic_clas_progre.png 
+
+Al hacer clic en el clasificador |b_cuantiles| en el panel de **Parámetros** se muestran los valores **Máximo** y **Mínimo** predeterminados, los cuales no pueden ser modificados. En la parte inferior del panel se muestra una lista desplegable con los tipos de cuantiles a elegir: |no_1| Cuartiles, |no_2| Quintiles y |no_3| Deciles.
 
 .. imagen:: /imagenes/fi_ventana_clasif_cuantiles.png   
 
-Hacer clic en el botón |b_aplicar| en la parte inferior del panel, se despliega en el visualizador de capas el mapa resultado de la aplicación del clasificador seleccionado. 	
+Hacer clic en el botón de **Aplicar clasificador** |b_aplicar| que se encuentra en la parte superior de las funciones básicas de la interfaz, y se despliega en el visualizador de capas el mapa resultado de la aplicación del clasificador seleccionado.   	
  
 .. imagen:: /imagenes/mapa_aplic_clas_cuantiles.png 	
  
-Al hacer clic en el clasificador |b_natural| en el panel de **Parámetros** se muestran los valores **Máximo** y **Mínimo** predeterminados, los cuales no pueden ser modificados.
+Al hacer clic en el clasificador |b_natural| en el panel de **Parámetros** se muestran los valores **Máximo** y **Mínimo** predeterminados, los cuales no pueden ser modificados. Para cambiar el número de categorías hacer clic en los botones |boton_mas| y |boton_menos| para aumentar o disminuir la cantidad de las categorías seleccionadas. 
  
-.. imagen:: /imagenes/mapa_aplic_clas_natural.png 
+.. imagen:: /imagenes/fi_ventana_clasif_natural.png   
 
-Hacer clic en el botón |b_aplicar| en la parte inferior del panel, se despliega en el visualizador de capas el mapa resultado de la aplicación del clasificador seleccionado. 	
- 
+Hacer clic en el botón de **Aplicar clasificador** |b_aplicar| que se encuentra en la parte superior de las funciones básicas de la interfaz, y se despliega en el visualizador de capas el mapa resultado de la aplicación del clasificador seleccionado.   	
+
+.. imagen:: /imagenes/mapa_aplic_clas_natural.png 
+ 	 
 3.5.2 Paletas de colores
 ------------------------
 
-Al hacer clic en el botón |b_paleta| se despliega una ventana que muestra la gama de color en la que aparece la capa del proyecto. 
+Al hacer clic en el botón |b_paleta| se despliega una ventana que muestra la gama de color en la que aparece la capa original y la capa resultado invitando a seleccionar un color. 
 
 .. imagen:: /imagenes/mapa_paleta_sigclassifier.png
  
@@ -234,13 +249,19 @@ Al hacer clic en el botón |b_list| aparece |no_1| una lista de despliegue con 1
 .. imagen:: /imagenes/fi_ventana_paleta_sigclassifier.png   
 
 4	Requerimientos
- 
+******************
+
 5	Herramientas 
+****************
+
 5.1	Crear un proyecto nuevo
+===========================
 
 6	Ejemplo de uso 
+******************
 
 7	Referencias
+***************
 
 .. |no_1| image:: /imagenes/fi_uno.png
             :scale: 50
@@ -272,9 +293,17 @@ Al hacer clic en el botón |b_list| aparece |no_1| una lista de despliegue con 1
             :height: 25px
             :width: 25px         
 
-.. |b_icono| image:: /imagenes/fi_b_icono_sigclassifier.png
+.. |b_icono_classifier| image:: /imagenes/fi_b_iconosigclassifier.png
             :height: 25px
             :width: 25px         
+
+.. |boton_mas| image:: /imagenes/boton_mas.png
+            :height: 25px
+            :width: 25px   
+
+.. |boton_menos| image:: /imagenes/boton_menos.png
+            :height: 25px
+            :width: 25px  
 
 .. |b_valores| image:: /imagenes/b_ocultar_sigindex.png
             :height: 25px
@@ -305,8 +334,7 @@ Al hacer clic en el botón |b_list| aparece |no_1| una lista de despliegue con 1
             :width: 25px 
 
 .. |b_opacidad| image:: /imagenes/fi_opacidad.png
-            :height: 25px
-            :width: 25px 
+            :scale: 40
 
 .. |b_seleccion| image:: /imagenes/fi_b_cambiarcapab.png
             :height: 25px
@@ -341,28 +369,22 @@ Al hacer clic en el botón |b_list| aparece |no_1| una lista de despliegue con 1
             :width: 25px 
 
 .. |b_seleccionar| image:: /imagenes/fi_b_seleccionar.png
-            :height: 25px
-            :width: 25px 
+            :scale: 40
 
 .. |b_weber| image:: /imagenes/fi_b_weber.png
-            :height: 25px
-            :width: 25px 
+            :scale: 50
 
-.. |b_bojorquez| image:: /imagenes/fi_b_bojorquez.png
-            :height: 25px
-            :width: 25px 
+.. |b_progresiva| image:: /imagenes/fi_b_progresiva.png
+            :scale: 50
 
 .. |b_cuantiles| image:: /imagenes/fi_b_cuantiles.png
-            :height: 25px
-            :width: 25px 
-
+            :scale: 50
+ 
 .. |b_natural| image:: /imagenes/fi_b_natural.png
-            :height: 25px
-            :width: 25px 
+            :scale: 50
 
 .. |b_factor_progre| image:: /imagenes/fi_b_factorp.png
-            :height: 25px
-            :width: 25px 
+            :scale: 30 
 
 .. |b_aplicar| image:: /imagenes/fi_b_aplicar_clas.png
             :height: 25px
