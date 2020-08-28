@@ -1,28 +1,123 @@
+Sigclassifier
+###############
 
-Guía de usuario de SIGclassifier
+Guía de usuario de Lizmap-QGIS
 ################################
-
-1 Introducción
-***************
-
-1.1	¿Por qué es necesario SIGclassifier?
-=========================================
 
 2 Organización del manual 
 *************************
 
 Este manual tiene el propósito de mostrar el uso del módulo SIGclassifier mediante (1) la explicación de todas las funciones de la plataforma (Sección 3. Organización de la Interfaz) y (2) la ilustración de un ejemplo de uso (Sección 4. Ejemplo de uso). Asimismo, se incluye bibliografía relevante como complemento teórico.
 
-3 Organización de la interfaz
-*****************************
-.. imagen:: /imagenes/mapa_org_interfaz_sigclassifier.png 
+1 Preparar un proyecto QGIS para publicarlo en la Web
+******************************************************
 
-La interfaz está organizada en las siguientes secciones: |no_1| el encabezado contiene al título y las funciones básicas, |no_2| en el panel izquierdo se ubica la barra de herramientas, y |no_3| el visualizador de capas incluye |no_4| los ajustes de despliegue de capas y |no_5| los ajustes de visualización.
+1.1 Crear un proyecto
+Crear un proyecto en QGIS y agregar los datos necesarios estos pueden ser de diferente tipo, por ejemplo:
+- Archivos vectoriales de datos geográficos 
+   ESRI Shapefile
+   MapInfo TAB and MIF/MID
+   GeoJSON
+
+- Archivos de datos geográficos RASTER 
+   GeoTIFF
+   Arc/Info ASCII Grid
+   netCDF
+
+- Bases de datos geográficas
+   PostgreSQL / PostGIS
+   MSSQL spatial
+   Oracle locator / spatial
+
+..imagen:: /imagenes/lz_data.png 
+
+1.2 Organice y manipule las capas en la leyenda
+
+-_Agregar grupos_ dando clic derecho en la sección vacía de la leyenda y seleccionar añadir grupo |lz_grupo|
+-_Mover las capas y los grupos arrastrandolos y soltandandolos
+-_Cambie el nombre de las capas_ y grupos con la tecla F2 o en la ventana de propiedades de la capa
+-Manipule el orden de representación de las capas:
+  - modificando el orden de las capas de la leyenda: las capas superiores se visualizan sobre las demás
+  - especificando el orden de las capas desde menú Ver> Paneles> Orden de capas
+
+Agregar un título al proyecto y guardarlo en formato .qgs en el directorio de trabajo.
+
+1.1	Configurar el proyecto para Lizmap
+=========================================
+
+1.1.1 Instalar el complemento Lizmap 
+
+El complemento Lizmap está disponible a través del repositorio oficial del proyecto QGIS: http://plugins.qgis.org/plugins/lizmap/
+Para instalarlo, simplemente hágalo como cualquier complemento de QGIS:
+
+Menú ‣ Complementos ‣ Administrar e instalar complementos |adm_comp|
+Buscar Lizmap
+Instalar el complemento
+..imagen:: /imagenes/comp_liz.png 
+
+El complemento ya aparecerá en el menú y en a barra de herramientas Web |icono_lizmap|
+
+1.1.2 Organización del complemento Lizmap
+
+El complemento está organizado en 6 pestañas:
+
+Map options: las opciones generales del mapa
+Layers: las opciones de cada capa
+Baselayers: las capas base utilizadas en la Web
+Locate by layer: 
+Attribute table:
+Layer editing:
+Tooltip layers:
+Filter layer by user:
+Dataviz:
+Time manager:
+Atlas:
+Filter data with form:
+Log:
+
+Y tiene 4 botones de acción:
+
+Aceptar
+Cancelar
+Aplicar
+Ayuda
+
+..imagen:: /imagenes/vista_lm.png 
+
+
+3 Configurar las capas y los grupos
+***********************************
+3.1 La configuración de la capas se realiza en la pestaña Layers
+
+Esta pestaña muestra el árbol de capas del proyecto con la misma organización que se define en el panel Capas. Puede seleccionar uno de los elementos del árbol, una capa o grupo, y luego configurar las opciones para el grupo o capa seleccionados.
+
+Información sobre grupos y capas:
+
+Título: se utilizará en el árbol de capas web en lugar del nombre. Para las capas, el campo de título está vinculado al de la pestaña Metadatos en la ventana de propiedades de la capa.
+Resumen: permite describir la capa o grupo. Se muestra en el mouseover. Para las capas, el Campo abstracto está vinculado al de la pestaña Metadatos en la ventana de propiedades de la capa.
+Enlace: la dirección web de un documento o una página web que describe la capa o el grupo. Aparece un icono (i) en la leyenda si se ha enviado el enlace. Puede utilizar la carpeta multimedia, consulte Medios en Lizmap.
+
+..imagen:: /imagenes/lz_layers.png 
+
+
+Opciones de capas:
+
+Conmutado: le permite especificar si una capa se muestra por defecto
+Activar ventana emergente: habilita ventanas emergentes de información sobre el interrogatorio del mapa haciendo clic. Ver Cómo configurar ventanas emergentes
+Ocultar imagen de leyenda: le permite ocultar la leyenda de la capa en la interfaz web
+Mostrar en árbol de leyendas: alterna la visibilidad de la capa en el árbol de capas; cuando está desactivado, no permite al usuario administrar su visualización
+Capa base: establece la capa como mapa base. Esto será accesible a través de la lista de mapa base.
+Mosaico único: selecciona el modo de visualización de la capa. Puede mostrarse como varias imágenes, mosaicos o una sola imagen generada por el servidor
+Formato de imagen:
+png: formato de imagen completo, gama completa de colores con transparencia
+png; modo = 16 bits: formato de imagen más claro, color del panel restringido con transparencia
+png; mode = 8bit: formato de imagen muy ligero, el panel de color se restringe al máximo con transparencia, posible degradación de la imagen
+jpeg: formato de imagen claro sin transparencia con pérdida de calidad
 
 3.1	Funciones básicas
 =====================
 
-Las funciones básicas son cuatro: botón de inicio, aplicar clasificador, exportar resultados y regresar.
+Las funciones básicas son tres: botón de inicio, exportar resultados y regresar. 
 
 3.1.1 Botón de inicio
 ---------------------
@@ -30,13 +125,6 @@ Las funciones básicas son cuatro: botón de inicio, aplicar clasificador, expor
 Al hacer clic en el botón de inicio |b_inicio|, se despliega una ventana con tres opciones: |no_1| redirecciona al **inicio** (home) de la plataforma SIGplanning, |no_2| muestra el **nombre del usuario** activo y |no_3| **cierra la sesión** del usuario activo. 
 
 .. imagen:: /imagenes/mapa_b_inicio_sigclassifier.png
-
-3.1.2 Aplicar clasificador
---------------------------
-
-Al hacer clic en el botón de aplicar clasificador |b_aplicar|, se despliega el mapa con el clasificador seleccionado. Para que se genere este archivo, el usuario debe haber seleccionado un tipo de clasificador y los parámetros correspondientes (ver apartado 3.5.1.1).
-
-.. imagen:: /imagenes/mapa_aplica_clasificador.png
 
 3.1.2 Exportar
 --------------
@@ -48,7 +136,7 @@ Al hacer clic en el botón de exportar |b_exportar|, se descarga un shapefile de
 3.1.3 Regresar
 --------------
 
-SIGclassifier tiene dos opciones para regresar al catálogo de proyectos y al resto de los módulos de SIGplanning: |no_1| el botón de regresar |b_regresar| y |no_2| el ícono del módulo |b_icono_classifier|. 
+SIGclassifier tiene dos opciones para regresar al catálogo de proyectos y al resto de los módulos de SIGplanning: |no_1| el botón de regresar |b_regresar| y |no_2| el ícono del módulo |b_icono|. 
 
 .. imagen:: /imagenes/mapa_b_regresar_sigclassifier.png
 
@@ -83,7 +171,7 @@ Hacer clic en cualquier parte del visualizador de capas y mover la barra de desp
 3.2.4 Visualizar el resultado de la clasificación
 -------------------------------------------------
 
-Al hacer clic en un pixel de la capa, se despliega |no_1| una ventana con el valor del pixel de la capa original y la capa resultado de la clasificación. 
+Al hacer clic en un pixel de la capa, se despliega |no_1| una ventana con el valor del pixel resultado de la clasificación. 
 
 .. imagen:: /imagenes/mapa_vis_clasif_sigclassifier.png 
 
@@ -97,7 +185,7 @@ Al hacer clic en el botón de ajustes de despliegue de capas |b_ajuste_capas|, s
 3.3.1 Activar o desactivar capas
 --------------------------------
 
-Al hacer clic sobre las casillas de verificación |b_activar_capas|, |no_1| se activan o desactivan las capas deseadas. Si se desactiva la capa resultado o la capa original |no_2| se cierran o despliegan las ventanas de los gradientes de estas capas.  
+Al hacer clic sobre las casillas de verificación |b_activar_capas|, se activan o desactivan las capas deseadas. 
 
 .. imagen:: /imagenes/mapa_b_activarcapa_sigclassifier.png
 
@@ -111,7 +199,7 @@ Al hacer clic sobre el botón del orden de sobreposición de capas |b_sobreposic
 3.3.3	Cambiar la opacidad de las capas
 ----------------------------------------
 
-Al hacer clic sobre el control deslizante de opacidad de capas |b_opacidad|, desplazar a la derecha o izquierda hasta llegar a la opacidad deseada.
+Al hacer clic sobre el control deslizante de opacidad de capas |b_opacidad|, desplazar a la de-recha o izquierda hasta llegar a la opacidad deseada.
 
 .. imagen:: /imagenes/mapa_opacidad_sigclassifier.png
  
@@ -161,21 +249,21 @@ Al hacer clic en el botón de norte geográfico |b_norte|, se reajusta la orient
 3.4.4	Guía rápida de controles de despliegue
 ----------------------------------------------
 
-Al hacer clic en el botón de guía rápida de controles de despliegue |b_interrogacion|, se despliega una ventana con dos opciones: |no_1| rotar el mapa y |no_2| hacer zoom a una ventana específica. 
+Al hacer clic en el botón de guía rápida de controles de despliegue |b_interrogacion|, se despliega una ventana con tres opciones: |no_1| rotar el mapa, |no_2| seleccionar un polígono, y |no_3| hacer zoom a una ventana específica. 
 
 .. imagen:: /imagenes/mapa_guia_sigclassifier.png
 
 3.5	Barra de herramientas 
 =========================
 
-3.5.1 Clasificador 
+3.5.1 Factor de progresión 
 --------------------------
 
-Al hacer clic en el botón **Clasificador** |b_atributos| se despliega una ventana con dos paneles: |no_1| **Clasificador** y |no_2| **Parámetros**.
+Al hacer clic en el botón de **Factor Progresión** |b_atributos| se despliega una ventana con dos paneles: |no_1| **Clasificador** y |no_2| **Parámetros**.
 
-.. imagen:: /imagenes/mapa_b_clasificador.png
+.. imagen:: /imagenes/mapa_b_fact_progre.png
 
-El primer panel tiene la función de |no_1|, seleccionar el tipo de clasificador. El segundo panel tiene la función de |no_2| seleccionar parámetros según el clasificador elegido.
+El primer panel tiene la función de |no_1|, seleccionar el tipo de clasificador. El segundo panel tiene dos funciones: |no_2| seleccionar parámetros según el clasificador elegido y |no_3| aplicar el clasificador.
 
 .. imagen:: /imagenes/fi_ventana_clasif.png
 
@@ -186,58 +274,48 @@ Al hacer clic en la lista de despliegue |b_seleccionar| del clasificador se desp
 
 .. imagen:: /imagenes/fi_ventana_selec_clasif.png            
  
-Al hacer clic en el clasificador |b_weber|, en el panel de **Parámetros** se muestran los valores **Máximo** y **Mínimo** predeterminados, los cuales no pueden ser modificados. El usuario debe elegir |no_1| el valor del factor de progresión que aparece |no_2| en la casilla del **Factor** y |no_3| el **número de categorías**.
+Al hacer clic en el clasificador |b_weber|, en el panel de **Parámetros** se muestran los valores **Máximo** y **Mínimo** predeterminados, los cuales no pueden ser modificados. El usuario debe elegir |no_1| el valor del factor de progresión que aparece |no_2| en la casilla del **Factor**. 
 
 .. imagen:: /imagenes/fi_ventana_clasif_weber.png    
 
 Para cambiar el factor de progresión, hacer clic en el botón del control deslizante |b_factor_progre|, desplazar hacia la derecha o izquierda hasta llegar al valor deseado. Automáticamente se muestra el valor en la casilla del **Factor** que puede ir de la **clasificación equidistante** (C. E.) hasta el valor 3. 
 
-.. imagen:: /imagenes/fi_ventana_clas_equid.png 
+.. imagen:: /imagenes/fi_ventana_clas_equid.png               
 
-Para cambiar el número de categorías hacer clic en los botones |boton_mas| y |boton_menos| para aumentar o disminuir la cantidad de las categorías seleccionadas. 
-
-.. imagen:: /imagenes/fi_ventana_num_catego.png 
-
-Hacer clic en el botón de **Aplicar clasificador** |b_aplicar| que se encuentra en la parte superior de las funciones básicas de la interfaz, y se despliega en el visualizador de capas el mapa resultado de la aplicación del clasificador seleccionado.  
+Hacer clic en el botón |b_aplicar| en la parte inferior del panel, se despliega en el visualizador de capas el mapa resultado de la aplicación del clasificador seleccionado. 
 
 .. imagen:: /imagenes/mapa_aplic_clas_weber.png 
 
-Al hacer clic en el clasificador |b_progresiva| en el panel de **Parámetros** se muestran los valores **Máximo** y **Mínimo** predeterminados, los cuales no pueden ser modificados. El usuario debe elegir |no_1| el valor del factor de progresión que aparece |no_2| en la casilla del **Factor**, y |no_3| el **número de categorías**. 
+Al hacer clic en el clasificador |b_bojorquez| en el panel de **Parámetros** se muestran los valores **Máximo** y **Mínimo** predeterminados, los cuales no pueden ser modificados. El usuario debe elegir |no_1| el valor del factor de progresión que aparece |no_2| en la casilla del **Factor**. 
 
-.. imagen:: /imagenes/fi_ventana_clasif_progre.png    
+.. imagen:: /imagenes/fi_ventana_clasif_bojorq.png    
 
 Para cambiar el factor de progresión, hacer clic en el botón del control deslizante |b_factor_progre|, desplazar hacia la derecha o izquierda hasta llegar al valor deseado. Automáticamente se muestra el valor en la casilla del **Factor** que puede ir de la **clasificación equidistante** (C. E.) hasta el valor 3. 
 
-.. imagen:: /imagenes/fi_ventana_ce_progre.png   
+.. imagen:: /imagenes/fi_ventana_ce_bojorquez.png   
 
-Para cambiar el número de categorías hacer clic en los botones |boton_mas| y |boton_menos| para aumentar o disminuir la cantidad de las categorías seleccionadas. 
+Hacer clic en el botón |b_aplicar| en la parte inferior del panel, se despliega en el visualizador de capas el mapa resultado de la aplicación del clasificador seleccionado. 	
+ 
+.. imagen:: /imagenes/mapa_aplic_clas_bojorquez.png 
 
-.. imagen:: /imagenes/fi_ventana_num_catego_progre.png 
-
-Hacer clic en el botón de **Aplicar clasificador** |b_aplicar| que se encuentra en la parte superior de las funciones básicas de la interfaz, y se despliega en el visualizador de capas el mapa resultado de la aplicación del clasificador seleccionado.  
-
-.. imagen:: /imagenes/mapa_aplic_clas_progre.png 
-
-Al hacer clic en el clasificador |b_cuantiles| en el panel de **Parámetros** se muestran los valores **Máximo** y **Mínimo** predeterminados, los cuales no pueden ser modificados. En la parte inferior del panel se muestra una lista desplegable con los tipos de cuantiles a elegir: |no_1| Cuartiles, |no_2| Quintiles y |no_3| Deciles.
+Al hacer clic en el clasificador |b_cuantiles| en el panel de **Parámetros** se muestran los valores **Máximo** y **Mínimo** predeterminados, los cuales no pueden ser modificados. En la parte inferior del panel se muestra una lista desplegable con los tipos de cuantiles a elegir: |no_1| Cuartiles, |no_2| Quintiles, |no_3| Deciles y |no_4| Percentiles.
 
 .. imagen:: /imagenes/fi_ventana_clasif_cuantiles.png   
 
-Hacer clic en el botón de **Aplicar clasificador** |b_aplicar| que se encuentra en la parte superior de las funciones básicas de la interfaz, y se despliega en el visualizador de capas el mapa resultado de la aplicación del clasificador seleccionado.   	
+Hacer clic en el botón |b_aplicar| en la parte inferior del panel, se despliega en el visualizador de capas el mapa resultado de la aplicación del clasificador seleccionado. 	
  
 .. imagen:: /imagenes/mapa_aplic_clas_cuantiles.png 	
  
-Al hacer clic en el clasificador |b_natural| en el panel de **Parámetros** se muestran los valores **Máximo** y **Mínimo** predeterminados, los cuales no pueden ser modificados. Para cambiar el número de categorías hacer clic en los botones |boton_mas| y |boton_menos| para aumentar o disminuir la cantidad de las categorías seleccionadas. 
+Al hacer clic en el clasificador |b_natural| en el panel de **Parámetros** se muestran los valores **Máximo** y **Mínimo** predeterminados, los cuales no pueden ser modificados.
  
-.. imagen:: /imagenes/fi_ventana_clasif_natural.png   
-
-Hacer clic en el botón de **Aplicar clasificador** |b_aplicar| que se encuentra en la parte superior de las funciones básicas de la interfaz, y se despliega en el visualizador de capas el mapa resultado de la aplicación del clasificador seleccionado.   	
-
 .. imagen:: /imagenes/mapa_aplic_clas_natural.png 
- 	 
+
+Hacer clic en el botón |b_aplicar| en la parte inferior del panel, se despliega en el visualizador de capas el mapa resultado de la aplicación del clasificador seleccionado. 	
+ 
 3.5.2 Paletas de colores
 ------------------------
 
-Al hacer clic en el botón |b_paleta| se despliega una ventana que muestra la gama de color en la que aparece la capa original y la capa resultado invitando a seleccionar un color. 
+Al hacer clic en el botón |b_paleta| se despliega una ventana que muestra la gama de color en la que aparece la capa del proyecto. 
 
 .. imagen:: /imagenes/mapa_paleta_sigclassifier.png
  
@@ -249,27 +327,21 @@ Al hacer clic en el botón |b_list| aparece |no_1| una lista de despliegue con 1
 .. imagen:: /imagenes/fi_ventana_paleta_sigclassifier.png   
 
 4	Requerimientos
-******************
-
+ 
 5	Herramientas 
-****************
-
 5.1	Crear un proyecto nuevo
-===========================
 
 6	Ejemplo de uso 
-******************
 
 7	Referencias
-***************
 
-.. |no_1| image:: /imagenes/fi_uno.png
+.. |adm_comp| image:: /imagenes/adm_comp.png
             :scale: 50
 
-.. |no_2| image:: /imagenes/fi_dos.png
+.. |icono_lizmap| image:: /imagenes/icono_lizmap.png
             :scale: 50
 
-.. |no_3| image:: /imagenes/fi_tres.png
+.. |lz_grupo| image:: /imagenes/lz_grupo.png
             :scale: 50
 
 .. |no_4| image:: /imagenes/fi_cuatro.png
@@ -293,17 +365,9 @@ Al hacer clic en el botón |b_list| aparece |no_1| una lista de despliegue con 1
             :height: 25px
             :width: 25px         
 
-.. |b_icono_classifier| image:: /imagenes/fi_b_iconosigclassifier.png
+.. |b_icono| image:: /imagenes/fi_b_iconosigclassifier.png
             :height: 25px
             :width: 25px         
-
-.. |boton_mas| image:: /imagenes/boton_mas.png
-            :height: 25px
-            :width: 25px   
-
-.. |boton_menos| image:: /imagenes/boton_menos.png
-            :height: 25px
-            :width: 25px  
 
 .. |b_valores| image:: /imagenes/b_ocultar_sigindex.png
             :height: 25px
@@ -369,22 +433,28 @@ Al hacer clic en el botón |b_list| aparece |no_1| una lista de despliegue con 1
             :width: 25px 
 
 .. |b_seleccionar| image:: /imagenes/fi_b_seleccionar.png
-            :scale: 40
+            :height: 25px
+            :width: 25px 
 
 .. |b_weber| image:: /imagenes/fi_b_weber.png
-            :scale: 50
+            :height: 25px
+            :width: 25px 
 
-.. |b_progresiva| image:: /imagenes/fi_b_progresiva.png
-            :scale: 50
+.. |b_bojorquez| image:: /imagenes/fi_b_bojorquez.png
+            :height: 25px
+            :width: 25px 
 
 .. |b_cuantiles| image:: /imagenes/fi_b_cuantiles.png
-            :scale: 50
- 
+            :height: 25px
+            :width: 25px 
+
 .. |b_natural| image:: /imagenes/fi_b_natural.png
-            :scale: 50
+            :height: 25px
+            :width: 25px 
 
 .. |b_factor_progre| image:: /imagenes/fi_b_factorp.png
-            :scale: 30 
+            :height: 25px
+            :width: 25px 
 
 .. |b_aplicar| image:: /imagenes/fi_b_aplicar_clas.png
             :height: 25px
