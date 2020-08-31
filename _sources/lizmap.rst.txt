@@ -212,7 +212,9 @@ La extensión del mapa inicial (inicial map extent)
 A menudo es útil separar las capas base como referencia y las capas temáticas en un mapa web. En Lizmap, se pueden usar grupos o capas como capas base. También es posible utilizar servicios externos en el mapa web.
 Las capas base no forman parte de la leyenda y se presentan como una lista.
 
-.. note::  Si se configura una sola capa base (capa de proyecto, servicio externo o capa base vacía), la interfaz del cliente web Lizmap no muestra el cuadro Capas base, pero la capa será visible debajo de las otras capas.
+.. note::  
+   
+   Si se configura una sola capa base (capa de proyecto, servicio externo o capa base vacía), la interfaz del cliente web Lizmap no muestra el cuadro Capas base, pero la capa será visible debajo de las otras capas.
 
 La pestaña Baselayers permite agregar servicios externos como capa base y una capa base vacía. La capa base vacía mostrará capas temáticas sobre el color de fondo del proyecto.
 
@@ -244,8 +246,10 @@ La pestaña Baselayers permite agregar servicios externos como capa base y una c
     - Satellite: el mapa de fondo que incorpora imágenes aéreas y de satélite del IGN
     - Scan: el mapa de fondo que mezcla los diversos escaneos IGN
 
-.. note:: Si elige una capa base externa, el mapa se mostrará en Google Mercator (EPSG: 3857 o EPSG: 900913), las escalas son las de los servicios externos y QGIS-Server realizará una reproyección al vuelo.
-Por lo tanto, es necesario preparar el proyecto QGIS en consecuencia.
+.. note:: 
+
+   Si elige una capa base externa, el mapa se mostrará en Google Mercator (EPSG: 3857 o EPSG: 900913), las escalas son las de los servicios externos y QGIS-Server realizará una reproyección al vuelo.
+   Por lo tanto, es necesario preparar el proyecto QGIS en consecuencia.
 
 5 Publicar el mapa por FTP Server
 **************************************
@@ -253,9 +257,13 @@ Por lo tanto, es necesario preparar el proyecto QGIS en consecuencia.
 Lizmap se basa en el sistema de repositorios. Para publicar un mapa en Lizmap, es suficiente con asegurarse de que el contenido del directorio local que contiene los datos y los proyectos QGIS se reproduzca exactamente idéntico en el repositorio del servidor correspondiente.
 Para ello, es necesario sincronizar el directorio local con el del servidor cada vez que actualice el proyecto QGIS, modifique la configuración de Lizmap con el complemento o agregue archivos en el directorio local.
 
-.. note:: Si está trabajando localmente, dado que Lizmap Web Client está instalado en la misma máquina que usa para QGIS, no necesita sincronizar sus archivos con FTP. Esta configuración solo debe existir para realizar pruebas.
+.. note:: 
 
-.. note:: Puede utilizar cualquier herramienta y protocolo de sincronización (FTP, FTPS, SFTP, rsync, unison, etc.).
+   Si está trabajando localmente, dado que Lizmap Web Client está instalado en la misma máquina que usa para QGIS, no necesita sincronizar sus archivos con FTP. Esta configuración solo debe existir para realizar pruebas.
+
+.. note:: 
+
+   Puede utilizar cualquier herramienta y protocolo de sincronización (FTP, FTPS, SFTP, rsync, unison, etc.).
 
 6 Utilizar un FTP para clientes
 **************************************
