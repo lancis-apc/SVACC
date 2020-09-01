@@ -1,2 +1,2 @@
-SIGfunction
+Sigfunction
 ###############
