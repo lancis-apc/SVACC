@@ -1,6 +1,8 @@
+SIGnificance
+############
 
 Guía de usuario de SIGnificance
-###############################
+*******************************
 
 1 Introducción
 ****************
@@ -379,12 +381,8 @@ SIGnificance tiene dos opciones de importación: insumos integrados o insumos de
             :width: 25px         
 
 .. |b_icono| image:: /imagenes/fi_b_icono.png
-            :height: 25px
-            :width: 25px         
-
-.. |b_icono| image:: /imagenes/fi_b_icono.png
-            :height: 25px
-            :width: 25px 
+            :scale: 40
+       
             
 .. |b_norterotado| image:: /imagenes/fi_norte_rotado.png
             :height: 25px
@@ -446,16 +444,14 @@ SIGnificance tiene dos opciones de importación: insumos integrados o insumos de
             :width: 25px   
 
 .. |b_selec_neutral| image:: /imagenes/fi_neutral.png
-            :height: 25px
-            :width: 25px    
+            :scale: 50   
 
 .. |b_guardar| image:: /imagenes/fi_b_guardar.png
             :height: 25px
             :width: 25px 
 
 .. |b_factor_progre| image:: /imagenes/fi_b_factorp.png
-            :height: 25px
-            :width: 25px   
+            :scale: 40
 
 .. |b_indicadores| image:: /imagenes/fi_b_indica_impac.png
             :height: 25px
@@ -482,8 +478,8 @@ SIGnificance tiene dos opciones de importación: insumos integrados o insumos de
             :width: 25px      
 
 .. |b_vu| image:: /imagenes/fi_vu.png
-            :height: 25px
-            :width: 25px   
+            :height: 30px
+            :width: 30px   
 
 .. |b_combo| image:: /imagenes/fi_b_combo.png
             :height: 25px

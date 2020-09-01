@@ -1,6 +1,8 @@
+SIGindex
+########
 
-Guía de usuario de SIGIndex
-****************
+Guía de usuario de SIGindex
+***************************
 
 1 Introducción
 ****************
@@ -323,8 +325,8 @@ CONAGUA. 2012. Atlas Digital del Agua México 2012. Sistema Nacional de Informac
             :width: 25px   
 
 .. |b_pestaña| image:: /imagenes/fi_b_ventana_val_sigindex.png
-            :height: 25px
-            :width: 25px              
+            :height: 20px
+            :width: 20px              
 
 .. |b_norterotado| image:: /imagenes/fi_norte_rotado.png
             :height: 25px
@@ -343,8 +345,8 @@ CONAGUA. 2012. Atlas Digital del Agua México 2012. Sistema Nacional de Informac
             :width: 25px 
 
 .. |b_opacidad| image:: /imagenes/fi_opacidad.png
-            :height: 25px
-            :width: 25px 
+            :scale: 40
+
 
 .. |b_seleccion| image:: /imagenes/fi_b_cambiarcapab.png
             :height: 25px
@@ -378,9 +380,9 @@ CONAGUA. 2012. Atlas Digital del Agua México 2012. Sistema Nacional de Informac
             :height: 25px
             :width: 25px 
 
-.. |b_factor_progre| image:: /imagenes/fi_b_factorp_sigindex.png
-            :height: 25px
-            :width: 25px 
+.. |b_factor_progre| image:: /imagenes/fi_b_factorp.png
+            :scale: 30
+
 
 .. |b_list| image:: /imagenes/fi_lista_despliegue.png
             :height: 25px
@@ -405,10 +407,6 @@ CONAGUA. 2012. Atlas Digital del Agua México 2012. Sistema Nacional de Informac
 .. |b_guardar| image:: /imagenes/fi_b_guardar.png
             :height: 25px
             :width: 25px 
-
-.. |b_factor_progre| image:: /imagenes/fi_b_factorp.png
-            :height: 25px
-            :width: 25px   
 
 .. |b_indicadores| image:: /imagenes/fi_b_indica_impac.png
             :height: 25px
@@ -445,9 +443,4 @@ CONAGUA. 2012. Atlas Digital del Agua México 2012. Sistema Nacional de Informac
 .. |b_paleta| image:: /imagenes/fi_b_paleta.png
             :height: 25px
             :width: 25px     
-
-.. |b_paleta| image:: /imagenes/fi_b_paleta.png
-            :height: 25px
-            :width: 25px                                              
-            :scale: 50
 

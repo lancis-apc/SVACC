@@ -1,6 +1,8 @@
+SIGclassifier
+#############
 
 Guía de usuario de SIGclassifier
-################################
+********************************
 
 1 Introducción
 ***************
