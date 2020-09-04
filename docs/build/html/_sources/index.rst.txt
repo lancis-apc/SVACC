@@ -5,7 +5,18 @@
 
 Welcome to Sigplanning's documentation!
 =======================================
+.. toctree::
+   :maxdepth: 1
+   :caption: Códigos en Python - Qgis
 
+   sensibilidad
+   verificacion
+   owa
+   clp 
+   webershape
+   weberraster
+
+   
 .. toctree::
    :maxdepth: 2
    :caption: Módulos:
