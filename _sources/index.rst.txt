@@ -19,14 +19,14 @@ Welcome to Sigplanning's documentation!
    
 .. toctree::
    :maxdepth: 2
-   :caption: Módulos:
+   :caption: Manuales:
 
    sigfunction
    sigfunctiond
    sigindex
    sigclassifier
-   signature
    significance
+   lizmap
 
 
 
