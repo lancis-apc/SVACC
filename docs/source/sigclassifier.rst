@@ -40,14 +40,14 @@ Al hacer clic en el botón de aplicar clasificador |b_aplicar|, se despliega el 
 
 .. imagen:: /imagenes/mapa_aplica_clasificador.png
 
-3.1.2 Exportar
+3.1.3 Exportar
 --------------
 
-Al hacer clic en el botón de exportar |b_exportar|, se descarga un shapefile de las unidades naturales en formato **.zip**, el cual contiene la capa ráster .tif y el metadato asociado en formato .xml, producto del uso del SIGclas-sifier. Para que se genere este archivo, el usuario debe haber seleccionado un tipo de clasificador y los parámetros correspondientes (ver apartado 3.5.1.1).
+Al hacer clic en el botón de exportar |b_exportar|, se descarga un shapefile de las unidades naturales en formato **.zip**, el cual contiene la capa ráster .tif y el metadato asociado en formato .xml, producto del uso del SIGclassifier. Para que se genere este archivo, el usuario debe haber seleccionado un tipo de clasificador y los parámetros correspondientes (ver apartado 3.5.1.1).
 
 .. imagen:: /imagenes/mapa_b_exportar_sigclassifier.png
 
-3.1.3 Regresar
+3.1.4 Regresar
 --------------
 
 SIGclassifier tiene dos opciones para regresar al catálogo de proyectos y al resto de los módulos de SIGplanning: |no_1| el botón de regresar |b_regresar| y |no_2| el ícono del módulo |b_icono_classifier|. 
@@ -137,13 +137,12 @@ Esta sección se compone de seis botones: |no_1| cambiar al visualizador de capa
 ------------------------------------------
 
 Al hacer clic |no_1| en el botón de pantalla completa |b_pantalla_comp|, |no_2| se muestra el área de visualización en la pantalla sin el resto de las secciones. 
-Al hacer clic |no_1| en el botón de pantalla completa |b_pantalla_comp|, |no_2| se muestra el área de visualización en la pantalla sin el resto de las secciones. 
 
 .. imagen:: /imagenes/mapa_pantalla_comp_sigclassifier.png
 
 .. imagen:: /imagenes/mapa_pantalla_comp2_sigclassifier.png
 
-Para salir de la pantalla completa, volver a oprimir el botón de los ajustes de visualización o la tecla Esc. 
+Para salir de la pantalla completa, volver a oprimir el botón de los ajustes de visualización o la tecla **Esc**. 
 
 3.4.2	Acercar o alejar el mapa
 --------------------------------
@@ -243,7 +242,7 @@ Al hacer clic en el botón |b_paleta| se despliega una ventana que muestra la ga
 
 .. imagen:: /imagenes/mapa_paleta_sigclassifier.png
  
-3.5.2.1	Cambiar el color del proyecto
+3.5.2.1	Cambiar el color de las capas
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Al hacer clic en el botón |b_list| aparece |no_1| una lista de despliegue con 12 paletas de colores a elegir, |no_2| al hacer clic en el control deslizante hacia arriba y abajo se puede |no_3| seleccionar una paleta para representar los valores de la capa en el visualizador. 

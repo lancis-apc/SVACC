@@ -1,5 +1,5 @@
 SIGindex
-########
+##########
 
 Guía de usuario de SIGindex
 ***************************
