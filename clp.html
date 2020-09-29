@@ -87,7 +87,15 @@
 <li class="toctree-l1"><a class="reference internal" href="sensibilidad.html">Análisis de sensibilidad</a></li>
 <li class="toctree-l1"><a class="reference internal" href="verificacion.html">Verificación de capas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="owa.html">OWA</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Combinación líneal ponderada</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Combinación líneal ponderada</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#requerimientos-generales">Requerimientos generales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#requerimientos-generales-de-los-insumos">Requerimientos generales de los insumos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#requerimientos-especificos">Requerimientos específicos</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#diccionario-de-insumos">Diccionario de insumos</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="webershape.html">Categorización de capas shape con Weber-Fechner</a></li>
 <li class="toctree-l1"><a class="reference internal" href="weberraster.html">Categorización de capas raster con Weber-Fechner</a></li>
 </ul>
@@ -166,6 +174,46 @@
             
   <div class="section" id="combinacion-lineal-ponderada">
 <h1>Combinación líneal ponderada<a class="headerlink" href="#combinacion-lineal-ponderada" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="requerimientos-generales">
+<h2>Requerimientos generales<a class="headerlink" href="#requerimientos-generales" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Para asegurar la ejecución correcta del código es importante
+verificar la instalación y funcionamiento de los siguientes elementos:</p>
+<ul class="simple">
+<li>Qgis 3.10 con GRASS 7 y librerías de Osgeo4W</li>
+<li>Librerías python:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>os</li>
+<li>string</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="requerimientos-generales-de-los-insumos">
+<h2>Requerimientos generales de los insumos<a class="headerlink" href="#requerimientos-generales-de-los-insumos" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Es importante que todas las capas raster cumplan con las siguientes condiciones:</p>
+<ul class="simple">
+<li>Misma proyección cartográfica</li>
+<li>Mismo tamaño de pixel</li>
+<li>Misma extensión de capa</li>
+<li>Mismo valor de NoData</li>
+</ul>
+</div>
+<div class="section" id="requerimientos-especificos">
+<h2>Requerimientos específicos<a class="headerlink" href="#requerimientos-especificos" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>El código esta diseñado para recibir como datos de entrada hasta 13 capas raster.</p>
+<div class="section" id="diccionario-de-insumos">
+<h3>Diccionario de insumos<a class="headerlink" href="#diccionario-de-insumos" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Para ingresar los insumos a la función, el tipo de datos requerido
+es un diccionario en python, su estructura debe ser la siguiente:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dicc</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;nombre_criterio_1&#39;</span><span class="p">:{</span><span class="s1">&#39;ruta&#39;</span><span class="p">:</span><span class="s2">&quot;/criterio_1.tif&quot;</span><span class="p">,</span><span class="s1">&#39;peso&#39;</span><span class="p">:</span><span class="mf">0.5</span><span class="p">},</span>
+        <span class="s1">&#39;nombre_criterio_2&#39;</span><span class="p">:{</span><span class="s1">&#39;ruta&#39;</span><span class="p">:</span><span class="s2">&quot;/criterio_1.tif&quot;</span><span class="p">,</span><span class="s1">&#39;peso&#39;</span><span class="p">:</span><span class="mf">0.3</span><span class="p">},</span>
+        <span class="s1">&#39;nombre_criterio_3&#39;</span><span class="p">:{</span><span class="s1">&#39;ruta&#39;</span><span class="p">:</span><span class="s2">&quot;/criterio_1.tif&quot;</span><span class="p">,</span><span class="s1">&#39;peso&#39;</span><span class="p">:</span><span class="mf">0.2</span><span class="p">}}</span>
+</pre></div>
+</div>
+<p>donde : <strong>nombre_criterio_1</strong> es el nombre del criterio, <strong>ruta</strong> es la ruta de la capa tif y <strong>peso</strong> es el valor del peso correspondiente al modelo.</p>
+</div>
+</div>
 </div>
 
 
