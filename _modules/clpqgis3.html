@@ -1,0 +1,828 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="es" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="es" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>clpqgis3 &mdash; documentación de Sigplanning - 1.0.0</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Sigplanning
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Códigos en Python - Qgis</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sensibilidad.html">Análisis de sensibilidad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../verificacion.html">Verificación de capas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../owa.html">OWA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clp.html">Combinación líneal ponderada</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webershape.html">Categorización de capas shape con Weber-Fechner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../weberraster.html">Categorización de capas raster con Weber-Fechner</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Manuales:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sigfunction.html">Sigfunction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sigfunctiond.html">Sigfunctiond</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sigindex.html">SIGindex</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sigclassifier.html">SIGclassifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../significance.html">SIGnificance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lizmap.html">Lizmap-QGIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lizmap.html#guia-de-usuario-de-lizmap-qgis">Guía de usuario de Lizmap-QGIS</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Sigplanning</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Código de módulo</a> &raquo;</li>
+        
+      <li>clpqgis3</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Código fuente para clpqgis3</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="kn">import</span> <span class="nn">processing</span> <span class="k">as</span> <span class="nn">pr</span> 
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">string</span> 
+
+<div class="viewcode-block" id="remove_raster"><a class="viewcode-back" href="../clp.html#clpqgis3.remove_raster">[documentos]</a><span class="k">def</span> <span class="nf">remove_raster</span><span class="p">(</span><span class="n">path_r</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Esta función elimina una capa del sistema</span>
+
+<span class="sd">    :param path_r: ruta de la capa </span>
+<span class="sd">    :type path_r: str</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">path_r</span><span class="p">)</span></div>
+<div class="viewcode-block" id="get_region"><a class="viewcode-back" href="../clp.html#clpqgis3.get_region">[documentos]</a><span class="k">def</span> <span class="nf">get_region</span><span class="p">(</span><span class="n">path_layer</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Esta función regresa en forma de cadena de texto </span>
+<span class="sd">    las coordenadas de la extensión de una capa raster</span>
+
+<span class="sd">    param path_layer: ruta de la capa raster</span>
+<span class="sd">    type path_layer: str</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">layer</span> <span class="o">=</span> <span class="n">QgsRasterLayer</span><span class="p">(</span><span class="n">path_layer</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">ext</span> <span class="o">=</span> <span class="n">layer</span><span class="o">.</span><span class="n">extent</span><span class="p">()</span>
+    <span class="n">xmin</span> <span class="o">=</span> <span class="n">ext</span><span class="o">.</span><span class="n">xMinimum</span><span class="p">()</span>
+    <span class="n">xmax</span> <span class="o">=</span> <span class="n">ext</span><span class="o">.</span><span class="n">xMaximum</span><span class="p">()</span>
+    <span class="n">ymin</span> <span class="o">=</span> <span class="n">ext</span><span class="o">.</span><span class="n">yMinimum</span><span class="p">()</span>
+    <span class="n">ymax</span> <span class="o">=</span> <span class="n">ext</span><span class="o">.</span><span class="n">yMaximum</span><span class="p">()</span>
+
+    <span class="n">region</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%f</span><span class="s2">,</span><span class="si">%f</span><span class="s2">,</span><span class="si">%f</span><span class="s2">,</span><span class="si">%f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">,</span> <span class="n">ymin</span><span class="p">,</span> <span class="n">ymax</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">region</span></div>
+<div class="viewcode-block" id="set_nulls"><a class="viewcode-back" href="../clp.html#clpqgis3.set_nulls">[documentos]</a><span class="k">def</span> <span class="nf">set_nulls</span><span class="p">(</span><span class="nb">map</span><span class="p">,</span><span class="n">output</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Esta función permite cambiar el valor de nodata de una capa</span>
+<span class="sd">    por -9999.0 </span>
+<span class="sd">    :param map: ruta de la capa tif</span>
+<span class="sd">    :type map: str</span>
+<span class="sd">    :param output: ruta de la capa con valor de nodata de -9999.0</span>
+<span class="sd">    :type output: str </span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">region</span><span class="o">=</span><span class="n">get_region</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
+    <span class="n">tp_output_1</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot;_tp1.tif&quot;</span>
+    <span class="n">tp_output_2</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot;_tp2.tif&quot;</span>
+    <span class="n">dicc</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;map&#39;</span><span class="p">:</span><span class="nb">map</span><span class="p">,</span>
+            <span class="s1">&#39;null&#39;</span><span class="p">:</span><span class="o">-</span><span class="mi">9999</span><span class="p">,</span>
+            <span class="s1">&#39;output&#39;</span><span class="p">:</span><span class="n">tp_output_1</span><span class="p">,</span>
+            <span class="s1">&#39;GRASS_REGION_PARAMETER&#39;</span><span class="p">:</span><span class="n">region</span><span class="p">,</span>
+            <span class="s1">&#39;GRASS_REGION_CELLSIZE_PARAMETER&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+    
+    <span class="n">pr</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;grass7:r.null&quot;</span><span class="p">,</span><span class="n">dicc</span><span class="p">)</span>
+
+    <span class="n">dicc2</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;map&#39;</span><span class="p">:</span><span class="n">tp_output_1</span><span class="p">,</span>
+            <span class="s1">&#39;setnull&#39;</span><span class="p">:</span><span class="o">-</span><span class="mi">9999</span><span class="p">,</span>
+            <span class="s1">&#39;output&#39;</span><span class="p">:</span><span class="n">tp_output_2</span><span class="p">,</span>
+            <span class="s1">&#39;GRASS_REGION_PARAMETER&#39;</span><span class="p">:</span><span class="n">region</span><span class="p">,</span>
+            <span class="s1">&#39;GRASS_REGION_CELLSIZE_PARAMETER&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+    
+
+    <span class="n">pr</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;grass7:r.null&quot;</span><span class="p">,</span><span class="n">dicc2</span><span class="p">)</span>
+
+    <span class="n">crea_capa</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,[</span><span class="n">tp_output_2</span><span class="p">],</span><span class="n">output</span><span class="p">)</span>
+    <span class="n">remove_raster</span><span class="p">(</span><span class="n">tp_output_1</span><span class="p">)</span>
+    <span class="n">remove_raster</span><span class="p">(</span><span class="n">tp_output_2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">output</span></div>
+<div class="viewcode-block" id="ecuacion_clp"><a class="viewcode-back" href="../clp.html#clpqgis3.ecuacion_clp">[documentos]</a><span class="k">def</span> <span class="nf">ecuacion_clp</span><span class="p">(</span><span class="n">pesos</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Esta función regresa la ecuación de la combinación líneal ponderada para la calculadora raster</span>
+<span class="sd">    :param pesos: lista de pesos de los criterios para la clp</span>
+<span class="sd">    :type pesos: list</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">n_variables</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">pesos</span><span class="p">)</span>
+    <span class="n">abc</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_uppercase</span><span class="p">)</span>
+    <span class="n">lista</span> <span class="o">=</span> <span class="p">[]</span>
+   
+    <span class="k">for</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n_variables</span><span class="p">),</span><span class="n">pesos</span><span class="p">):</span>
+        <span class="n">lista</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">)</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">abc</span><span class="p">[</span><span class="n">a</span><span class="p">]))</span>
+    <span class="n">ecuacion</span><span class="o">=</span> <span class="s2">&quot; + &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ecuacion</span> </div>
+<div class="viewcode-block" id="ecuacion_comp"><a class="viewcode-back" href="../clp.html#clpqgis3.ecuacion_comp">[documentos]</a><span class="k">def</span> <span class="nf">ecuacion_comp</span><span class="p">(</span><span class="n">pesos</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Esta función regresa la ecuación del modo de decisión compensatorio para la calculadora raster</span>
+<span class="sd">    :param pesos: lista de pesos de los criterios para la clp</span>
+<span class="sd">    :type pesos: list</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">n_variables</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">pesos</span><span class="p">)</span>
+    <span class="n">abc</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_uppercase</span><span class="p">)</span>
+    <span class="n">lista</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n_variables</span><span class="p">),</span><span class="n">pesos</span><span class="p">):</span>
+       <span class="n">lista</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="s1">&#39; * &#39;</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;(1 - &quot;</span> <span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">abc</span><span class="p">[</span><span class="n">a</span><span class="p">])</span><span class="o">+</span><span class="s2">&quot;)&quot;</span><span class="p">)</span>
+    <span class="n">ecuacion</span> <span class="o">=</span> <span class="s2">&quot; + &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ecuacion</span></div>
+<div class="viewcode-block" id="ecuacion_p_comp"><a class="viewcode-back" href="../clp.html#clpqgis3.ecuacion_p_comp">[documentos]</a><span class="k">def</span> <span class="nf">ecuacion_p_comp</span><span class="p">(</span><span class="n">pesos</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Esta función regresa la ecuación del modo de decisión  parcialmente compensatorio para la calculadora raster</span>
+<span class="sd">    :param pesos: lista de pesos de los criterios para la clp</span>
+<span class="sd">    :type pesos: list</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">n_variables</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">pesos</span><span class="p">)</span>
+    <span class="n">abc</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_uppercase</span><span class="p">)</span>
+    <span class="n">ecuacion</span> <span class="o">=</span> <span class="s1">&#39;numpy.power(&#39;</span>
+    <span class="n">lista</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n_variables</span><span class="p">),</span><span class="n">pesos</span><span class="p">):</span>
+        <span class="n">lista</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;numpy.power(&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;,2)&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="s1">&#39; * &#39;</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;(1 - &quot;</span> <span class="o">+</span><span class="s2">&quot;numpy.power(&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">abc</span><span class="p">[</span><span class="n">a</span><span class="p">])</span><span class="o">+</span><span class="s2">&quot;,2)&quot;</span><span class="o">+</span><span class="s2">&quot;)&quot;</span><span class="p">)</span>
+    <span class="n">ecuacion</span> <span class="o">+=</span> <span class="s2">&quot; + &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+    <span class="n">ecuacion</span><span class="o">+=</span> <span class="s1">&#39;,0.5)&#39;</span>
+    <span class="k">return</span> <span class="n">ecuacion</span> </div>
+<div class="viewcode-block" id="ecuacion_no_comp"><a class="viewcode-back" href="../clp.html#clpqgis3.ecuacion_no_comp">[documentos]</a><span class="k">def</span> <span class="nf">ecuacion_no_comp</span><span class="p">(</span><span class="n">pesos</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Esta función regresa la ecuación del modo de decisión  no compensatorio para la calculadora raster</span>
+<span class="sd">    :param pesos: lista de pesos de los criterios para la clp</span>
+<span class="sd">    :type pesos: list</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">n_variables</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">pesos</span><span class="p">)</span>
+    <span class="n">abc</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_uppercase</span><span class="p">)</span>
+    <span class="n">ecuacion</span> <span class="o">=</span> <span class="s1">&#39;numpy.power(&#39;</span>
+    <span class="n">lista</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n_variables</span><span class="p">),</span><span class="n">pesos</span><span class="p">):</span>
+        <span class="n">lista</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;numpy.power(&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;,10)&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="s1">&#39; * &#39;</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;(1 - &quot;</span> <span class="o">+</span><span class="s2">&quot;numpy.power(&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">abc</span><span class="p">[</span><span class="n">a</span><span class="p">])</span><span class="o">+</span><span class="s2">&quot;,10)&quot;</span><span class="o">+</span><span class="s2">&quot;)&quot;</span><span class="p">)</span>
+    <span class="n">ecuacion</span> <span class="o">+=</span> <span class="s2">&quot; + &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+    <span class="n">ecuacion</span><span class="o">+=</span> <span class="s1">&#39;,0.1)&#39;</span>
+    <span class="k">return</span> <span class="n">ecuacion</span> </div>
+<div class="viewcode-block" id="raster_min_max"><a class="viewcode-back" href="../clp.html#clpqgis3.raster_min_max">[documentos]</a><span class="k">def</span> <span class="nf">raster_min_max</span><span class="p">(</span><span class="n">path_raster</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Esta funcion regresa los valores maximos y minimos de una capa raster</span>
+
+<span class="sd">    :param path_raster: ruta de la capa raster</span>
+<span class="sd">    :type path_raster: str </span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">rlayer</span> <span class="o">=</span> <span class="n">QgsRasterLayer</span><span class="p">(</span><span class="n">path_raster</span><span class="p">,</span><span class="s2">&quot;raster&quot;</span><span class="p">)</span>
+    <span class="n">extent</span> <span class="o">=</span> <span class="n">rlayer</span><span class="o">.</span><span class="n">extent</span><span class="p">()</span>
+    <span class="n">provider</span> <span class="o">=</span> <span class="n">rlayer</span><span class="o">.</span><span class="n">dataProvider</span><span class="p">()</span>
+    <span class="n">stats</span> <span class="o">=</span> <span class="n">provider</span><span class="o">.</span><span class="n">bandStatistics</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span>
+                                    <span class="n">QgsRasterBandStats</span><span class="o">.</span><span class="n">All</span><span class="p">,</span>
+                                    <span class="n">extent</span><span class="p">,</span>
+                                    <span class="mi">0</span><span class="p">)</span>
+
+    <span class="n">v_min</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">minimumValue</span>
+    <span class="n">v_max</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">maximumValue</span>
+    <span class="k">return</span> <span class="n">v_min</span><span class="p">,</span> <span class="n">v_max</span></div>
+<span class="k">def</span> <span class="nf">crea_capa</span><span class="p">(</span><span class="n">ecuacion</span><span class="p">,</span><span class="n">rasters_input</span><span class="p">,</span><span class="n">salida</span><span class="p">):</span> 
+    <span class="n">path_A</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+    <span class="n">path_B</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+    <span class="n">path_C</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+    <span class="n">path_D</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+    <span class="n">path_E</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+    <span class="n">path_F</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+    <span class="n">path_G</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+    <span class="n">path_H</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+    <span class="n">path_I</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+    <span class="n">path_J</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+    <span class="n">path_K</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+    <span class="n">path_L</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+    <span class="n">path_M</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+    <span class="n">path_N</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+    <span class="n">total_raster</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">rasters_input</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">total_raster</span><span class="p">),</span> <span class="n">rasters_input</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">path_A</span><span class="o">=</span><span class="n">b</span>
+        <span class="k">elif</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">path_B</span><span class="o">=</span><span class="n">b</span>
+        <span class="k">elif</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">path_C</span><span class="o">=</span><span class="n">b</span>
+        <span class="k">elif</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">path_D</span><span class="o">=</span><span class="n">b</span>
+        <span class="k">elif</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+            <span class="n">path_E</span><span class="o">=</span><span class="n">b</span>
+        <span class="k">elif</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+            <span class="n">path_F</span><span class="o">=</span><span class="n">b</span>
+        <span class="k">elif</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
+            <span class="n">path_G</span><span class="o">=</span><span class="n">b</span>
+        <span class="k">elif</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">7</span><span class="p">:</span>
+            <span class="n">path_H</span><span class="o">=</span><span class="n">b</span>
+        <span class="k">elif</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">8</span><span class="p">:</span>
+            <span class="n">path_I</span><span class="o">=</span><span class="n">b</span>
+        <span class="k">elif</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">9</span><span class="p">:</span>
+            <span class="n">path_J</span><span class="o">=</span><span class="n">b</span>
+        <span class="k">elif</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">10</span><span class="p">:</span>
+            <span class="n">path_K</span><span class="o">=</span><span class="n">b</span>
+        <span class="k">elif</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">11</span><span class="p">:</span>
+            <span class="n">path_L</span><span class="o">=</span><span class="n">b</span>
+        <span class="k">elif</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">12</span><span class="p">:</span>
+            <span class="n">path_M</span><span class="o">=</span><span class="n">b</span>
+        <span class="k">elif</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">13</span><span class="p">:</span>
+            <span class="n">path_N</span><span class="o">=</span><span class="n">b</span>
+
+    
+    <span class="k">if</span> <span class="n">total_raster</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">dicc</span> <span class="o">=</span><span class="p">{</span>        
+                <span class="s1">&#39;INPUT_A&#39;</span><span class="p">:</span><span class="n">path_A</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_A&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;FORMULA&#39;</span><span class="p">:</span><span class="n">ecuacion</span><span class="p">,</span>
+                <span class="s1">&#39;NO_DATA&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">9999.0</span><span class="p">,</span>
+                <span class="s1">&#39;RTYPE&#39;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span>
+                <span class="s1">&#39;EXTRA&#39;</span><span class="p">:</span><span class="s1">&#39;--co=&quot;COMPRESS=LZW&quot;&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;OUTPUT&#39;</span><span class="p">:</span><span class="n">salida</span><span class="p">}</span>
+        <span class="n">pr</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;gdal:rastercalculator&quot;</span><span class="p">,</span><span class="n">dicc</span><span class="p">)</span>
+                            
+    <span class="k">if</span> <span class="n">total_raster</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">dicc</span> <span class="o">=</span><span class="p">{</span>        
+                <span class="s1">&#39;INPUT_A&#39;</span><span class="p">:</span><span class="n">path_A</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_A&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_B&#39;</span><span class="p">:</span><span class="n">path_B</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_B&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;FORMULA&#39;</span><span class="p">:</span><span class="n">ecuacion</span><span class="p">,</span>
+                <span class="s1">&#39;NO_DATA&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">9999.0</span><span class="p">,</span>
+                <span class="s1">&#39;RTYPE&#39;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span>
+                <span class="s1">&#39;EXTRA&#39;</span><span class="p">:</span><span class="s1">&#39;--co=&quot;COMPRESS=LZW&quot;&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;OUTPUT&#39;</span><span class="p">:</span><span class="n">salida</span><span class="p">}</span>
+        <span class="n">pr</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;gdal:rastercalculator&quot;</span><span class="p">,</span><span class="n">dicc</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">total_raster</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="n">dicc</span> <span class="o">=</span><span class="p">{</span>        
+                <span class="s1">&#39;INPUT_A&#39;</span><span class="p">:</span><span class="n">path_A</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_A&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_B&#39;</span><span class="p">:</span><span class="n">path_B</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_B&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_C&#39;</span><span class="p">:</span><span class="n">path_C</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_C&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;FORMULA&#39;</span><span class="p">:</span><span class="n">ecuacion</span><span class="p">,</span>
+                <span class="s1">&#39;NO_DATA&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">9999.0</span><span class="p">,</span>
+                <span class="s1">&#39;RTYPE&#39;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span>
+                <span class="s1">&#39;EXTRA&#39;</span><span class="p">:</span><span class="s1">&#39;--co=&quot;COMPRESS=LZW&quot;&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;OUTPUT&#39;</span><span class="p">:</span><span class="n">salida</span><span class="p">}</span>
+        <span class="n">pr</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;gdal:rastercalculator&quot;</span><span class="p">,</span><span class="n">dicc</span><span class="p">)</span>
+                            
+    <span class="k">if</span> <span class="n">total_raster</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="n">dicc</span> <span class="o">=</span><span class="p">{</span>        
+                <span class="s1">&#39;INPUT_A&#39;</span><span class="p">:</span><span class="n">path_A</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_A&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_B&#39;</span><span class="p">:</span><span class="n">path_B</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_B&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_C&#39;</span><span class="p">:</span><span class="n">path_C</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_C&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_D&#39;</span><span class="p">:</span><span class="n">path_D</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_D&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;FORMULA&#39;</span><span class="p">:</span><span class="n">ecuacion</span><span class="p">,</span>
+                <span class="s1">&#39;NO_DATA&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">9999.0</span><span class="p">,</span>
+                <span class="s1">&#39;RTYPE&#39;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span>
+                <span class="s1">&#39;EXTRA&#39;</span><span class="p">:</span><span class="s1">&#39;--co=&quot;COMPRESS=LZW&quot;&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;OUTPUT&#39;</span><span class="p">:</span><span class="n">salida</span><span class="p">}</span>
+        <span class="n">pr</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;gdal:rastercalculator&quot;</span><span class="p">,</span><span class="n">dicc</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">total_raster</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="n">dicc</span> <span class="o">=</span><span class="p">{</span>        
+                <span class="s1">&#39;INPUT_A&#39;</span><span class="p">:</span><span class="n">path_A</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_A&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_B&#39;</span><span class="p">:</span><span class="n">path_B</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_B&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_C&#39;</span><span class="p">:</span><span class="n">path_C</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_C&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_D&#39;</span><span class="p">:</span><span class="n">path_D</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_D&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_E&#39;</span><span class="p">:</span><span class="n">path_E</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_E&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;FORMULA&#39;</span><span class="p">:</span><span class="n">ecuacion</span><span class="p">,</span>
+                <span class="s1">&#39;NO_DATA&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">9999.0</span><span class="p">,</span>
+                <span class="s1">&#39;RTYPE&#39;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span>
+                <span class="s1">&#39;EXTRA&#39;</span><span class="p">:</span><span class="s1">&#39;--co=&quot;COMPRESS=LZW&quot;&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;OUTPUT&#39;</span><span class="p">:</span><span class="n">salida</span><span class="p">}</span>
+        <span class="n">pr</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;gdal:rastercalculator&quot;</span><span class="p">,</span><span class="n">dicc</span><span class="p">)</span>
+                            
+    <span class="k">if</span> <span class="n">total_raster</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
+        <span class="n">dicc</span> <span class="o">=</span><span class="p">{</span>        
+                <span class="s1">&#39;INPUT_A&#39;</span><span class="p">:</span><span class="n">path_A</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_A&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_B&#39;</span><span class="p">:</span><span class="n">path_B</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_B&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_C&#39;</span><span class="p">:</span><span class="n">path_C</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_C&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_D&#39;</span><span class="p">:</span><span class="n">path_D</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_D&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_E&#39;</span><span class="p">:</span><span class="n">path_E</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_E&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_F&#39;</span><span class="p">:</span><span class="n">path_F</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_F&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;FORMULA&#39;</span><span class="p">:</span><span class="n">ecuacion</span><span class="p">,</span>
+                <span class="s1">&#39;NO_DATA&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">9999.0</span><span class="p">,</span>
+                <span class="s1">&#39;RTYPE&#39;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span>
+                <span class="s1">&#39;EXTRA&#39;</span><span class="p">:</span><span class="s1">&#39;--co=&quot;COMPRESS=LZW&quot;&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;OUTPUT&#39;</span><span class="p">:</span><span class="n">salida</span><span class="p">}</span>
+    <span class="k">if</span> <span class="n">total_raster</span> <span class="o">==</span> <span class="mi">7</span><span class="p">:</span>
+        <span class="n">dicc</span> <span class="o">=</span><span class="p">{</span>        
+                <span class="s1">&#39;INPUT_A&#39;</span><span class="p">:</span><span class="n">path_A</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_A&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_B&#39;</span><span class="p">:</span><span class="n">path_B</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_B&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_C&#39;</span><span class="p">:</span><span class="n">path_C</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_C&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_D&#39;</span><span class="p">:</span><span class="n">path_D</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_D&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_E&#39;</span><span class="p">:</span><span class="n">path_E</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_E&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_F&#39;</span><span class="p">:</span><span class="n">path_F</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_F&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_G&#39;</span><span class="p">:</span><span class="n">path_G</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_G&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;FORMULA&#39;</span><span class="p">:</span><span class="n">ecuacion</span><span class="p">,</span>
+                <span class="s1">&#39;NO_DATA&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">9999.0</span><span class="p">,</span>
+                <span class="s1">&#39;RTYPE&#39;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span>
+                <span class="s1">&#39;EXTRA&#39;</span><span class="p">:</span><span class="s1">&#39;--co=&quot;COMPRESS=LZW&quot;&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;OUTPUT&#39;</span><span class="p">:</span><span class="n">salida</span><span class="p">}</span>
+
+    <span class="k">if</span> <span class="n">total_raster</span> <span class="o">==</span> <span class="mi">8</span><span class="p">:</span>
+        <span class="n">dicc</span> <span class="o">=</span><span class="p">{</span>        
+                <span class="s1">&#39;INPUT_A&#39;</span><span class="p">:</span><span class="n">path_A</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_A&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_B&#39;</span><span class="p">:</span><span class="n">path_B</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_B&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_C&#39;</span><span class="p">:</span><span class="n">path_C</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_C&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_D&#39;</span><span class="p">:</span><span class="n">path_D</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_D&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_E&#39;</span><span class="p">:</span><span class="n">path_E</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_E&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_F&#39;</span><span class="p">:</span><span class="n">path_F</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_F&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_G&#39;</span><span class="p">:</span><span class="n">path_G</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_G&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_H&#39;</span><span class="p">:</span><span class="n">path_H</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_H&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;FORMULA&#39;</span><span class="p">:</span><span class="n">ecuacion</span><span class="p">,</span>
+                <span class="s1">&#39;NO_DATA&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">9999.0</span><span class="p">,</span>
+                <span class="s1">&#39;RTYPE&#39;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span>
+                <span class="s1">&#39;EXTRA&#39;</span><span class="p">:</span><span class="s1">&#39;--co=&quot;COMPRESS=LZW&quot;&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;OUTPUT&#39;</span><span class="p">:</span><span class="n">salida</span><span class="p">}</span>
+    <span class="k">if</span> <span class="n">total_raster</span> <span class="o">==</span> <span class="mi">9</span><span class="p">:</span>
+        <span class="n">dicc</span> <span class="o">=</span><span class="p">{</span>        
+                <span class="s1">&#39;INPUT_A&#39;</span><span class="p">:</span><span class="n">path_A</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_A&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_B&#39;</span><span class="p">:</span><span class="n">path_B</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_B&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_C&#39;</span><span class="p">:</span><span class="n">path_C</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_C&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_D&#39;</span><span class="p">:</span><span class="n">path_D</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_D&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_E&#39;</span><span class="p">:</span><span class="n">path_E</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_E&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_F&#39;</span><span class="p">:</span><span class="n">path_F</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_F&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_G&#39;</span><span class="p">:</span><span class="n">path_G</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_G&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_H&#39;</span><span class="p">:</span><span class="n">path_H</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_H&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_I&#39;</span><span class="p">:</span><span class="n">path_I</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_I&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;FORMULA&#39;</span><span class="p">:</span><span class="n">ecuacion</span><span class="p">,</span>
+                <span class="s1">&#39;NO_DATA&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">9999.0</span><span class="p">,</span>
+                <span class="s1">&#39;RTYPE&#39;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span>
+                <span class="s1">&#39;EXTRA&#39;</span><span class="p">:</span><span class="s1">&#39;--co=&quot;COMPRESS=LZW&quot;&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;OUTPUT&#39;</span><span class="p">:</span><span class="n">salida</span><span class="p">}</span>
+    <span class="k">if</span> <span class="n">total_raster</span> <span class="o">==</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="n">dicc</span> <span class="o">=</span><span class="p">{</span>        
+                <span class="s1">&#39;INPUT_A&#39;</span><span class="p">:</span><span class="n">path_A</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_A&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_B&#39;</span><span class="p">:</span><span class="n">path_B</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_B&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_C&#39;</span><span class="p">:</span><span class="n">path_C</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_C&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_D&#39;</span><span class="p">:</span><span class="n">path_D</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_D&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_E&#39;</span><span class="p">:</span><span class="n">path_E</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_E&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_F&#39;</span><span class="p">:</span><span class="n">path_F</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_F&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_G&#39;</span><span class="p">:</span><span class="n">path_G</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_G&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_H&#39;</span><span class="p">:</span><span class="n">path_H</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_H&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_I&#39;</span><span class="p">:</span><span class="n">path_I</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_I&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_J&#39;</span><span class="p">:</span><span class="n">path_J</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_J&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;FORMULA&#39;</span><span class="p">:</span><span class="n">ecuacion</span><span class="p">,</span>
+                <span class="s1">&#39;NO_DATA&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">9999.0</span><span class="p">,</span>
+                <span class="s1">&#39;RTYPE&#39;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span>
+                <span class="s1">&#39;EXTRA&#39;</span><span class="p">:</span><span class="s1">&#39;--co=&quot;COMPRESS=LZW&quot;&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;OUTPUT&#39;</span><span class="p">:</span><span class="n">salida</span><span class="p">}</span>
+
+    <span class="k">if</span> <span class="n">total_raster</span> <span class="o">==</span> <span class="mi">11</span><span class="p">:</span>
+        <span class="n">dicc</span> <span class="o">=</span><span class="p">{</span>        
+                <span class="s1">&#39;INPUT_A&#39;</span><span class="p">:</span><span class="n">path_A</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_A&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_B&#39;</span><span class="p">:</span><span class="n">path_B</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_B&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_C&#39;</span><span class="p">:</span><span class="n">path_C</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_C&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_D&#39;</span><span class="p">:</span><span class="n">path_D</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_D&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_E&#39;</span><span class="p">:</span><span class="n">path_E</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_E&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_F&#39;</span><span class="p">:</span><span class="n">path_F</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_F&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_G&#39;</span><span class="p">:</span><span class="n">path_G</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_G&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_H&#39;</span><span class="p">:</span><span class="n">path_H</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_H&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_I&#39;</span><span class="p">:</span><span class="n">path_I</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_I&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_J&#39;</span><span class="p">:</span><span class="n">path_J</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_J&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_K&#39;</span><span class="p">:</span><span class="n">path_K</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_K&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;FORMULA&#39;</span><span class="p">:</span><span class="n">ecuacion</span><span class="p">,</span>
+                <span class="s1">&#39;NO_DATA&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">9999.0</span><span class="p">,</span>
+                <span class="s1">&#39;RTYPE&#39;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span>
+                <span class="s1">&#39;EXTRA&#39;</span><span class="p">:</span><span class="s1">&#39;--co=&quot;COMPRESS=LZW&quot;&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;OUTPUT&#39;</span><span class="p">:</span><span class="n">salida</span><span class="p">}</span>
+
+    <span class="k">if</span> <span class="n">total_raster</span> <span class="o">==</span> <span class="mi">12</span><span class="p">:</span>
+        <span class="n">dicc</span> <span class="o">=</span><span class="p">{</span>        
+                <span class="s1">&#39;INPUT_A&#39;</span><span class="p">:</span><span class="n">path_A</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_A&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_B&#39;</span><span class="p">:</span><span class="n">path_B</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_B&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_C&#39;</span><span class="p">:</span><span class="n">path_C</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_C&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_D&#39;</span><span class="p">:</span><span class="n">path_D</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_D&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_E&#39;</span><span class="p">:</span><span class="n">path_E</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_E&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_F&#39;</span><span class="p">:</span><span class="n">path_F</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_F&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_G&#39;</span><span class="p">:</span><span class="n">path_G</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_G&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_H&#39;</span><span class="p">:</span><span class="n">path_H</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_H&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_I&#39;</span><span class="p">:</span><span class="n">path_I</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_I&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_J&#39;</span><span class="p">:</span><span class="n">path_J</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_J&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_K&#39;</span><span class="p">:</span><span class="n">path_K</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_K&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_L&#39;</span><span class="p">:</span><span class="n">path_L</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_L&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;FORMULA&#39;</span><span class="p">:</span><span class="n">ecuacion</span><span class="p">,</span>
+                <span class="s1">&#39;NO_DATA&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">9999.0</span><span class="p">,</span>
+                <span class="s1">&#39;RTYPE&#39;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span>
+                <span class="s1">&#39;EXTRA&#39;</span><span class="p">:</span><span class="s1">&#39;--co=&quot;COMPRESS=LZW&quot;&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;OUTPUT&#39;</span><span class="p">:</span><span class="n">salida</span><span class="p">}</span>
+    <span class="k">if</span> <span class="n">total_raster</span> <span class="o">==</span> <span class="mi">13</span><span class="p">:</span>
+        <span class="n">dicc</span> <span class="o">=</span><span class="p">{</span>        
+                <span class="s1">&#39;INPUT_A&#39;</span><span class="p">:</span><span class="n">path_A</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_A&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_B&#39;</span><span class="p">:</span><span class="n">path_B</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_B&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_C&#39;</span><span class="p">:</span><span class="n">path_C</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_C&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_D&#39;</span><span class="p">:</span><span class="n">path_D</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_D&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_E&#39;</span><span class="p">:</span><span class="n">path_E</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_E&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_F&#39;</span><span class="p">:</span><span class="n">path_F</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_F&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_G&#39;</span><span class="p">:</span><span class="n">path_G</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_G&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_H&#39;</span><span class="p">:</span><span class="n">path_H</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_H&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_I&#39;</span><span class="p">:</span><span class="n">path_I</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_I&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_J&#39;</span><span class="p">:</span><span class="n">path_J</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_J&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_K&#39;</span><span class="p">:</span><span class="n">path_K</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_K&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_L&#39;</span><span class="p">:</span><span class="n">path_L</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_L&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_M&#39;</span><span class="p">:</span><span class="n">path_M</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_M&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;FORMULA&#39;</span><span class="p">:</span><span class="n">ecuacion</span><span class="p">,</span>
+                <span class="s1">&#39;NO_DATA&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">9999.0</span><span class="p">,</span>
+                <span class="s1">&#39;RTYPE&#39;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span>
+                <span class="s1">&#39;EXTRA&#39;</span><span class="p">:</span><span class="s1">&#39;--co=&quot;COMPRESS=LZW&quot;&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;OUTPUT&#39;</span><span class="p">:</span><span class="n">salida</span><span class="p">}</span>
+
+    <span class="k">if</span> <span class="n">total_raster</span> <span class="o">==</span> <span class="mi">14</span><span class="p">:</span>
+        <span class="n">dicc</span> <span class="o">=</span><span class="p">{</span>        
+                <span class="s1">&#39;INPUT_A&#39;</span><span class="p">:</span><span class="n">path_A</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_A&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_B&#39;</span><span class="p">:</span><span class="n">path_B</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_B&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_C&#39;</span><span class="p">:</span><span class="n">path_C</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_C&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_D&#39;</span><span class="p">:</span><span class="n">path_D</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_D&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_E&#39;</span><span class="p">:</span><span class="n">path_E</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_E&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_F&#39;</span><span class="p">:</span><span class="n">path_F</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_F&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_G&#39;</span><span class="p">:</span><span class="n">path_G</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_G&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_H&#39;</span><span class="p">:</span><span class="n">path_H</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_H&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_I&#39;</span><span class="p">:</span><span class="n">path_I</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_I&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_J&#39;</span><span class="p">:</span><span class="n">path_J</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_J&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_K&#39;</span><span class="p">:</span><span class="n">path_K</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_K&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_L&#39;</span><span class="p">:</span><span class="n">path_L</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_L&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_M&#39;</span><span class="p">:</span><span class="n">path_M</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_M&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;INPUT_N&#39;</span><span class="p">:</span><span class="n">path_N</span><span class="p">,</span>
+                <span class="s1">&#39;BAND_N&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;FORMULA&#39;</span><span class="p">:</span><span class="n">ecuacion</span><span class="p">,</span>
+                <span class="s1">&#39;NO_DATA&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">9999.0</span><span class="p">,</span>
+                <span class="s1">&#39;RTYPE&#39;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span>
+                <span class="s1">&#39;EXTRA&#39;</span><span class="p">:</span><span class="s1">&#39;--co=&quot;COMPRESS=LZW&quot;&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;OUTPUT&#39;</span><span class="p">:</span><span class="n">salida</span><span class="p">}</span>
+
+        <span class="n">pr</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;gdal:rastercalculator&quot;</span><span class="p">,</span><span class="n">dicc</span><span class="p">)</span>
+<div class="viewcode-block" id="nombre_capa"><a class="viewcode-back" href="../clp.html#clpqgis3.nombre_capa">[documentos]</a><span class="k">def</span> <span class="nf">nombre_capa</span><span class="p">(</span><span class="n">path_capa</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Esta función regresa el nombre de una capa sin extensión </span>
+
+<span class="sd">    :param path_capa: ruta de la capa</span>
+<span class="sd">    :type path_capa: str </span>
+
+
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">nombre_capa</span><span class="o">=</span><span class="p">(</span><span class="n">path_capa</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">:])[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">nombre_capa</span></div>
+<div class="viewcode-block" id="cargar_raster"><a class="viewcode-back" href="../clp.html#clpqgis3.cargar_raster">[documentos]</a><span class="k">def</span> <span class="nf">cargar_raster</span><span class="p">(</span><span class="n">path_raster</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Esta función carga una capa raster a un proyecto </span>
+<span class="sd">    de qgis </span>
+
+<span class="sd">    :param path_raster: ruta de la capa raster</span>
+<span class="sd">    :type path_raster: str</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>  
+    <span class="n">nombre</span> <span class="o">=</span> <span class="n">nombre_capa</span><span class="p">(</span><span class="n">path_raster</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+    <span class="n">rlayer</span> <span class="o">=</span> <span class="n">QgsRasterLayer</span><span class="p">(</span><span class="n">path_raster</span><span class="p">,</span> <span class="n">nombre</span><span class="p">)</span>
+    <span class="n">QgsProject</span><span class="o">.</span><span class="n">instance</span><span class="p">()</span><span class="o">.</span><span class="n">addMapLayer</span><span class="p">(</span><span class="n">rlayer</span><span class="p">)</span></div>
+<div class="viewcode-block" id="raster_nodata"><a class="viewcode-back" href="../clp.html#clpqgis3.raster_nodata">[documentos]</a><span class="k">def</span> <span class="nf">raster_nodata</span><span class="p">(</span><span class="n">path_raster</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Esta función regresa el valor NoData de una capa raster</span>
+<span class="sd">    :param path_raster: ruta de la capa raster:</span>
+<span class="sd">    :type path_raster: str</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">rlayer</span> <span class="o">=</span> <span class="n">QgsRasterLayer</span><span class="p">(</span><span class="n">path_raster</span><span class="p">,</span><span class="s2">&quot;raster&quot;</span><span class="p">)</span>
+    <span class="n">extent</span> <span class="o">=</span> <span class="n">rlayer</span><span class="o">.</span><span class="n">extent</span><span class="p">()</span>
+    
+
+    <span class="n">provider</span> <span class="o">=</span> <span class="n">rlayer</span><span class="o">.</span><span class="n">dataProvider</span><span class="p">()</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">rlayer</span><span class="o">.</span><span class="n">rasterUnitsPerPixelY</span><span class="p">()</span>
+    <span class="n">cols</span> <span class="o">=</span> <span class="n">rlayer</span><span class="o">.</span><span class="n">rasterUnitsPerPixelX</span><span class="p">()</span>
+    <span class="n">block</span> <span class="o">=</span> <span class="n">provider</span><span class="o">.</span><span class="n">block</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">extent</span><span class="p">,</span>  <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">)</span>
+
+    <span class="n">no_data</span> <span class="o">=</span> <span class="n">block</span><span class="o">.</span><span class="n">noDataValue</span><span class="p">()</span>
+
+    
+    <span class="k">return</span> <span class="n">no_data</span></div>
+<div class="viewcode-block" id="norm_estandar"><a class="viewcode-back" href="../clp.html#clpqgis3.norm_estandar">[documentos]</a><span class="k">def</span> <span class="nf">norm_estandar</span><span class="p">(</span><span class="n">path_raster</span><span class="p">,</span> <span class="n">path_raster_n</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Esta función normaliza línealmente una capa tipo raster</span>
+<span class="sd">    :param path_raster: ruta de la capa a normalizar:</span>
+<span class="sd">    :type path_raster: str</span>
+
+<span class="sd">    :param path_raster_n: ruta de la capa normalizada</span>
+<span class="sd">    :type path_raster_n: str</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="nb">min</span><span class="p">,</span><span class="nb">max</span> <span class="o">=</span> <span class="n">raster_min_max</span><span class="p">(</span><span class="n">path_raster</span><span class="p">)</span>
+    <span class="n">ec_norm</span> <span class="o">=</span><span class="s1">&#39;(A - &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">min</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;) / (&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">max</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; - &#39;</span> <span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">min</span><span class="p">)</span> <span class="o">+</span><span class="s1">&#39;)&#39;</span> 
+    <span class="n">crea_capa</span><span class="p">(</span><span class="n">ec_norm</span><span class="p">,[</span><span class="n">path_raster</span><span class="p">],</span><span class="n">path_raster_n</span><span class="p">)</span></div>
+<div class="viewcode-block" id="multicriteria_gis"><a class="viewcode-back" href="../clp.html#clpqgis3.multicriteria_gis">[documentos]</a><span class="k">def</span> <span class="nf">multicriteria_gis</span><span class="p">(</span><span class="n">modo</span><span class="p">,</span> <span class="n">dict_capas</span><span class="p">,</span><span class="n">nombre_final</span><span class="p">,</span><span class="n">directorio_salida</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Esta función permite realizar la integración de criterios (capas) según el modo </span>
+<span class="sd">    de decisión específicado para el análisis espacial multicriterio</span>
+
+<span class="sd">    :param modo: modo de decisión a elegir escriba **clp** para combinación líneal ponderada, **pc** para parcialmente compensatorio o **nc** para no compensatorio</span>
+<span class="sd">    :type modo: str</span>
+
+<span class="sd">    :param dict_capas: diccionario que contiene el nombre de la capa la ruta y su peso</span>
+<span class="sd">    :type dict_capas: dict</span>
+
+<span class="sd">    :param nombre_final: nombre del resultado de la integración ej: exposicion</span>
+<span class="sd">    :type nombre_final: str</span>
+
+<span class="sd">    :param directorio_salida: ruta del directorio de salida</span>
+<span class="sd">    :type directorio_salida: str</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">lista_inputs</span> <span class="o">=</span> <span class="p">[]</span> 
+    <span class="n">pesos</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">dir_tmp</span> <span class="o">=</span> <span class="n">directorio_salida</span><span class="o">+</span><span class="s2">&quot;tmp&quot;</span>
+    <span class="k">if</span> <span class="s2">&quot;tmp&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">directorio_salida</span><span class="p">):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">dir_tmp</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">dict_capas</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">lista_inputs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dict_capas</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="s1">&#39;ruta&#39;</span><span class="p">])</span>
+        <span class="n">pesos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dict_capas</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="s1">&#39;peso&#39;</span><span class="p">])</span>
+
+    <span class="n">capas_listas</span> <span class="o">=</span><span class="p">[]</span>
+    <span class="k">for</span> <span class="n">capa</span> <span class="ow">in</span> <span class="n">lista_inputs</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">raster_nodata</span><span class="p">(</span><span class="n">capa</span><span class="p">)</span><span class="o">==-</span><span class="mf">9999.0</span><span class="p">:</span>
+            <span class="n">capas_listas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">capa</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;cambiando valores de null de la capa:&quot;</span><span class="p">,</span><span class="n">nombre_capa</span><span class="p">(</span><span class="n">capa</span><span class="p">))</span>
+            <span class="n">tp_capa_set_null</span> <span class="o">=</span> <span class="n">dir_tmp</span><span class="o">+</span><span class="s2">&quot;/&quot;</span><span class="o">+</span><span class="n">nombre_capa</span><span class="p">(</span><span class="n">capa</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;.tif&quot;</span>
+            <span class="n">capa_ac</span> <span class="o">=</span> <span class="n">set_nulls</span><span class="p">(</span><span class="n">capa</span><span class="p">,</span><span class="n">tp_capa_set_null</span><span class="p">)</span>
+            <span class="n">capas_listas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">capa_ac</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">modo</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">==</span><span class="s1">&#39;clp&#39;</span> <span class="ow">or</span> <span class="n">modo</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span><span class="s2">&quot; &quot;</span><span class="p">)</span><span class="o">==</span><span class="s1">&#39;combinacion lineal ponderada&#39;</span><span class="p">:</span>
+        <span class="n">path_salida</span><span class="o">=</span> <span class="n">directorio_salida</span><span class="o">+</span> <span class="n">nombre_final</span><span class="o">+</span><span class="s2">&quot;.tif&quot;</span>
+        <span class="n">ecuacion</span> <span class="o">=</span> <span class="n">ecuacion_clp</span><span class="p">(</span><span class="n">pesos</span><span class="p">)</span>
+        <span class="n">crea_capa</span><span class="p">(</span><span class="n">ecuacion</span><span class="p">,</span><span class="n">lista_inputs</span><span class="p">,</span><span class="n">path_salida</span><span class="p">)</span>
+        <span class="n">cargar_raster</span><span class="p">(</span><span class="n">path_salida</span><span class="p">)</span>
+        <span class="k">return</span>  <span class="n">path_salida</span>
+
+    <span class="k">if</span> <span class="n">modo</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">==</span><span class="s1">&#39;pc&#39;</span> <span class="ow">or</span> <span class="n">modo</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span><span class="s2">&quot; &quot;</span><span class="p">)</span><span class="o">==</span><span class="s1">&#39;parcialmente compensatorio&#39;</span><span class="p">:</span>
+        <span class="n">path_salida</span><span class="o">=</span> <span class="n">directorio_salida</span><span class="o">+</span> <span class="n">nombre_final</span><span class="o">+</span><span class="s2">&quot;.tif&quot;</span>
+        <span class="n">ecuacion</span> <span class="o">=</span> <span class="n">ecuacion_p_comp</span><span class="p">(</span><span class="n">pesos</span><span class="p">)</span>
+        <span class="n">crea_capa</span><span class="p">(</span><span class="n">ecuacion</span><span class="p">,</span><span class="n">capas_listas</span><span class="p">,</span><span class="n">path_salida</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">modo</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">==</span><span class="s1">&#39;nc&#39;</span> <span class="ow">or</span> <span class="n">modo</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span><span class="s2">&quot; &quot;</span><span class="p">)</span><span class="o">==</span><span class="s1">&#39;no compensatorio&#39;</span><span class="p">:</span>
+        <span class="n">path_salida</span><span class="o">=</span> <span class="n">directorio_salida</span><span class="o">+</span> <span class="n">nombre_final</span><span class="o">+</span><span class="s2">&quot;.tif&quot;</span>
+        <span class="n">ecuacion</span> <span class="o">=</span> <span class="n">ecuacion_no_comp</span><span class="p">(</span><span class="n">pesos</span><span class="p">)</span>
+        <span class="n">crea_capa</span><span class="p">(</span><span class="n">ecuacion</span><span class="p">,</span><span class="n">capas_listas</span><span class="p">,</span><span class="n">path_salida</span><span class="p">)</span></div>
+
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, LANCIS
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
