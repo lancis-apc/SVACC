@@ -292,7 +292,7 @@ de decisión específicado para el análisis espacial multicriterio</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parámetros:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Parámetros:</th><td class="field-body"><ul class="first simple">
 <li><strong>modo</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(en Python versión 3.8)"><em>str</em></a>) – modo de decisión a elegir escriba <strong>clp</strong> para combinación líneal ponderada, <strong>pc</strong> para parcialmente compensatorio o <strong>nc</strong> para no compensatorio</li>
 <li><strong>dict_capas</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(en Python versión 3.8)"><em>dict</em></a>) – diccionario que contiene el nombre de la capa la ruta y su peso</li>
 <li><strong>nombre_final</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(en Python versión 3.8)"><em>str</em></a>) – nombre del resultado de la integración ej: exposicion</li>
@@ -300,10 +300,15 @@ de decisión específicado para el análisis espacial multicriterio</p>
 </ul>
 </td>
 </tr>
+<tr class="field-even field"><th class="field-name">Devuelve:</th><td class="field-body"><p class="first">capa raster, resultado de la integración según el modo de decisión elegido</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Tipo del valor devuelto:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first last">raster</p>
+</td>
+</tr>
 </tbody>
 </table>
-<p>:returns:capa raster, resultado de la integración según el modo de decisión elegido
-:rtype: raster</p>
 </dd></dl>
 
 <dl class="function">
@@ -323,14 +328,16 @@ de decisión específicado para el análisis espacial multicriterio</p>
 <dl class="function">
 <dt id="clpqgis3.norm_estandar">
 <code class="descclassname">clpqgis3.</code><code class="descname">norm_estandar</code><span class="sig-paren">(</span><em>path_raster</em>, <em>path_raster_n</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/clpqgis3.html#norm_estandar"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#clpqgis3.norm_estandar" title="Enlazar permanentemente con esta definición">¶</a></dt>
-<dd><p>Esta función normaliza línealmente una capa tipo raster
-:param path_raster: ruta de la capa a normalizar:
-:type path_raster: str</p>
+<dd><p>Esta función normaliza línealmente una capa tipo raster</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parámetros:</th><td class="field-body"><strong>path_raster_n</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(en Python versión 3.8)"><em>str</em></a>) – ruta de la capa normalizada</td>
+<tr class="field-odd field"><th class="field-name">Parámetros:</th><td class="field-body"><ul class="first last simple">
+<li><strong>path_raster</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(en Python versión 3.8)"><em>str</em></a>) – ruta de la capa a normalizar:</li>
+<li><strong>path_raster_n</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(en Python versión 3.8)"><em>str</em></a>) – ruta de la capa normalizada</li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>
@@ -353,9 +360,15 @@ de decisión específicado para el análisis espacial multicriterio</p>
 <dl class="function">
 <dt id="clpqgis3.raster_nodata">
 <code class="descclassname">clpqgis3.</code><code class="descname">raster_nodata</code><span class="sig-paren">(</span><em>path_raster</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/clpqgis3.html#raster_nodata"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#clpqgis3.raster_nodata" title="Enlazar permanentemente con esta definición">¶</a></dt>
-<dd><p>Esta función regresa el valor NoData de una capa raster
-:param path_raster: ruta de la capa raster:
-:type path_raster: str</p>
+<dd><p>Esta función regresa el valor NoData de una capa raster</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parámetros:</th><td class="field-body"><strong>path_raster</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(en Python versión 3.8)"><em>str</em></a>) – ruta de la capa raster:</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="function">
@@ -376,11 +389,19 @@ de decisión específicado para el análisis espacial multicriterio</p>
 <dt id="clpqgis3.set_nulls">
 <code class="descclassname">clpqgis3.</code><code class="descname">set_nulls</code><span class="sig-paren">(</span><em>map</em>, <em>output</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/clpqgis3.html#set_nulls"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#clpqgis3.set_nulls" title="Enlazar permanentemente con esta definición">¶</a></dt>
 <dd><p>Esta función permite cambiar el valor de nodata de una capa
-por -9999.0 
-:param map: ruta de la capa tif
-:type map: str
-:param output: ruta de la capa con valor de nodata de -9999.0
-:type output: str</p>
+por -9999.0</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parámetros:</th><td class="field-body"><ul class="first last simple">
+<li><strong>map</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(en Python versión 3.8)"><em>str</em></a>) – ruta de la capa tif</li>
+<li><strong>output</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(en Python versión 3.8)"><em>str</em></a>) – ruta de la capa con valor de nodata de -9999.0</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>
