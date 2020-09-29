@@ -51,9 +51,18 @@ es un diccionario en python, su estructura debe ser la siguiente:
         
 donde : **nombre_criterio_1** es el nombre del criterio, **ruta** es la ruta de la capa tif y **peso** es el valor del peso correspondiente al modelo.
 
+Modo de decisión
+========================
+En la función **multicriteria_gis** se requiere que se específique el modo de decisión 
+
+
+- Para elegir la combinación líneal ponderada escriba 'clp'
+- Para elegir el modo parcialmente compensatorio escriba 'pc'
+- Para elegir el modo no compensatorio escriba 'nc'
+
 
 Documentación dentro del código
-==================================
+-----------------------------------------
 
 .. automodule:: clpqgis3
     :members:

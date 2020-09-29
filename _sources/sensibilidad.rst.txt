@@ -115,5 +115,5 @@ Bibliografía
 Documentación dentro del código
 ==================================
 
-.. .. automodule:: sensibilidad
-..     :members:
+.. automodule:: sensibilidad
+    :members:
