@@ -9,8 +9,8 @@ Guía de usuario de SIGfunction
 
 SIGfunction es una herramienta que genera una representación de la condición o estado de un atributo del territorio en un valor numérico que denota su capacidad para satisfacer un objetivo o meta en particular. 
 
-SIGfunction emplea una expresión matemática para transformar la escala natural que mide el es-tado de un atributo del territorio a una escala de valor entre cero y uno, que representa un gradiente de un estado anti-ideal a uno ideal de acuerdo con su contribución para el cumplimiento del objetivo o me-ta (0 representando la condición más indeseable y 1 la más deseable).
-Existen dos tipos generales de funciones de valor: nominales y continuas. Las funciones de valor nominales se usan para representar los diferentes estados de variables que se identifican con categorías o nombres. Por ejemplo, el tipo de vegetación que se representa en categorías como bosque o selva; o el tipo de suelo, que se representa en categorías como xerosol o regosol. Las funciones de valor conti-nuas se usan para representar los diferentes estados de variables cuyo valor cambia en forma gradual. Por ejemplo, precipitación (en mm) o distancia a una carretera (en km). Estas funciones se pueden re-presentar a través de diversos tipos de curvas.
+SIGfunction emplea una expresión matemática para transformar la escala natural que mide el estado de un atributo del territorio a una escala de valor entre cero y uno, que representa un gradiente de un estado anti-ideal a uno ideal de acuerdo con su contribución para el cumplimiento del objetivo o meta (0 representando la condición más indeseable y 1 la más deseable).
+Existen dos tipos generales de funciones de valor: nominales y continuas. Las funciones de valor nominales se usan para representar los diferentes estados de variables que se identifican con categorías o nombres. Por ejemplo, el tipo de vegetación que se representa en categorías como bosque o selva; o el tipo de suelo, que se representa en categorías como xerosol o regosol. Las funciones de valor continuas se usan para representar los diferentes estados de variables cuyo valor cambia en forma gradual. Por ejemplo, precipitación (en mm) o distancia a una carretera (en km). Estas funciones se pueden representar a través de diversos tipos de curvas.
 
 SIGfunction se utiliza para desarrollar funciones de valor continuas.
 
@@ -49,7 +49,7 @@ Al hacer clic en el botón de inicio |b_inicio|, se despliega una ventana con tr
 3.1.2 Generar función de valor
 ------------------------------
 
-Al hacer clic en el botón generar función de valor |b_aplicar|, se genera el mapa que resulta de la aplicación de SIGfunction y se despliega en el visualizador de capas. Para que se genere el mapa, el usuario debió haber seleccio-nado una función de valor y especificado los parámetros (ver apartado 3.5.1.1).
+Al hacer clic en el botón generar función de valor |b_aplicar|, se genera el mapa que resulta de la aplicación de SIGfunction y se despliega en el visualizador de capas. Para que se genere el mapa, el usuario debió haber seleccionado una función de valor y especificado los parámetros (ver apartado 3.5.1.1).
 
 .. imagen:: /imagenes/mapa_generar_fv.png
 
@@ -170,7 +170,7 @@ Al hacer clic sobre el botón de alejar |b_menos|, |no_2| se disminuye el zoom e
  
 Al hacer clic en el botón de norte geográfico |b_norte|, se reajusta la orientación del visualizador de capas a la posición original.  
 
-.. imagen:: /imagenes/mapa_ajustar_norte_sigfunction
+.. imagen:: /imagenes/mapa_ajustar_norte_sigfunction.png
 
 3.4.4	Guía rápida de controles de despliegue
 ----------------------------------------------

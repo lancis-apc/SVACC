@@ -5,7 +5,7 @@ Guía de usuario de SIGnificance
 *******************************
 
 1 Introducción
-****************
+**************
 
 SIGnificance es una herramienta que agrega y sintetiza indicadores de impacto de distintos componentes ambientales en un índice único de significancia. 
 

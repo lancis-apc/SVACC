@@ -1,13 +1,14 @@
 Lizmap-QGIS
-###############
+###########
 
 Guía de usuario de Lizmap-QGIS
-################################
+******************************
 
 1 Introducción
-***************
+**************
+
 1.1 ¿Por qué es necesario Lizmap?
-================================
+=================================
 
 2 Organización del manual 
 *************************
@@ -18,7 +19,7 @@ Este manual tiene el propósito de mostrar como publicar proyectos mediante el c
 ******************************************************
 
 3.1 Crear un proyecto
-======================
+=====================
 
 Crear un proyecto en QGIS y agregar los datos necesarios estos pueden ser de diferente tipo, por ejemplo:
  
@@ -207,7 +208,7 @@ La extensión del mapa inicial (inicial map extent)
  - de forma predeterminada, la extensión inicial es la máxima.
 
 4.5 Configurar las capas base
-========================================
+=============================
 
 A menudo es útil separar las capas base como referencia y las capas temáticas en un mapa web. En Lizmap, se pueden usar grupos o capas como capas base. También es posible utilizar servicios externos en el mapa web.
 Las capas base no forman parte de la leyenda y se presentan como una lista.

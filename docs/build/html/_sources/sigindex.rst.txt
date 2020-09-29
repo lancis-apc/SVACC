@@ -1,5 +1,5 @@
 SIGindex
-##########
+########
 
 Guía de usuario de SIGindex
 ***************************
@@ -7,7 +7,7 @@ Guía de usuario de SIGindex
 1 Introducción
 ****************
 
-SIGIndex es una herramienta que integra mapas de aptitud a partir de funciones de valor. mediante una interfaz amigable.
+SIGIndex es una herramienta que integra mapas de aptitud a partir de funciones de valor mediante una interfaz amigable.
 
 SIGIndex tiene tres opciones de modos de decisión: el compensatorio (combinación lineal ponderada), el no compensatorio y el parcialmente compensatorio 
 
