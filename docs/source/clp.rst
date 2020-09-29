@@ -52,3 +52,8 @@ es un diccionario en python, su estructura debe ser la siguiente:
 donde : **nombre_criterio_1** es el nombre del criterio, **ruta** es la ruta de la capa tif y **peso** es el valor del peso correspondiente al modelo.
 
 
+Documentación dentro del código
+==================================
+
+.. automodule:: clpqgis3
+    :members:
