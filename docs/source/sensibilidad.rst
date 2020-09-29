@@ -1,8 +1,8 @@
 Análisis de sensibilidad
 #############################
 
-El análisis de sensibilidad por remoción de capas mide la importancia de cada mapa que se utiliza en un índice cartográfico como el que resulta de la aplicación de la combinación lineal ponderada. 
-Este análisis, sirve para estimar el grado de influencia de cada mapa que sirve de insumo en un análisis geoespacial.
+El análisis de sensibilidad mide la importancia de cada capa que se utiliza en índices como los que resultan de la aplicación de la combinación lineal ponderada. 
+Este análisis, sirve para estimar el grado de influencia de cada capa que sirve de insumo en un análisis geoespacial.
 
 
 
