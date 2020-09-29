@@ -34,8 +34,10 @@ def set_nulls(map,output):
     '''
     Esta función permite cambiar el valor de nodata de una capa
     por -9999.0 
+
     :param map: ruta de la capa tif
     :type map: str
+    
     :param output: ruta de la capa con valor de nodata de -9999.0
     :type output: str 
 
@@ -537,6 +539,7 @@ def cargar_raster(path_raster):
 def raster_nodata(path_raster):
     '''
     Esta función regresa el valor NoData de una capa raster
+
     :param path_raster: ruta de la capa raster:
     :type path_raster: str
     '''
@@ -556,6 +559,7 @@ def raster_nodata(path_raster):
 def norm_estandar(path_raster, path_raster_n):
     '''
     Esta función normaliza línealmente una capa tipo raster
+
     :param path_raster: ruta de la capa a normalizar:
     :type path_raster: str
 
@@ -582,7 +586,7 @@ def multicriteria_gis(modo, dict_capas,nombre_final,directorio_salida):
     :param directorio_salida: ruta del directorio de salida
     :type directorio_salida: str
 
-    :returns:capa raster, resultado de la integración según el modo de decisión elegido
+    :returns: capa raster, resultado de la integración según el modo de decisión elegido
     :rtype: raster
     '''
 
