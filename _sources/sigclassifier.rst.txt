@@ -1,5 +1,5 @@
 SIGclassifier
-#############
+##############
 
 Guía de usuario de SIGclassifier
 ********************************
@@ -8,7 +8,7 @@ Guía de usuario de SIGclassifier
 ***************
 
 1.1	¿Por qué es necesario SIGclassifier?
-=========================================
+========================================
 
 2 Organización del manual 
 *************************
@@ -70,7 +70,7 @@ Hacer clic en cualquier parte del visualizador de capas, mover el ratón en cual
 
 3.2.2 Rotar el mapa
 -------------------
-Hacer clic en cualquier parte del visualizador de capas, sin soltar el ratón, oprimir la tecla Shift y rotar la capa hasta llegar a la orientación deseada. 
+Hacer clic en cualquier parte del visualizador de capas, sin soltar el ratón, oprimir la tecla *Shift* y rotar la capa hasta llegar a la orientación deseada. 
 Al rotar el mapa, |no_1| aparece el botón del norte geográfico rotado |b_norterotado|. Al hacer clic sobre el norte geográfico, se reposiciona el mapa a la orientación original.    
 
 .. imagen:: /imagenes/mapa_rotado_sigclassifier.png
