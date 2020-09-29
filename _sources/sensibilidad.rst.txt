@@ -1,6 +1,8 @@
 Análisis de sensibilidad
 #############################
 
+El análisis de sensibilidad por remoción de capas mide la importancia de cada mapa que se utiliza en un índice cartográfico como el que resulta de la aplicación de la combinación lineal ponderada. 
+Este análisis, sirve para estimar el grado de influencia de cada mapa que sirve de insumo en un análisis geoespacial.
 
 
 
@@ -16,7 +18,7 @@ Para asegurar la ejecución correcta del código es importante
 verificar la instalación y funcionamiento de los siguientes elementos:
 
 
-- Qgis 3.4 o superior y librerías de Osgeo4W
+- Qgis 3.10  o superior y librerías de Osgeo4W
 - Librerías python:
 
 
