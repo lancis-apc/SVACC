@@ -92,9 +92,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#requerimientos-generales-de-los-insumos">Requerimientos generales de los insumos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#requerimientos-especificos">Requerimientos específicos</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#diccionario-de-insumos">Diccionario de insumos</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-clpqgis3">Documentación dentro del código</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modo-de-decision">Modo de decisión</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#module-clpqgis3">Documentación dentro del código</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="webershape.html">Categorización de capas shape con Weber-Fechner</a></li>
@@ -214,8 +215,18 @@ es un diccionario en python, su estructura debe ser la siguiente:</p>
 </div>
 <p>donde : <strong>nombre_criterio_1</strong> es el nombre del criterio, <strong>ruta</strong> es la ruta de la capa tif y <strong>peso</strong> es el valor del peso correspondiente al modelo.</p>
 </div>
+<div class="section" id="modo-de-decision">
+<h3>Modo de decisión<a class="headerlink" href="#modo-de-decision" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>En la función <strong>multicriteria_gis</strong> se requiere que se específique el modo de decisión</p>
+<ul class="simple">
+<li>Para elegir la combinación líneal ponderada escriba “clp”</li>
+<li>Para elegir el modo parcialmente compensatorio escriba “pc”</li>
+<li>Para elegir el modo no compensatorio escriba “nc”</li>
+</ul>
+</div>
+</div>
 <div class="section" id="module-clpqgis3">
-<span id="documentacion-dentro-del-codigo"></span><h3>Documentación dentro del código<a class="headerlink" href="#module-clpqgis3" title="Enlazar permanentemente con este título">¶</a></h3>
+<span id="documentacion-dentro-del-codigo"></span><h2>Documentación dentro del código<a class="headerlink" href="#module-clpqgis3" title="Enlazar permanentemente con este título">¶</a></h2>
 <dl class="function">
 <dt id="clpqgis3.cargar_raster">
 <code class="descclassname">clpqgis3.</code><code class="descname">cargar_raster</code><span class="sig-paren">(</span><em>path_raster</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/clpqgis3.html#cargar_raster"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#clpqgis3.cargar_raster" title="Enlazar permanentemente con esta definición">¶</a></dt>
@@ -291,6 +302,8 @@ de decisión específicado para el análisis espacial multicriterio</p>
 </tr>
 </tbody>
 </table>
+<p>:returns:capa raster, resultado de la integración según el modo de decisión elegido
+:rtype: raster</p>
 </dd></dl>
 
 <dl class="function">
@@ -370,7 +383,6 @@ por -9999.0
 :type output: str</p>
 </dd></dl>
 
-</div>
 </div>
 </div>
 

@@ -581,6 +581,9 @@ def multicriteria_gis(modo, dict_capas,nombre_final,directorio_salida):
 
     :param directorio_salida: ruta del directorio de salida
     :type directorio_salida: str
+
+    :returns:capa raster, resultado de la integración según el modo de decisión elegido
+    :rtype: raster
     '''
 
     lista_inputs = [] 
