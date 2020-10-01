@@ -24,9 +24,7 @@ Donde:
 
 
 
-Descargar el código de ejemplo 
-
-:download:`owa_raster.py <../../codigos/owa_raster.py>`.
+Descargar el código :download:`owa_raster.py <../../codigos/owa_raster.py>`.
 
 
 Requerimientos generales 

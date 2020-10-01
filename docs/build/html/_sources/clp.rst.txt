@@ -17,6 +17,9 @@ verificar la instalación y funcionamiento de los siguientes elementos:
  - string
 
 
+Descargar el código :download:`owa_raster.py <../../codigos/clpqgis3.py>`.
+
+
 Requerimientos generales de los insumos
 ----------------------------------------
 
