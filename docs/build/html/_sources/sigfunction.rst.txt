@@ -56,7 +56,7 @@ Al hacer clic en el botón generar función de valor |b_aplicar|, se genera el m
 3.1.3 Exportar
 --------------
 
-Al hacer clic en el botón de exportar |b_exportar|, se descarga un shapefile de las unidades naturales en formato **.zip**, el cual contiene la capa ráster .tif y el metadato asociado en formato .xml, producto del uso del SIGfunction. Para que se genere el shapefile de resultados, el usuario debió haber seleccionado una función de valor, especificado los parámetros y hacer clic en el botón de Generar Función de Valor |b_aplicar| (ver apartado 3.5.1.1). 
+Al hacer clic en el botón de exportar |b_exportar|, se descarga un archivo en formato **.zip**, el cual contiene la capa ráster .tif y el metadato asociado en formato .xml, producto del uso del SIGfunction. Para que se genere el mapa, el usuario debió haber seleccionado una función de valor, especificado los parámetros y hacer clic en el botón de Generar Función de Valor |b_aplicar| (ver apartado 3.5.1.1). 
 
 .. imagen:: /imagenes/mapa_b_exportar_sigfunction.png
 
@@ -222,7 +222,7 @@ Al seleccionar las funciones **Cóncava Creciente**, **Cóncava Decreciente**, *
 3.5.1.5	Funciones lineal y lineal invertida
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Al seleccionar las funciones **Lineal** y **Lineal Invertida**, se deben ingresar en los cuadros de texto: |no_1| el valor máximo y |no_2| el valor mínimo que puede tener el atributo en el territorio analizado, así como |no_3| el valor de la pendiente y de |no_4| la ordenada en el origen.
+Al seleccionar las funciones **Lineal** y **Lineal Invertida**, se deben ingresar en los cuadros de texto: |no_1| el valor máximo y |no_2| el valor mínimo que puede tener el atributo en el territorio analizado. 
 
 .. imagen:: /imagenes/mapa_lineal.png   
  

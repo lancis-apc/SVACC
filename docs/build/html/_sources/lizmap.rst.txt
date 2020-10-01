@@ -13,7 +13,7 @@ Guía de usuario de Lizmap-QGIS
 2 Organización del manual 
 *************************
 
-Este manual tiene el propósito de mostrar como publicar proyectos mediante el complemento de QGIS: Lizmap, mediante (1) la explicación de como preparar un proyecto QGIS para publicarlo en la web, (2) como configurar un proyecto para Lizmap y (3) una explicación de las funciones avanzadas.
+Este manual tiene el propósito de mostrar como publicar proyectos mediante el complemento de QGIS: Lizmap, mediante (1) la explicación de como preparar un proyecto QGIS para publicarlo en la web y  (2) como configurar un proyecto para Lizmap.
 
 3 Preparar un proyecto QGIS para publicarlo en la Web
 ******************************************************
@@ -62,9 +62,11 @@ Configurar el sistema de referencia de coordenadas, CRS, del proyecto:
 
 Seleccionar el CRS del mapa web, por ejemplo:
 
- - EPSG: 3857 para Google Mercator
- - EPSG: 2154 para Lambert 93
+ - EPSG:32616 - WGS 84 / UTM zone 16N - Proyectado
+ - EPSG:4326 - WGS 84
  - etc
+
+.. imagen:: /imagenes/fi_imagen1.png 
 
 Configurar los parámetros de la Web de Servicios Geográficos (Web Map Services (WMS)) con la pestaña del servidor de QGIS (acceder a ella desde el menú Proyecto ‣ Propiedades del proyecto ‣ Servidor de QGIS):
 
@@ -79,6 +81,8 @@ Configurar los parámetros de la Web de Servicios Geográficos (Web Map Services
  - Excluir composiciones y capas si los datos no se pueden publicar en WMS
  - Habilitar las capas que desea publicar WFS y WCS
 
+.. imagen:: /imagenes/fi_imagen2.png 
+
 3.3 Configurar las capas para la web
 =======================================
 
@@ -88,6 +92,7 @@ En la ventana Propiedades de capa, la pestaña Metadatos permite configurar much
  - Especificar la atribución para respetar la licencia de los datos
  - Agregar la URL del registro de metadatos si está disponible
 
+.. imagen:: /imagenes/fi_imagen3.png 
 
 4 Configurar el proyecto para Lizmap
 **************************************
@@ -104,6 +109,8 @@ Para instalarlo seguir el mismo procedimiento de instalación que el de cualquie
 
 El complemento aparecerá en el menú y en la barra de herramientas Web 
 
+.. imagen:: /imagenes/fi_imagen4.png  
+
 4.2 Organización del complemento Lizmap
 ========================================
 
@@ -112,16 +119,16 @@ El complemento está organizado en 13 pestañas:
 - Map options: las opciones generales del mapa
 - Layers: las opciones de cada capa
 - Baselayers: las capas base utilizadas en la Web
-- Locate by layer: 
+- Locate by layer: la lista desplegable que da la capacidad de hacer zoom en uno o más objetos espaciales de la capa
 - Attribute table: las tablas de atributos de las capas agregadas
-- Layer editing: 
-- Tooltip layers: 
-- Filter layer by user:
-- Dataviz:
-- Time manager:
-- Atlas:
-- Filter data with form:
-- Log: muestra información de las acciones realizadas
+- Layer editing: las capacidades de edición para cada capa
+- Tooltip layers: la información sobre las herramientas del mapa disponibles para el usuario
+- Filter layer by user: los filtros aplicados para mostrar a los usuarios
+- Dataviz: la creación de gráficas a partir de capas
+- Time manager: las animaciones a partir de las capas vectoriales que contengan un atributo de fecha u hora 
+- Atlas: la configuración de los atributos de una capa para hacer una secuencia 
+- Filter data with form: los formularios que permite buscar entre los datos de una capa 
+- Log: la información de las acciones realizadas
 
 Y tiene 4 botones de acción:
 
@@ -135,6 +142,8 @@ Y tiene 4 botones de acción:
 
 La configuración de la capas se realiza en la pestaña Layers
 Esta pestaña muestra el árbol de capas del proyecto con la misma organización que se define en el panel Capas. Puede seleccionar uno de los elementos del árbol, una capa o grupo, y luego configurar las opciones para el grupo o capa seleccionados.
+
+.. imagen:: /imagenes/fi_imagen5.png 
 
 Información sobre grupos y capas:
 
@@ -157,6 +166,8 @@ Opciones de capas:
   - png; mode = 8bit: formato de imagen muy ligero, el panel de color se restringe al máximo con transparencia, posible degradación de la imagen
   - jpeg: formato de imagen claro sin transparencia con pérdida de calidad
 
+.. imagen:: /imagenes/fi_imagen6.png 
+
 Si la capa la proporciona un servicio WMS y es compatible con el sistema de referencia de coordenadas del mapa web, es posible solicitar imágenes directamente al servidor WMS. Esto reduce la carga de QGIS-Server y optimiza Lizmap. Esta opción está disponible en el grupo de capas WMS de terceros.
 
 Opciones de grupo:
@@ -174,6 +185,8 @@ Opciones de grupo:
 ========================================
 
 La pestaña Mapa le permite habilitar o deshabilitar las herramientas básicas de Lizmap, eligiendo escalas y la extensión inicial.
+
+.. imagen:: /imagenes/fi_imagen7.png  
 
 Las opciones genéricas (generic options):
 
@@ -217,6 +230,8 @@ Las capas base no forman parte de la leyenda y se presentan como una lista.
 
 La pestaña Baselayers permite agregar servicios externos como capa base y una capa base vacía. La capa base vacía mostrará capas temáticas sobre el color de fondo del proyecto.
 
+.. imagen:: /imagenes/fi_imagen8.png 
+
 4.5.1 Las capas base disponibles
 ---------------------------------
 
@@ -247,32 +262,6 @@ La pestaña Baselayers permite agregar servicios externos como capa base y una c
 
 .. note:: Si elige una capa base externa, el mapa se mostrará en Google Mercator (EPSG: 3857 o EPSG: 900913), las escalas son las de los servicios externos y QGIS-Server realizará una reproyección al vuelo.
 Por lo tanto, es necesario preparar el proyecto QGIS en consecuencia.
-
-5 Publicar el mapa por FTP Server
-**************************************
-
-Lizmap se basa en el sistema de repositorios. Para publicar un mapa en Lizmap, es suficiente con asegurarse de que el contenido del directorio local que contiene los datos y los proyectos QGIS se reproduzca exactamente idéntico en el repositorio del servidor correspondiente.
-Para ello, es necesario sincronizar el directorio local con el del servidor cada vez que actualice el proyecto QGIS, modifique la configuración de Lizmap con el complemento o agregue archivos en el directorio local.
-
-.. note:: Si está trabajando localmente, dado que Lizmap Web Client está instalado en la misma máquina que usa para QGIS, no necesita sincronizar sus archivos con FTP. Esta configuración solo debe existir para realizar pruebas.
-
-.. note:: Puede utilizar cualquier herramienta y protocolo de sincronización (FTP, FTPS, SFTP, rsync, unison, etc.).
-
-6 Utilizar un FTP para clientes
-**************************************
-
-FTP permite acceder a archivos desde un servidor, recuperarlos y agregar documentos y/o carpetas. Por lo tanto, se puede utilizar para sincronizar el directorio local con el del servidor donde se encuentra Lizmap Web Client. Este protocolo es un estándar web que puede explotarse a través de muchos clientes FTP.
-Puede utilizar alguna de las siguientes extensiones o alguna que utilice habitualmente:
-
-  - FireFTP: complemento de Firefox
-  - Filezilla: software multiplataforma gratuito (Windows, MacOS, Linux)
-  - WinSCP: software gratuito para Windows
-
- Puede utilizar estas herramientas para realizar cambios manuales en el directorio remoto:
-  - hacer una copia de seguridad
-  - eliminar contenido
-  - sobrescribir archivos manualmente: proyecto QGIS (.qgs) y configuración de Lizmap (.qgs.cfg).
-
 
 7	Referencias
 **************************************

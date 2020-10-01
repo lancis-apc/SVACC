@@ -43,7 +43,7 @@ Al hacer clic en el botón generar función de valor |b_aplicar|, se genera el m
 3.1.3 Exportar
 --------------
 
-Al hacer clic en el botón de exportar |b_exportar|, se descarga un shapefile de las unidades naturales en formato **.zip**, el cual contiene la capa ráster .tif y el metadato asociado en formato .xml, producto del uso del SIGfunctionD. Para que se genere este archivo, el usuario debe haber definido los valores originales y de la función de valor (ver apartado 3.5.1.1).
+Al hacer clic en el botón de exportar |b_exportar|, se descarga un archivo en formato **.zip**, el cual contiene la capa ráster .tif y el metadato asociado en formato .xml, producto del uso del SIGfunctionD. Para que se genere el mapa, el usuario debe haber seleccionado una función de valor, especificando los parámetros y hacer clic en el botón de Generar Función de Valor (ver apartado 3.5.1.1).
 
 .. imagen:: /imagenes/mapa_b_exportar_sigfunctiond.png
 

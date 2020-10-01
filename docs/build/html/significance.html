@@ -38,7 +38,7 @@
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
     <link rel="next" title="Lizmap-QGIS" href="lizmap.html" />
-    <link rel="prev" title="SIGclassifier" href="sigclassifier.html" /> 
+    <link rel="prev" title="SIGzoning" href="sigzoning.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -97,6 +97,7 @@
 <li class="toctree-l1"><a class="reference internal" href="sigfunctiond.html">Sigfunctiond</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sigindex.html">SIGindex</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sigclassifier.html">SIGclassifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sigzoning.html">SIGzoning</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">SIGnificance</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#guia-de-usuario-de-significance">Guía de usuario de SIGnificance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#introduccion">1 Introducción</a><ul>
@@ -160,6 +161,15 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="lizmap.html">Lizmap-QGIS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Syllabus:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="s_sigfunction_sigfunctiond.html">SIGfunction y SIGfunctionD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="s_sigindex.html">SIGindex</a></li>
+<li class="toctree-l1"><a class="reference internal" href="s_sigclassifier.html">SIGclassifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="s_significance.html">SIGnificance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="s_lizmap.html">Lizmap-QGIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="s_geonetwork.html">Geonetwork</a></li>
 </ul>
 
             
@@ -448,7 +458,7 @@ Al hacer clic en el botón <a class="reference internal" href="_images/fi_amenos
 <div class="section" id="shapefile-de-unidades-naturales-comprimido-en-formato-zip">
 <h4>4.1.1 Shapefile de unidades naturales comprimido en formato .zip<a class="headerlink" href="#shapefile-de-unidades-naturales-comprimido-en-formato-zip" title="Enlazar permanentemente con este título">¶</a></h4>
 <ul class="simple">
-<li>Shapefile de unidades naturales que se compone de un mínimo de cinco archivos con las extensiones: nombre**.shp**, nombre**.shx**, nombre**.dbf**, nombre**.prj** y nombre.**xml**. Puede contener más archivos con extensiones adicionales dependiendo de la forma como se creó el shapefile. Para más información revisar: <a class="reference external" href="https://desktop.arcgis.com/es/arcmap/10.3/manage-data/shapefiles/shapefile-file-extensions.htm">https://desktop.arcgis.com/es/arcmap/10.3/manage-data/shapefiles/shapefile-file-extensions.htm</a></li>
+<li>Shapefile de unidades naturales que se compone de un mínimo de cinco archivos con las extensiones: nombre <strong>.shp</strong>, nombre <strong>.shx</strong>, nombre <strong>.dbf</strong>, nombre <strong>.prj</strong> y nombre. <strong>xml</strong>. Puede contener más archivos con extensiones adicionales dependiendo de la forma como se creó el shapefile. Para más información revisar: <a class="reference external" href="https://desktop.arcgis.com/es/arcmap/10.3/manage-data/shapefiles/shapefile-file-extensions.htm">https://desktop.arcgis.com/es/arcmap/10.3/manage-data/shapefiles/shapefile-file-extensions.htm</a></li>
 <li>Archivo <strong>.dbf</strong> que contiene la tabla de atributos debe incluir: <a class="reference internal" href="_images/fi_uno.png"><img alt="no_1" src="_images/fi_uno.png" style="width: 22.5px; height: 26.5px;" /></a> un campo de número identificador, <a class="reference internal" href="_images/fi_dos.png"><img alt="no_2" src="_images/fi_dos.png" style="width: 22.0px; height: 27.0px;" /></a> un campo con el nombre descriptivo de las unidades naturales y <a class="reference internal" href="_images/fi_tres.png"><img alt="no_3" src="_images/fi_tres.png" style="width: 22.5px; height: 27.0px;" /></a> un campo por cada índice de impacto y su contraparte de índice de vulnerabilidad. <strong>Los valores de los campos de los índices de impacto y vulnerabilidad deben ser numéricos y normalizados entre cero y uno.</strong></li>
 </ul>
 <img alt="_images/fi_shape.png" src="_images/fi_shape.png" />
@@ -456,7 +466,7 @@ Al hacer clic en el botón <a class="reference internal" href="_images/fi_amenos
 <div class="section" id="shapefile-del-plan-maestro-o-proyecto-arquitectonico-insumo-opcional">
 <h4>4.1.2 Shapefile del plan maestro o proyecto arquitectónico (insumo opcional)<a class="headerlink" href="#shapefile-del-plan-maestro-o-proyecto-arquitectonico-insumo-opcional" title="Enlazar permanentemente con este título">¶</a></h4>
 <ul class="simple">
-<li>El shapefile que se compone de un mínimo de cinco archivos con las extensiones: nombre**.shp**, nombre**.shx**, nombre**.dbf**, nombre**.prj** y nombre**.xml.**</li>
+<li>El shapefile que se compone de un mínimo de cinco archivos con las extensiones: nombre <strong>.shp</strong>, nombre <strong>.shx</strong>, nombre <strong>.dbf</strong>, nombre <strong>.prj</strong> y nombre <strong>.xml.</strong></li>
 </ul>
 </div>
 </div>
@@ -465,7 +475,7 @@ Al hacer clic en el botón <a class="reference internal" href="_images/fi_amenos
 <div class="section" id="id1">
 <h4>4.2.1 Shapefile de unidades naturales comprimido en formato .zip<a class="headerlink" href="#id1" title="Enlazar permanentemente con este título">¶</a></h4>
 <ul class="simple">
-<li>Shapefile de unidades naturales que se compone de un mínimo de cinco archivos con las extensiones: nombre**.shp**, nombre**.shx**, nombre**.dbf**, nombre**.prj** y nombre**.xml**. Puede contener más archivos con extensiones adicionales dependiendo de la forma como se creó el shapefile. Para más información revisar: <a class="reference external" href="https://desktop.arcgis.com/es/arcmap/10.3/manage-data/shapefiles/shapefile-file-extensions.htm">https://desktop.arcgis.com/es/arcmap/10.3/manage-data/shapefiles/shapefile-file-extensions.htm</a></li>
+<li>Shapefile de unidades naturales que se compone de un mínimo de cinco archivos con las extensiones: nombre <strong>.shp</strong>, nombre <strong>.shx</strong>, nombre <strong>.dbf</strong>, nombre <strong>.prj</strong> y nombre <strong>.xml</strong>. Puede contener más archivos con extensiones adicionales dependiendo de la forma como se creó el shapefile. Para más información revisar: <a class="reference external" href="https://desktop.arcgis.com/es/arcmap/10.3/manage-data/shapefiles/shapefile-file-extensions.htm">https://desktop.arcgis.com/es/arcmap/10.3/manage-data/shapefiles/shapefile-file-extensions.htm</a></li>
 <li>Archivo <strong>.dbf</strong> que contiene la tabla de atributos debe incluir: (1) un campo de número identificador, y (2) nombre descriptivo de las unidades naturales</li>
 </ul>
 </div>
@@ -479,7 +489,7 @@ Al hacer clic en el botón <a class="reference internal" href="_images/fi_amenos
 <div class="section" id="id2">
 <h4>4.2.3 Shapefile del plan maestro o proyecto arquitectónico (insumo opcional)<a class="headerlink" href="#id2" title="Enlazar permanentemente con este título">¶</a></h4>
 <ul class="simple">
-<li>Shapefile que se compone de un mínimo de cinco archivos con las extensiones: nombre**.shp**, nombre**.shx**, nombre**.dbf**, nombre**.prj** y nombre**.xml.**</li>
+<li>Shapefile que se compone de un mínimo de cinco archivos con las extensiones: nombre <strong>.shp</strong>, nombre <strong>.shx</strong>, nombre <strong>.dbf</strong>, nombre <strong>.prj</strong> y nombre <strong>.xml.</strong></li>
 </ul>
 </div>
 </div>
@@ -503,7 +513,7 @@ Al hacer clic en el botón <a class="reference internal" href="_images/fi_amenos
         <a href="lizmap.html" class="btn btn-neutral float-right" title="Lizmap-QGIS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="sigclassifier.html" class="btn btn-neutral float-left" title="SIGclassifier" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="sigzoning.html" class="btn btn-neutral float-left" title="SIGzoning" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
