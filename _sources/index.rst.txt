@@ -18,16 +18,27 @@ Welcome to Sigplanning's documentation!
 
    
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Manuales:
 
    sigfunction
    sigfunctiond
    sigindex
    sigclassifier
+   sigzoning
    significance
    lizmap
 
+.. toctree::
+   :maxdepth: 1
+   :caption: Syllabus:
+
+   s_sigfunction_sigfunctiond
+   s_sigindex
+   s_sigclassifier
+   s_significance
+   s_lizmap
+   s_geonetwork
 
 
 .. Indices and tables

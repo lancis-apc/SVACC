@@ -43,7 +43,7 @@ Al hacer clic en el botón de aplicar clasificador |b_aplicar|, se despliega el 
 3.1.3 Exportar
 --------------
 
-Al hacer clic en el botón de exportar |b_exportar|, se descarga un shapefile de las unidades naturales en formato **.zip**, el cual contiene la capa ráster .tif y el metadato asociado en formato .xml, producto del uso del SIGclassifier. Para que se genere este archivo, el usuario debe haber seleccionado un tipo de clasificador y los parámetros correspondientes (ver apartado 3.5.1.1).
+Al hacer clic en el botón de exportar |b_exportar|, se descarga un archivo en formato **.zip**, el cual contiene la capa ráster .tif y el metadato asociado en formato .xml, producto del uso del SIGclassifier. Para que se genere el mapa, el usuario debe haber seleccionado un tipo de clasificador y los parámetros correspondientes (ver apartado 3.5.1.1).
 
 .. imagen:: /imagenes/mapa_b_exportar_sigclassifier.png
 

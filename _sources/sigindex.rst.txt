@@ -186,7 +186,7 @@ Al hacer clic |no_1| en el botón mostrar/ocultar gradientes de capas |b_gradien
 3.5	Barra de herramientas 
 ===========================
 
-Cuenta con tres herramientas, |no_1| Atributos |b_atributos|, |no_2| Clasificación progresiva |b_factor_progre| y |no_3| Paleta de colores |b_paleta|.
+Cuenta con tres herramientas, |no_1| Atributos |b_atributos|, |no_2| Clasificación progresiva |b_clas_progre| y |no_3| Paleta de colores |b_paleta|.
   
 .. imagen:: /imagenes/mapa_barra_herramienta.png
 
@@ -383,6 +383,9 @@ CONAGUA. 2012. Atlas Digital del Agua México 2012. Sistema Nacional de Informac
 .. |b_factor_progre| image:: /imagenes/fi_b_factorp.png
             :scale: 30
 
+.. |b_clas_progre| image:: /imagenes/fi_b_factorp_sigindex.png
+            :height: 25px
+            :width: 25px             
 
 .. |b_list| image:: /imagenes/fi_lista_despliegue.png
             :height: 25px

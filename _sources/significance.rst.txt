@@ -312,7 +312,7 @@ SIGnificance tiene dos opciones de importación: insumos integrados o insumos de
 4.1.1 Shapefile de unidades naturales comprimido en formato .zip
 ----------------------------------------------------------------
 
-•	Shapefile de unidades naturales que se compone de un mínimo de cinco archivos con las extensiones: nombre**.shp**, nombre**.shx**, nombre**.dbf**, nombre**.prj** y nombre.**xml**. Puede contener más archivos con extensiones adicionales dependiendo de la forma como se creó el shapefile. Para más información revisar: https://desktop.arcgis.com/es/arcmap/10.3/manage-data/shapefiles/shapefile-file-extensions.htm
+•	Shapefile de unidades naturales que se compone de un mínimo de cinco archivos con las extensiones: nombre **.shp**, nombre **.shx**, nombre **.dbf**, nombre **.prj** y nombre. **xml**. Puede contener más archivos con extensiones adicionales dependiendo de la forma como se creó el shapefile. Para más información revisar: https://desktop.arcgis.com/es/arcmap/10.3/manage-data/shapefiles/shapefile-file-extensions.htm
 •	Archivo **.dbf** que contiene la tabla de atributos debe incluir: |no_1| un campo de número identificador, |no_2| un campo con el nombre descriptivo de las unidades naturales y |no_3| un campo por cada índice de impacto y su contraparte de índice de vulnerabilidad. **Los valores de los campos de los índices de impacto y vulnerabilidad deben ser numéricos y normalizados entre cero y uno.** 
 
 .. imagen:: /imagenes/fi_shape.png
@@ -320,7 +320,7 @@ SIGnificance tiene dos opciones de importación: insumos integrados o insumos de
 4.1.2 Shapefile del plan maestro o proyecto arquitectónico (insumo opcional)
 ----------------------------------------------------------------------------
 
-•	El shapefile que se compone de un mínimo de cinco archivos con las extensiones: nombre**.shp**, nombre**.shx**, nombre**.dbf**, nombre**.prj** y nombre**.xml.**  
+•	El shapefile que se compone de un mínimo de cinco archivos con las extensiones: nombre **.shp**, nombre **.shx**, nombre **.dbf**, nombre **.prj** y nombre **.xml.**  
 
 4.2	Insumos desagregados
 ========================
@@ -328,7 +328,7 @@ SIGnificance tiene dos opciones de importación: insumos integrados o insumos de
 4.2.1 Shapefile de unidades naturales comprimido en formato .zip 
 ----------------------------------------------------------------
 
-•	Shapefile de unidades naturales que se compone de un mínimo de cinco archivos con las extensiones: nombre**.shp**, nombre**.shx**, nombre**.dbf**, nombre**.prj** y nombre**.xml**. Puede contener más archivos con extensiones adicionales dependiendo de la forma como se creó el shapefile. Para más información revisar: https://desktop.arcgis.com/es/arcmap/10.3/manage-data/shapefiles/shapefile-file-extensions.htm
+•	Shapefile de unidades naturales que se compone de un mínimo de cinco archivos con las extensiones: nombre **.shp**, nombre **.shx**, nombre **.dbf**, nombre **.prj** y nombre **.xml**. Puede contener más archivos con extensiones adicionales dependiendo de la forma como se creó el shapefile. Para más información revisar: https://desktop.arcgis.com/es/arcmap/10.3/manage-data/shapefiles/shapefile-file-extensions.htm
 •	Archivo **.dbf** que contiene la tabla de atributos debe incluir: (1) un campo de número identificador, y (2) nombre descriptivo de las unidades naturales
 
 4.2.2 Archivo .csv de indicadores
@@ -341,7 +341,7 @@ SIGnificance tiene dos opciones de importación: insumos integrados o insumos de
 4.2.3 Shapefile del plan maestro o proyecto arquitectónico (insumo opcional)
 ----------------------------------------------------------------------------
 
-•	Shapefile que se compone de un mínimo de cinco archivos con las extensiones: nombre**.shp**, nombre**.shx**, nombre**.dbf**, nombre**.prj** y nombre**.xml.**
+•	Shapefile que se compone de un mínimo de cinco archivos con las extensiones: nombre **.shp**, nombre **.shx**, nombre **.dbf**, nombre **.prj** y nombre **.xml.**
 
 5 Ejemplo de uso 
 *******************

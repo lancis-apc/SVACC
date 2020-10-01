@@ -108,8 +108,8 @@ ha procesado cada una de las capas.
 
 .. image:: ../../analisis_sensibilidad/images/ejecucion.JPG
 
-Bibliografía 
-==============
+.. Bibliografía 
+.. ==============
 
 
 Documentación dentro del código
