@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Sigplanning's documentation!
-=======================================
+Portafolio de herramientas metodológicas  del Laboratorio Binacional de Sostenibilidad, Vulnerabilidad y Cambio Climático
+============================================================================================================================
 .. toctree::
    :maxdepth: 1
    :caption: Códigos en Python - Qgis
@@ -13,8 +13,7 @@ Welcome to Sigplanning's documentation!
    verificacion
    owa
    clp 
-   webershape
-   weberraster
+   layerclassifier
 
    
 .. toctree::

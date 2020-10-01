@@ -29,7 +29,7 @@ sys.path.insert(0,'C:/osgeo4~1/apps/qgis-ltr/python/plugins/processing/algs/qgis
 
 # -- Project information -----------------------------------------------------
 
-project = 'Sigplanning'
+project = 'SVAAC'
 copyright = '2020, LANCIS'
 author = 'LANCIS'
 
