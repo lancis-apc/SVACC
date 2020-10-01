@@ -5,13 +5,18 @@ Verificación de capas
 Los puntos a verificar son los siguientes:
 
 
-1. Proyección Que exista el archivo prj asociado
-2. Geometría completa  Que exista los mismos elementos geométricos que los contenidos en la tabla de atributos
-3. Sobrelapados Que la capa no cuente con errores topológicos
-4. Nulos Que no existan campos vacios en la tabla de atributos
-5. Codificados Que no existan campos con caracteres espeaciales o extraños en su contenido o que datos numéricos esten declardos como texto
-6. Metadatos Que exista el archivo xml asociado a los metadatos geográficos
+1. Proyección.  Existe el archivo prj asociado 
+2. Geometría completa.  La capa contiene el mismo número de elementos geométricos y datos tabulares en la tabla de atributos
+3. Sobrelapamiento. La capa no cuenta con errores topológicos
+4. Nulos. No existen campos vacios en la tabla de atributos
+5. Codificación*. No existen campos con carácteres especiales o extraños en su contenido o datos numéricos esten declardos como texto
+6. Metadatos. Existe el archivo xml asociado a los metadatos geográficos 
 
+
+.. Note::
+
+    La códificación se basa en la revisión de elementos con UTF-8, si la capa cuenta con otro tipo de codificación y contiene carácteres especiales
+    el módulo de códificación reconocerá carácteres extraños en el contenido. dandole un puntaje de 0 en este rubro.
 
 
 Descargar el código de ejemplo 
