@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Portafolio de herramientas metodológicas del Laboratorio Binacional de Sostenibilidad, Vulnerabilidad y Cambio Climático &mdash; documentación de SVAAC - 1.0.0</title>
+  <title>Análisis de calidad de capas geográficas &mdash; documentación de SVAAC - 1.0.0</title>
   
 
   
@@ -36,8 +36,7 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Índice" href="genindex.html" />
-    <link rel="search" title="Búsqueda" href="search.html" />
-    <link rel="next" title="Análisis de sensibilidad" href="sensibilidad.html" /> 
+    <link rel="search" title="Búsqueda" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -51,7 +50,7 @@
           
 
           
-            <a href="#" class="icon icon-home"> SVAAC
+            <a href="index.html" class="icon icon-home"> SVAAC
           
 
           
@@ -120,7 +119,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">SVAAC</a>
+          <a href="index.html">SVAAC</a>
         
       </nav>
 
@@ -149,15 +148,15 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="#">Docs</a> &raquo;</li>
+      <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Portafolio de herramientas metodológicas  del Laboratorio Binacional de Sostenibilidad, Vulnerabilidad y Cambio Climático</li>
+      <li>Análisis de calidad de capas geográficas</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/calidad.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -170,39 +169,66 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="portafolio-de-herramientas-metodologicas-del-laboratorio-binacional-de-sostenibilidad-vulnerabilidad-y-cambio-climatico">
-<h1>Portafolio de herramientas metodológicas  del Laboratorio Binacional de Sostenibilidad, Vulnerabilidad y Cambio Climático<a class="headerlink" href="#portafolio-de-herramientas-metodologicas-del-laboratorio-binacional-de-sostenibilidad-vulnerabilidad-y-cambio-climatico" title="Enlazar permanentemente con este título">¶</a></h1>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Códigos en Python - Qgis</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="sensibilidad.html">Análisis de sensibilidad</a></li>
-<li class="toctree-l1"><a class="reference internal" href="owa.html">OWA</a></li>
-<li class="toctree-l1"><a class="reference internal" href="clp.html">Combinación líneal ponderada</a></li>
-<li class="toctree-l1"><a class="reference internal" href="layerclassifier.html">Layer Classifier</a></li>
-</ul>
+  <div class="section" id="analisis-de-calidad-de-capas-geograficas">
+<h1>Análisis de calidad de capas geográficas<a class="headerlink" href="#analisis-de-calidad-de-capas-geograficas" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Los puntos a verificar son los siguientes:</p>
+<ol class="arabic simple">
+<li>Proyección.  Existe el archivo prj asociado</li>
+<li>Geometría completa.  La capa contiene el mismo número de elementos geométricos y datos tabulares en la tabla de atributos</li>
+<li>Sobrelapamiento. La capa no cuenta con errores topológicos</li>
+<li>Nulos. No existen campos vacios en la tabla de atributos</li>
+<li>Codificación*. No existen campos con carácteres especiales o extraños en su contenido o datos numéricos esten declardos como texto</li>
+<li>Metadatos. Existe el archivo xml asociado a los metadatos geográficos</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">La códificación se basa en la revisión de elementos con UTF-8, si la capa cuenta con otro tipo de codificación y contiene carácteres especiales
+el módulo de códificación reconocerá carácteres extraños en el contenido. dandole un puntaje de 0 en este rubro.</p>
 </div>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Manuales:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="sigfunction.html">Sigfunction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sigfunctiond.html">Sigfunctiond</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sigindex.html">SIGindex</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sigclassifier.html">SIGclassifier</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sigzoning.html">SIGzoning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="significance.html">SIGnificance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lizmap.html">Lizmap-QGIS</a></li>
-</ul>
+<p>Descargar el código  <a class="reference download internal" download="" href="_downloads/11557ae74e5d403a0ddacfcf2c61bc0e/calidad_layers.py"><code class="xref download docutils literal notranslate"><span class="pre">calidad_layers.py</span></code></a>.</p>
+<div class="section" id="requerimientos-generales">
+<h2>Requerimientos generales<a class="headerlink" href="#requerimientos-generales" title="Enlazar permanentemente con este título">¶</a></h2>
 </div>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Syllabus:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="s_sigfunction_sigfunctiond.html">SIGfunction y SIGfunctionD</a></li>
-<li class="toctree-l1"><a class="reference internal" href="s_sigindex.html">SIGindex</a></li>
-<li class="toctree-l1"><a class="reference internal" href="s_sigclassifier.html">SIGclassifier</a></li>
-<li class="toctree-l1"><a class="reference internal" href="s_significance.html">SIGnificance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="s_lizmap.html">Lizmap-QGIS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="s_geonetwork.html">Geonetwork</a></li>
-</ul>
+<div class="section" id="ejemplo">
+<h2>Ejemplo:<a class="headerlink" href="#ejemplo" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="abrir-el-codigo">
+<h3>1. Abrir el código<a class="headerlink" href="#abrir-el-codigo" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Abrir el código <strong>calidad_layers.py</strong> en Qgis 3.4 o superior,
+para resolver cualquier duda al respecto, consultar la <a class="reference external" href="https://vichdzgeo.github.io/geo_lancis/ejecucion.html">guia</a></p>
+<img alt="_images/codigo1.PNG" src="_images/codigo1.PNG" />
+</div>
+<div class="section" id="indicar-el-directorio">
+<h3>2. Indicar el directorio<a class="headerlink" href="#indicar-el-directorio" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>El código verifica todas las capas vectoriales contenidas en el directorio
+indicado en la variable <strong>path_dir</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">path_dir</span> <span class="o">=</span> <span class="s2">&quot;C:/Dropbox (LANCIS)/SIG/insumos/agricultura/conabio/vector/produccion_miel/&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="salidas">
+<h3>Salidas<a class="headerlink" href="#salidas" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="section" id="capas-de-topologia">
+<h4>Capas de topología<a class="headerlink" href="#capas-de-topologia" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>el código crea una carpeta llamada <strong>temp</strong>, dentro de ella otra carpeta llamada <strong>topologia</strong> en esta
+carpeta se guardan los 3 archivos shapefile  resultantes de la función <strong>topologia</strong></p>
+<p>estan nombrados de la siguiente manera:</p>
+<p><strong>nombrecapa_error</strong>.shp</p>
+<p>Capa de puntos que índica la posición en donde 2 o más poligonos no colindan adecuadamente
+o que su geometría puede causar problemas en algún análisis espacial</p>
+<p><strong>nombrecapa_invalido</strong>.shp</p>
+<p>Capa de poligonos que índica geométria inválida de la capa</p>
+<p><strong>nombrecapa_valido</strong>.shp</p>
+<p>Capa de poligonos que indica la geometría válida de la capa</p>
+</div>
+<div class="section" id="imagen-de-la-capa">
+<h4>Imagen de la capa<a class="headerlink" href="#imagen-de-la-capa" title="Enlazar permanentemente con este título">¶</a></h4>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">El código genera una imagen de la capa con el mapa base de openstreetmap
+sí y solo sí la capa tiene un puntaje de 10 en el criterio de <strong>proyección</strong></p>
+</div>
+</div>
+</div>
 </div>
 </div>
 
@@ -211,13 +237,6 @@
            
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="sensibilidad.html" class="btn btn-neutral float-right" title="Análisis de sensibilidad" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-    </div>
   
 
   <hr/>

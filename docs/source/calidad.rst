@@ -1,5 +1,5 @@
-Verificación de capas
-#############################
+Análisis de calidad de capas geográficas
+####################################################
 
 
 Los puntos a verificar son los siguientes:
@@ -19,7 +19,7 @@ Los puntos a verificar son los siguientes:
     el módulo de códificación reconocerá carácteres extraños en el contenido. dandole un puntaje de 0 en este rubro.
 
 
-Descargar el código  :download:`verificacion_layers.py <../../codigos/verificacion_layers.py>`.
+Descargar el código  :download:`calidad_layers.py <../../codigos/calidad_layers.py>`.
 
 
 Requerimientos generales 
@@ -33,7 +33,7 @@ Ejemplo:
 1. Abrir el código 
 ********************
 
-Abrir el código **verificación_layers.py** en Qgis 3.4 o superior, 
+Abrir el código **calidad_layers.py** en Qgis 3.4 o superior, 
 para resolver cualquier duda al respecto, consultar la guia_
 
 .. _guia: https://vichdzgeo.github.io/geo_lancis/ejecucion.html
