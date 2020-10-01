@@ -110,9 +110,18 @@
 <li class="toctree-l1"><a class="reference internal" href="sigfunctiond.html">Sigfunctiond</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sigindex.html">SIGindex</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sigclassifier.html">SIGclassifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sigzoning.html">SIGzoning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="significance.html">SIGnificance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lizmap.html">Lizmap-QGIS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lizmap.html#guia-de-usuario-de-lizmap-qgis">Guía de usuario de Lizmap-QGIS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Syllabus:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="s_sigfunction_sigfunctiond.html">SIGfunction y SIGfunctionD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="s_sigindex.html">SIGindex</a></li>
+<li class="toctree-l1"><a class="reference internal" href="s_sigclassifier.html">SIGclassifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="s_significance.html">SIGnificance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="s_lizmap.html">Lizmap-QGIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="s_geonetwork.html">Geonetwork</a></li>
 </ul>
 
             
@@ -181,13 +190,18 @@
 <h1>Verificación de capas<a class="headerlink" href="#verificacion-de-capas" title="Enlazar permanentemente con este título">¶</a></h1>
 <p>Los puntos a verificar son los siguientes:</p>
 <ol class="arabic simple">
-<li>Proyección Que exista el archivo prj asociado</li>
-<li>Geometría completa  Que exista los mismos elementos geométricos que los contenidos en la tabla de atributos</li>
-<li>Sobrelapados Que la capa no cuente con errores topológicos</li>
-<li>Nulos Que no existan campos vacios en la tabla de atributos</li>
-<li>Codificados Que no existan campos con caracteres espeaciales o extraños en su contenido o que datos numéricos esten declardos como texto</li>
-<li>Metadatos Que exista el archivo xml asociado a los metadatos geográficos</li>
+<li>Proyección.  Existe el archivo prj asociado</li>
+<li>Geometría completa.  La capa contiene el mismo número de elementos geométricos y datos tabulares en la tabla de atributos</li>
+<li>Sobrelapamiento. La capa no cuenta con errores topológicos</li>
+<li>Nulos. No existen campos vacios en la tabla de atributos</li>
+<li>Codificación*. No existen campos con carácteres especiales o extraños en su contenido o datos numéricos esten declardos como texto</li>
+<li>Metadatos. Existe el archivo xml asociado a los metadatos geográficos</li>
 </ol>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">La códificación se basa en la revisión de elementos con UTF-8, si la capa cuenta con otro tipo de codificación y contiene carácteres especiales
+el módulo de códificación reconocerá carácteres extraños en el contenido. dandole un puntaje de 0 en este rubro.</p>
+</div>
 <p>Descargar el código de ejemplo</p>
 <p><a class="reference download internal" download="" href="_downloads/a3dd5b03134e938c10de107e35c235da/verificacion_layers.py"><code class="xref download docutils literal notranslate"><span class="pre">verificacion_layers.py</span></code></a>.</p>
 <div class="section" id="requerimientos-generales">
