@@ -19,9 +19,7 @@ Los puntos a verificar son los siguientes:
     el módulo de códificación reconocerá carácteres extraños en el contenido. dandole un puntaje de 0 en este rubro.
 
 
-Descargar el código de ejemplo 
-
-:download:`verificacion_layers.py <../../codigos/verificacion_layers.py>`.
+Descargar el código  :download:`verificacion_layers.py <../../codigos/verificacion_layers.py>`.
 
 
 Requerimientos generales 
