@@ -10,7 +10,7 @@ Portafolio de herramientas metodológicas  del Laboratorio Binacional de Sosteni
    :caption: Códigos en Python - Qgis
 
    sensibilidad
-   verificacion
+   calidad
    owa
    clp 
    layerclassifier
