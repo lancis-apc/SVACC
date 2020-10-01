@@ -84,7 +84,6 @@
               <p class="caption"><span class="caption-text">Códigos en Python - Qgis</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="sensibilidad.html">Análisis de sensibilidad</a></li>
-<li class="toctree-l1"><a class="reference internal" href="verificacion.html">Verificación de capas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="owa.html">OWA</a></li>
 <li class="toctree-l1"><a class="reference internal" href="clp.html">Combinación líneal ponderada</a></li>
 <li class="toctree-l1"><a class="reference internal" href="layerclassifier.html">Layer Classifier</a></li>
@@ -179,11 +178,15 @@
  | <a href="#G"><strong>G</strong></a>
  | <a href="#I"><strong>I</strong></a>
  | <a href="#J"><strong>J</strong></a>
+ | <a href="#L"><strong>L</strong></a>
  | <a href="#M"><strong>M</strong></a>
  | <a href="#N"><strong>N</strong></a>
  | <a href="#O"><strong>O</strong></a>
+ | <a href="#P"><strong>P</strong></a>
  | <a href="#R"><strong>R</strong></a>
  | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
+ | <a href="#W"><strong>W</strong></a>
  
 </div>
 <h2 id="A">A</h2>
@@ -199,11 +202,19 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="owa.html#owa_raster.calculo_owa">calculo_owa() (en el módulo owa_raster)</a>
 </li>
+      <li><a href="clp.html#clpqgis3.cargar_raster">cargar_raster() (en el módulo clpqgis3)</a>
+
+      <ul>
+        <li><a href="layerclassifier.html#layerclassifier_raster.cargar_raster">(en el módulo layerclassifier_raster)</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="clp.html#clpqgis3.cargar_raster">cargar_raster() (en el módulo clpqgis3)</a>
+      <li><a href="layerclassifier.html#layerclassifier_raster.clasifica_raster">clasifica_raster() (en el módulo layerclassifier_raster)</a>
 </li>
       <li><a href="clp.html#module-clpqgis3">clpqgis3 (módulo)</a>
+</li>
+      <li><a href="layerclassifier.html#layerclassifier_raster.cuantiles">cuantiles() (en el módulo layerclassifier_raster)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -211,6 +222,8 @@
 <h2 id="E">E</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="layerclassifier.html#layerclassifier_raster.ecuacion_class">ecuacion_class() (en el módulo layerclassifier_raster)</a>
+</li>
       <li><a href="clp.html#clpqgis3.ecuacion_clp">ecuacion_clp() (en el módulo clpqgis3)</a>
 </li>
       <li><a href="clp.html#clpqgis3.ecuacion_comp">ecuacion_comp() (en el módulo clpqgis3)</a>
@@ -220,6 +233,8 @@
       <li><a href="clp.html#clpqgis3.ecuacion_no_comp">ecuacion_no_comp() (en el módulo clpqgis3)</a>
 </li>
       <li><a href="clp.html#clpqgis3.ecuacion_p_comp">ecuacion_p_comp() (en el módulo clpqgis3)</a>
+</li>
+      <li><a href="layerclassifier.html#layerclassifier_raster.equidistantes">equidistantes() (en el módulo layerclassifier_raster)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -232,7 +247,11 @@
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="clp.html#clpqgis3.get_region">get_region() (en el módulo clpqgis3)</a>
+
+      <ul>
+        <li><a href="layerclassifier.html#layerclassifier_raster.get_region">(en el módulo layerclassifier_raster)</a>
 </li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -256,6 +275,14 @@
   </ul></td>
 </tr></table>
 
+<h2 id="L">L</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="layerclassifier.html#module-layerclassifier_raster">layerclassifier_raster (módulo)</a>
+</li>
+  </ul></td>
+</tr></table>
+
 <h2 id="M">M</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -268,7 +295,11 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="clp.html#clpqgis3.nombre_capa">nombre_capa() (en el módulo clpqgis3)</a>
+
+      <ul>
+        <li><a href="layerclassifier.html#layerclassifier_raster.nombre_capa">(en el módulo layerclassifier_raster)</a>
 </li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="clp.html#clpqgis3.norm_estandar">norm_estandar() (en el módulo clpqgis3)</a>
@@ -290,19 +321,39 @@
   </ul></td>
 </tr></table>
 
+<h2 id="P">P</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="layerclassifier.html#layerclassifier_raster.progressive">progressive() (en el módulo layerclassifier_raster)</a>
+</li>
+  </ul></td>
+</tr></table>
+
 <h2 id="R">R</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="clp.html#clpqgis3.raster_min_max">raster_min_max() (en el módulo clpqgis3)</a>
+
+      <ul>
+        <li><a href="layerclassifier.html#layerclassifier_raster.raster_min_max">(en el módulo layerclassifier_raster)</a>
 </li>
+      </ul></li>
       <li><a href="clp.html#clpqgis3.raster_nodata">raster_nodata() (en el módulo clpqgis3)</a>
+
+      <ul>
+        <li><a href="layerclassifier.html#layerclassifier_raster.raster_nodata">(en el módulo layerclassifier_raster)</a>
 </li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="owa.html#owa_raster.raster_to_df">raster_to_df() (en el módulo owa_raster)</a>
 </li>
       <li><a href="clp.html#clpqgis3.remove_raster">remove_raster() (en el módulo clpqgis3)</a>
+
+      <ul>
+        <li><a href="layerclassifier.html#layerclassifier_raster.remove_raster">(en el módulo layerclassifier_raster)</a>
 </li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -310,6 +361,26 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="clp.html#clpqgis3.set_nulls">set_nulls() (en el módulo clpqgis3)</a>
+
+      <ul>
+        <li><a href="layerclassifier.html#layerclassifier_raster.set_nulls">(en el módulo layerclassifier_raster)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="layerclassifier.html#layerclassifier_raster.tipo_clasificador">tipo_clasificador() (en el módulo layerclassifier_raster)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="W">W</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="layerclassifier.html#layerclassifier_raster.wf">wf() (en el módulo layerclassifier_raster)</a>
 </li>
   </ul></td>
 </tr></table>

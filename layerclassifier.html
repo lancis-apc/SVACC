@@ -88,7 +88,11 @@
 <li class="toctree-l1"><a class="reference internal" href="verificacion.html">Verificación de capas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="owa.html">OWA</a></li>
 <li class="toctree-l1"><a class="reference internal" href="clp.html">Combinación líneal ponderada</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Layer Classifier</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Layer Classifier</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#requerimientos-generales">Requerimientos generales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-layerclassifier_raster">Documentación dentro del código</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Manuales:</span></p>
 <ul>
@@ -174,6 +178,279 @@
             
   <div class="section" id="layer-classifier">
 <h1>Layer Classifier<a class="headerlink" href="#layer-classifier" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Permite utilizar diferentes modos de clasificación para capas raster</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Weber - Fechner</li>
+<li>Progresiva</li>
+<li>Cuartiles</li>
+<li>Quintiles</li>
+<li>Deciles</li>
+<li>Equidistante</li>
+</ol>
+</div></blockquote>
+<div class="section" id="requerimientos-generales">
+<h2>Requerimientos generales<a class="headerlink" href="#requerimientos-generales" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Para asegurar la ejecución correcta del código es importante
+verificar la instalación y funcionamiento de los siguientes elementos:</p>
+<ul class="simple">
+<li>Qgis 3.10 con GRASS 7 y librerías de Osgeo4W</li>
+<li>Librerías python:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>os</li>
+<li>numpy</li>
+<li>gdal</li>
+<li>osr</li>
+</ul>
+</div></blockquote>
+<p>Descargar el código <a class="reference download internal" download="" href="_downloads/caffdc4b1f50b1c1e2017882226bcf90/layerclassifier_raster.py"><code class="xref download docutils literal notranslate"><span class="pre">layerclassifier_raster.py</span></code></a>.</p>
+</div>
+<div class="section" id="module-layerclassifier_raster">
+<span id="documentacion-dentro-del-codigo"></span><h2>Documentación dentro del código<a class="headerlink" href="#module-layerclassifier_raster" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Qgis 3 o superior</p>
+<dl class="function">
+<dt id="layerclassifier_raster.cargar_raster">
+<code class="descclassname">layerclassifier_raster.</code><code class="descname">cargar_raster</code><span class="sig-paren">(</span><em>path_raster</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/layerclassifier_raster.html#cargar_raster"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#layerclassifier_raster.cargar_raster" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Esta función carga una capa raster a un proyecto 
+de qgis</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parámetros:</th><td class="field-body"><strong>path_raster</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(en Python versión 3.8)"><em>str</em></a>) – ruta de la capa raster</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="layerclassifier_raster.clasifica_raster">
+<code class="descclassname">layerclassifier_raster.</code><code class="descname">clasifica_raster</code><span class="sig-paren">(</span><em>path_capa</em>, <em>clasificador</em>, <em>fp=2</em>, <em>categories=5</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/layerclassifier_raster.html#clasifica_raster"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#layerclassifier_raster.clasifica_raster" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Funcion integradora para clasificar la capa raster</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parámetros:</th><td class="field-body"><ul class="first last simple">
+<li><strong>path_capa</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(en Python versión 3.8)"><em>str</em></a>) – ruta de la capa raster</li>
+<li><strong>clasificador</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(en Python versión 3.8)"><em>str</em></a>) – nombre del clasificador</li>
+<li><strong>fp</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(en Python versión 3.8)"><em>float</em></a>) – factor de progresión</li>
+<li><strong>categories</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(en Python versión 3.8)"><em>int</em></a>) – número de categorias</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="layerclassifier_raster.cuantiles">
+<code class="descclassname">layerclassifier_raster.</code><code class="descname">cuantiles</code><span class="sig-paren">(</span><em>path_r</em>, <em>quantil</em>, <em>min</em>, <em>max</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/layerclassifier_raster.html#cuantiles"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#layerclassifier_raster.cuantiles" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Esta función regresa la lista de cortes según el cualtil 
+deseado de los valores de la capa raster de entrada</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parámetros:</th><td class="field-body"><ul class="first last simple">
+<li><strong>path_r</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(en Python versión 3.8)"><em>str</em></a>) – ruta de la capa raster</li>
+<li><strong>quantil</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(en Python versión 3.8)"><em>int</em></a>) – cuantil</li>
+<li><strong>min</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(en Python versión 3.8)"><em>float</em></a>) – valor mínimo de la capa</li>
+<li><strong>max</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(en Python versión 3.8)"><em>float</em></a>) – valor máximo de la capa</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="layerclassifier_raster.ecuacion_class">
+<code class="descclassname">layerclassifier_raster.</code><code class="descname">ecuacion_class</code><span class="sig-paren">(</span><em>cortes</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/layerclassifier_raster.html#ecuacion_class"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#layerclassifier_raster.ecuacion_class" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Esta funcion regresa en formato de cadena la ecuación 
+para utilizarse en la calculadora de gdal a partir de una lista de cortes</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parámetros:</th><td class="field-body"><strong>cortes</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(en Python versión 3.8)"><em>list</em></a>) – lista con los puntos de corte</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="layerclassifier_raster.equidistantes">
+<code class="descclassname">layerclassifier_raster.</code><code class="descname">equidistantes</code><span class="sig-paren">(</span><em>categories=5</em>, <em>min=0</em>, <em>max=1</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/layerclassifier_raster.html#equidistantes"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#layerclassifier_raster.equidistantes" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Esta función regresa la lista de cortes equidistantes según el número 
+de categorias y el valor minimo y maximo ingresados.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parámetros:</th><td class="field-body"><ul class="first last simple">
+<li><strong>categories</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(en Python versión 3.8)"><em>int</em></a>) – número de categorias</li>
+<li><strong>min</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(en Python versión 3.8)"><em>float</em></a>) – valor mínimo de la capa</li>
+<li><strong>max</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(en Python versión 3.8)"><em>float</em></a>) – valor máximo de la capa</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="layerclassifier_raster.get_region">
+<code class="descclassname">layerclassifier_raster.</code><code class="descname">get_region</code><span class="sig-paren">(</span><em>path_layer</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/layerclassifier_raster.html#get_region"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#layerclassifier_raster.get_region" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Esta función regresa en forma de cadena de texto 
+las coordenadas de la extensión de una capa raster</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parámetros:</th><td class="field-body"><strong>path_layer</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(en Python versión 3.8)"><em>str</em></a>) – ruta de la capa raster</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="layerclassifier_raster.nombre_capa">
+<code class="descclassname">layerclassifier_raster.</code><code class="descname">nombre_capa</code><span class="sig-paren">(</span><em>path_capa</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/layerclassifier_raster.html#nombre_capa"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#layerclassifier_raster.nombre_capa" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Esta función regresa el nombre de una capa sin extensión</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parámetros:</th><td class="field-body"><strong>path_capa</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(en Python versión 3.8)"><em>str</em></a>) – ruta de la capa</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="layerclassifier_raster.progressive">
+<code class="descclassname">layerclassifier_raster.</code><code class="descname">progressive</code><span class="sig-paren">(</span><em>fp=2</em>, <em>min=0</em>, <em>max=1</em>, <em>categories=5</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/layerclassifier_raster.html#progressive"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#layerclassifier_raster.progressive" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Esta función regresa una lista de los cortes según el método progresivo</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parámetros:</th><td class="field-body"><ul class="first last simple">
+<li><strong>fp</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(en Python versión 3.8)"><em>float</em></a>) – factor de progresión</li>
+<li><strong>min</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(en Python versión 3.8)"><em>float</em></a>) – valor mínimo de la capa</li>
+<li><strong>max</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(en Python versión 3.8)"><em>float</em></a>) – valor máximo de la capa</li>
+<li><strong>categories</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(en Python versión 3.8)"><em>int</em></a>) – número de categorias</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="layerclassifier_raster.raster_min_max">
+<code class="descclassname">layerclassifier_raster.</code><code class="descname">raster_min_max</code><span class="sig-paren">(</span><em>path_raster</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/layerclassifier_raster.html#raster_min_max"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#layerclassifier_raster.raster_min_max" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Esta funcion regresa los valores maximos y minimos de una capa raster</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parámetros:</th><td class="field-body"><strong>path_raster</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(en Python versión 3.8)"><em>str</em></a>) – ruta de la capa raster</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="layerclassifier_raster.raster_nodata">
+<code class="descclassname">layerclassifier_raster.</code><code class="descname">raster_nodata</code><span class="sig-paren">(</span><em>path_raster</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/layerclassifier_raster.html#raster_nodata"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#layerclassifier_raster.raster_nodata" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Esta función regresa el valor de no data de la capa raster de entrada</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parámetros:</th><td class="field-body"><strong>path_raster</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(en Python versión 3.8)"><em>str</em></a>) – ruta de la capa raster</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="layerclassifier_raster.remove_raster">
+<code class="descclassname">layerclassifier_raster.</code><code class="descname">remove_raster</code><span class="sig-paren">(</span><em>path_r</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/layerclassifier_raster.html#remove_raster"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#layerclassifier_raster.remove_raster" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Esta función elimina una capa del sistema</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parámetros:</th><td class="field-body"><strong>path_r</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(en Python versión 3.8)"><em>str</em></a>) – ruta de la capa</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="layerclassifier_raster.set_nulls">
+<code class="descclassname">layerclassifier_raster.</code><code class="descname">set_nulls</code><span class="sig-paren">(</span><em>map</em>, <em>output</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/layerclassifier_raster.html#set_nulls"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#layerclassifier_raster.set_nulls" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Esta función asigna un valor de cero a los no_data de la capa</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parámetros:</th><td class="field-body"><strong>map</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(en Python versión 3.8)"><em>str</em></a>) – ruta de la capa raster</td>
+</tr>
+</tbody>
+</table>
+<p>:param output:ruta de la capa resultante
+:type output: str</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="layerclassifier_raster.tipo_clasificador">
+<code class="descclassname">layerclassifier_raster.</code><code class="descname">tipo_clasificador</code><span class="sig-paren">(</span><em>clasificador</em>, <em>path_r</em>, <em>fp=2</em>, <em>categories=5</em>, <em>min=0</em>, <em>max=1</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/layerclassifier_raster.html#tipo_clasificador"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#layerclassifier_raster.tipo_clasificador" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Esta función integra los modos de clasificación, weber-fechner, progresiva,
+cuartiles, quintiles, deciles o equidistante</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parámetros:</th><td class="field-body"><ul class="first last simple">
+<li><strong>tipo_clasificador</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(en Python versión 3.8)"><em>str</em></a>) – tipo de clasificador (progresiva, cuartiles, quintiles, deciles, equidistante)</li>
+<li><strong>fp</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(en Python versión 3.8)"><em>float</em></a>) – factor de progresión</li>
+<li><strong>categories</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(en Python versión 3.8)"><em>int</em></a>) – número de categorias</li>
+<li><strong>min</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(en Python versión 3.8)"><em>float</em></a>) – valor mínimo de la capa</li>
+<li><strong>max</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(en Python versión 3.8)"><em>float</em></a>) – valor máximo de la capa</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="layerclassifier_raster.wf">
+<code class="descclassname">layerclassifier_raster.</code><code class="descname">wf</code><span class="sig-paren">(</span><em>fp=2</em>, <em>min=0</em>, <em>max=1</em>, <em>categories=5</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/layerclassifier_raster.html#wf"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#layerclassifier_raster.wf" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Esta funcion regresa los intervalos de  cortes según el método de weber-fechner</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parámetros:</th><td class="field-body"><ul class="first last simple">
+<li><strong>fp</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(en Python versión 3.8)"><em>float</em></a>) – factor de progresión</li>
+<li><strong>min</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(en Python versión 3.8)"><em>float</em></a>) – valor mínimo de la capa</li>
+<li><strong>max</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(en Python versión 3.8)"><em>float</em></a>) – valor máximo de la capa</li>
+<li><strong>categories</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(en Python versión 3.8)"><em>int</em></a>) – número de categorias</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
 </div>
 
 

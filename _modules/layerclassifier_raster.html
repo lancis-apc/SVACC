@@ -1,0 +1,579 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="es" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="es" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>layerclassifier_raster &mdash; documentación de SVAAC - 1.0.0</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> SVAAC
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Códigos en Python - Qgis</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sensibilidad.html">Análisis de sensibilidad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../owa.html">OWA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clp.html">Combinación líneal ponderada</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../layerclassifier.html">Layer Classifier</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Manuales:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sigfunction.html">Sigfunction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sigfunctiond.html">Sigfunctiond</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sigindex.html">SIGindex</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sigclassifier.html">SIGclassifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sigzoning.html">SIGzoning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../significance.html">SIGnificance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lizmap.html">Lizmap-QGIS</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Syllabus:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../s_sigfunction_sigfunctiond.html">SIGfunction y SIGfunctionD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s_sigindex.html">SIGindex</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s_sigclassifier.html">SIGclassifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s_significance.html">SIGnificance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s_lizmap.html">Lizmap-QGIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../s_geonetwork.html">Geonetwork</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SVAAC</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Código de módulo</a> &raquo;</li>
+        
+      <li>layerclassifier_raster</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Código fuente para layerclassifier_raster</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Qgis 3 o superior</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+
+<span class="kn">from</span> <span class="nn">qgis.core</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">qgis.PyQt</span> <span class="k">import</span> <span class="n">QtCore</span><span class="p">,</span> <span class="n">QtGui</span><span class="p">,</span> <span class="n">QtWidgets</span><span class="p">,</span> <span class="n">uic</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">processing</span> <span class="k">as</span> <span class="nn">pr</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<span class="kn">from</span> <span class="nn">osgeo</span> <span class="k">import</span> <span class="n">gdal</span>
+<span class="kn">from</span> <span class="nn">osgeo</span> <span class="k">import</span> <span class="n">osr</span>
+
+
+<div class="viewcode-block" id="raster_min_max"><a class="viewcode-back" href="../layerclassifier.html#layerclassifier_raster.raster_min_max">[documentos]</a><span class="k">def</span> <span class="nf">raster_min_max</span><span class="p">(</span><span class="n">path_raster</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Esta funcion regresa los valores maximos y minimos de una capa raster</span>
+
+<span class="sd">    :param path_raster: ruta de la capa raster</span>
+<span class="sd">    :type path_raster: str </span>
+<span class="sd">    </span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">rlayer</span> <span class="o">=</span> <span class="n">QgsRasterLayer</span><span class="p">(</span><span class="n">path_raster</span><span class="p">,</span><span class="s2">&quot;raster&quot;</span><span class="p">)</span>
+    <span class="n">extent</span> <span class="o">=</span> <span class="n">rlayer</span><span class="o">.</span><span class="n">extent</span><span class="p">()</span>
+    <span class="n">provider</span> <span class="o">=</span> <span class="n">rlayer</span><span class="o">.</span><span class="n">dataProvider</span><span class="p">()</span>
+    <span class="n">stats</span> <span class="o">=</span> <span class="n">provider</span><span class="o">.</span><span class="n">bandStatistics</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span>
+                                    <span class="n">QgsRasterBandStats</span><span class="o">.</span><span class="n">All</span><span class="p">,</span>
+                                    <span class="n">extent</span><span class="p">,</span>
+                                    <span class="mi">0</span><span class="p">)</span>
+
+    <span class="n">v_min</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">minimumValue</span>
+    <span class="n">v_max</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">maximumValue</span>
+    <span class="k">return</span> <span class="n">v_min</span><span class="p">,</span> <span class="n">v_max</span></div>
+
+<div class="viewcode-block" id="raster_nodata"><a class="viewcode-back" href="../layerclassifier.html#layerclassifier_raster.raster_nodata">[documentos]</a><span class="k">def</span> <span class="nf">raster_nodata</span><span class="p">(</span><span class="n">path_raster</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Esta función regresa el valor de no data de la capa raster de entrada</span>
+
+<span class="sd">    :param path_raster: ruta de la capa raster</span>
+<span class="sd">    :type path_raster: str </span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">rlayer</span> <span class="o">=</span> <span class="n">QgsRasterLayer</span><span class="p">(</span><span class="n">path_raster</span><span class="p">,</span><span class="s2">&quot;raster&quot;</span><span class="p">)</span>
+    <span class="n">extent</span> <span class="o">=</span> <span class="n">rlayer</span><span class="o">.</span><span class="n">extent</span><span class="p">()</span>
+    <span class="n">provider</span> <span class="o">=</span> <span class="n">rlayer</span><span class="o">.</span><span class="n">dataProvider</span><span class="p">()</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">rlayer</span><span class="o">.</span><span class="n">rasterUnitsPerPixelY</span><span class="p">()</span>
+    <span class="n">cols</span> <span class="o">=</span> <span class="n">rlayer</span><span class="o">.</span><span class="n">rasterUnitsPerPixelX</span><span class="p">()</span>
+    <span class="n">block</span> <span class="o">=</span> <span class="n">provider</span><span class="o">.</span><span class="n">block</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">extent</span><span class="p">,</span>  <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">)</span>
+    <span class="n">no_data</span> <span class="o">=</span> <span class="n">block</span><span class="o">.</span><span class="n">noDataValue</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">no_data</span></div>
+
+<div class="viewcode-block" id="wf"><a class="viewcode-back" href="../layerclassifier.html#layerclassifier_raster.wf">[documentos]</a><span class="k">def</span> <span class="nf">wf</span><span class="p">(</span><span class="n">fp</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">categories</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Esta funcion regresa los intervalos de  cortes según el método de weber-fechner</span>
+
+<span class="sd">    :param fp: factor de progresión </span>
+<span class="sd">    :type fp: float</span>
+
+<span class="sd">    :param min: valor mínimo de la capa</span>
+<span class="sd">    :type min: float</span>
+
+<span class="sd">    :param max: valor máximo de la capa</span>
+<span class="sd">    :type max: float</span>
+
+<span class="sd">    :param categories: número de categorias</span>
+<span class="sd">    :type categories: int </span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">dicc_e</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">list_val</span> <span class="o">=</span> <span class="p">[</span><span class="nb">min</span><span class="p">,]</span>
+    <span class="n">pm</span> <span class="o">=</span> <span class="nb">max</span> <span class="o">-</span> <span class="nb">min</span> 
+    <span class="n">cats</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span> <span class="n">categories</span><span class="p">)</span>
+    <span class="n">e0</span> <span class="o">=</span> <span class="n">pm</span><span class="o">/</span><span class="n">cats</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span> <span class="p">,</span> <span class="n">categories</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">dicc_e</span><span class="p">[</span><span class="s1">&#39;e&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span><span class="o">=</span> <span class="nb">min</span> <span class="o">+</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span><span class="n">i</span><span class="p">)</span> <span class="o">*</span> <span class="n">e0</span><span class="p">)</span>
+        
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">categories</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">list_val</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dicc_e</span><span class="p">[</span><span class="s1">&#39;e&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)])</span>
+
+    <span class="k">return</span> <span class="n">list_val</span></div>
+
+
+<div class="viewcode-block" id="progressive"><a class="viewcode-back" href="../layerclassifier.html#layerclassifier_raster.progressive">[documentos]</a><span class="k">def</span> <span class="nf">progressive</span><span class="p">(</span><span class="n">fp</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">categories</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Esta función regresa una lista de los cortes según el método progresivo</span>
+
+<span class="sd">    :param fp: factor de progresión </span>
+<span class="sd">    :type fp: float</span>
+
+<span class="sd">    :param min: valor mínimo de la capa</span>
+<span class="sd">    :type min: float</span>
+
+<span class="sd">    :param max: valor máximo de la capa</span>
+<span class="sd">    :type max: float</span>
+
+<span class="sd">    :param categories: número de categorias </span>
+<span class="sd">    :type categories: int </span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+    
+    <span class="n">numeroDeCortes</span> <span class="o">=</span> <span class="n">categories</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">laSuma</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">categories</span><span class="p">)</span> <span class="p">:</span>
+        <span class="n">laSuma</span> <span class="o">+=</span> <span class="p">((</span><span class="n">fp</span><span class="p">)</span> <span class="o">**</span> <span class="n">i</span><span class="p">)</span>
+
+    <span class="n">cachito</span> <span class="o">=</span> <span class="nb">max</span> <span class="o">/</span> <span class="n">laSuma</span>
+
+    <span class="n">FuzzyCut</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numeroDeCortes</span><span class="p">)</span> <span class="p">:</span>
+        <span class="n">anterior</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">anterior</span> <span class="o">=</span> <span class="n">FuzzyCut</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+
+        <span class="n">corte</span> <span class="o">=</span> <span class="n">anterior</span> <span class="o">+</span> <span class="n">fp</span> <span class="o">**</span> <span class="n">i</span> <span class="o">*</span> <span class="n">cachito</span>
+        <span class="n">FuzzyCut</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">corte</span><span class="p">)</span>
+
+    <span class="n">FuzzyCut</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">min</span><span class="p">)</span>
+    <span class="n">FuzzyCut</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">max</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">FuzzyCut</span></div>
+
+<div class="viewcode-block" id="tipo_clasificador"><a class="viewcode-back" href="../layerclassifier.html#layerclassifier_raster.tipo_clasificador">[documentos]</a><span class="k">def</span> <span class="nf">tipo_clasificador</span><span class="p">(</span><span class="n">clasificador</span><span class="p">,</span><span class="n">path_r</span><span class="p">,</span><span class="n">fp</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">categories</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="nb">max</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Esta función integra los modos de clasificación, weber-fechner, progresiva,</span>
+<span class="sd">        cuartiles, quintiles, deciles o equidistante</span>
+
+<span class="sd">        :param tipo_clasificador: tipo de clasificador (progresiva, cuartiles, quintiles, deciles, equidistante)</span>
+<span class="sd">        :type tipo_clasificador: str</span>
+
+<span class="sd">        :param fp: factor de progresión </span>
+<span class="sd">        :type fp: float</span>
+
+<span class="sd">        :param categories: número de categorias </span>
+<span class="sd">        :type categories: int </span>
+
+<span class="sd">        :param min: valor mínimo de la capa</span>
+<span class="sd">        :type min: float</span>
+
+<span class="sd">        :param max: valor máximo de la capa</span>
+<span class="sd">        :type max: float</span>
+
+
+
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">if</span> <span class="n">clasificador</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;progresiva&quot;</span><span class="p">:</span>
+        <span class="n">nombre</span> <span class="o">=</span><span class="s1">&#39;pg&#39;</span><span class="o">+</span><span class="s2">&quot;_&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="s1">&#39;_&#39;</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;_&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">categories</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;cats&quot;</span>
+        <span class="k">return</span> <span class="n">progressive</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span><span class="nb">min</span><span class="p">,</span><span class="nb">max</span><span class="p">,</span><span class="n">categories</span><span class="p">),</span><span class="n">nombre</span>
+        
+    <span class="k">elif</span> <span class="n">clasificador</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;wf&quot;</span> <span class="ow">or</span> <span class="n">clasificador</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;weber-fechner&quot;</span><span class="p">:</span>
+        <span class="n">nombre</span> <span class="o">=</span><span class="n">clasificador</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">+</span><span class="s2">&quot;_&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="s1">&#39;_&#39;</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;_&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">categories</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;cats&quot;</span>
+        <span class="k">return</span> <span class="n">wf</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span><span class="nb">min</span><span class="p">,</span><span class="nb">max</span><span class="p">,</span><span class="n">categories</span><span class="p">),</span><span class="n">nombre</span>
+    <span class="k">elif</span> <span class="n">clasificador</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">==</span><span class="s1">&#39;cuartiles&#39;</span><span class="p">:</span>
+        <span class="n">nombre</span> <span class="o">=</span> <span class="n">clasificador</span>
+        <span class="k">return</span> <span class="n">cuantiles</span><span class="p">(</span><span class="n">path_r</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="nb">min</span><span class="p">,</span><span class="nb">max</span><span class="p">),</span><span class="n">nombre</span>
+    <span class="k">elif</span> <span class="n">clasificador</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">==</span><span class="s1">&#39;quintiles&#39;</span><span class="p">:</span>
+        <span class="n">nombre</span> <span class="o">=</span> <span class="n">clasificador</span>
+        <span class="k">return</span> <span class="n">cuantiles</span><span class="p">(</span><span class="n">path_r</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="nb">min</span><span class="p">,</span><span class="nb">max</span><span class="p">),</span><span class="n">nombre</span>
+    <span class="k">elif</span> <span class="n">clasificador</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">==</span> <span class="s1">&#39;deciles&#39;</span><span class="p">:</span>
+        <span class="n">nombre</span> <span class="o">=</span> <span class="n">clasificador</span>
+        <span class="k">return</span> <span class="n">cuantiles</span><span class="p">(</span><span class="n">path_r</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="nb">min</span><span class="p">,</span><span class="nb">max</span><span class="p">),</span><span class="n">nombre</span>
+    <span class="k">elif</span> <span class="n">clasificador</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">==</span> <span class="s1">&#39;equidistante&#39;</span><span class="p">:</span>
+        <span class="n">nombre</span> <span class="o">=</span> <span class="n">clasificador</span>
+        <span class="k">return</span> <span class="n">equidistantes</span><span class="p">(</span><span class="n">categories</span><span class="p">,</span><span class="nb">min</span><span class="p">,</span><span class="nb">max</span><span class="p">),</span><span class="n">nombre</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;error en el nombre de clasificacion&quot;</span><span class="p">)</span></div>
+        
+<div class="viewcode-block" id="cuantiles"><a class="viewcode-back" href="../layerclassifier.html#layerclassifier_raster.cuantiles">[documentos]</a><span class="k">def</span> <span class="nf">cuantiles</span><span class="p">(</span><span class="n">path_r</span><span class="p">,</span><span class="n">quantil</span><span class="p">,</span><span class="nb">min</span><span class="p">,</span><span class="nb">max</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Esta función regresa la lista de cortes según el cualtil </span>
+<span class="sd">    deseado de los valores de la capa raster de entrada</span>
+
+<span class="sd">    :param path_r: ruta de la capa raster</span>
+<span class="sd">    :type path_r: str</span>
+<span class="sd">    </span>
+<span class="sd">    :param quantil: cuantil  </span>
+<span class="sd">    :type quantil: int </span>
+
+<span class="sd">    :param min: valor mínimo de la capa</span>
+<span class="sd">    :type min: float</span>
+
+<span class="sd">    :param max: valor máximo de la capa</span>
+<span class="sd">    :type max: float</span>
+<span class="sd">    </span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    
+
+    <span class="n">raster</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="n">path_r</span><span class="p">)</span>
+    <span class="n">band1</span> <span class="o">=</span><span class="n">raster</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">()</span>
+    <span class="n">nodata_r</span><span class="o">=</span><span class="n">raster</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">GetNoDataValue</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">nodata_r</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">band2</span><span class="o">=</span> <span class="n">band1</span><span class="p">[</span><span class="n">band1</span> <span class="o">&gt;</span> <span class="n">nodata_r</span><span class="p">]</span>
+    <span class="k">elif</span>  <span class="n">nodata_r</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">band2</span><span class="o">=</span> <span class="n">band1</span><span class="p">[</span><span class="n">band1</span> <span class="o">&lt;</span> <span class="n">nodata_r</span><span class="p">]</span>
+    <span class="n">band2</span> <span class="o">=</span> <span class="n">band2</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">nodata_r</span><span class="p">)</span>
+    <span class="n">list_val</span> <span class="o">=</span> <span class="p">[</span><span class="nb">min</span><span class="p">,]</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">quantil</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="c1">#print (i,i/quantil)</span>
+        <span class="n">valor</span><span class="o">=</span> <span class="n">i</span><span class="o">/</span><span class="n">quantil</span>
+        <span class="n">cuantil_c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">band2</span><span class="p">,</span><span class="n">valor</span><span class="p">)</span>
+        <span class="n">list_val</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cuantil_c</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">list_val</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">list_val</span></div>
+    
+<div class="viewcode-block" id="equidistantes"><a class="viewcode-back" href="../layerclassifier.html#layerclassifier_raster.equidistantes">[documentos]</a><span class="k">def</span> <span class="nf">equidistantes</span> <span class="p">(</span><span class="n">categories</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="nb">max</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Esta función regresa la lista de cortes equidistantes según el número </span>
+<span class="sd">    de categorias y el valor minimo y maximo ingresados.</span>
+
+<span class="sd">    :param categories: número de categorias </span>
+<span class="sd">    :type categories: int </span>
+
+<span class="sd">    :param min: valor mínimo de la capa</span>
+<span class="sd">    :type min: float</span>
+
+<span class="sd">    :param max: valor máximo de la capa</span>
+<span class="sd">    :type max: float</span>
+<span class="sd">    </span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">list_val</span> <span class="o">=</span> <span class="p">[</span><span class="nb">min</span><span class="p">,]</span>
+    <span class="n">incremento</span> <span class="o">=</span> <span class="p">(</span><span class="nb">max</span> <span class="o">-</span> <span class="nb">min</span><span class="p">)</span> <span class="o">/</span> <span class="n">categories</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">categories</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">valor</span> <span class="o">=</span> <span class="nb">min</span> <span class="o">+</span> <span class="p">(</span><span class="n">incremento</span> <span class="o">*</span> <span class="n">i</span><span class="p">)</span>
+        <span class="n">list_val</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">valor</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">list_val</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">list_val</span></div>
+
+<div class="viewcode-block" id="clasifica_raster"><a class="viewcode-back" href="../layerclassifier.html#layerclassifier_raster.clasifica_raster">[documentos]</a><span class="k">def</span> <span class="nf">clasifica_raster</span><span class="p">(</span><span class="n">path_capa</span><span class="p">,</span><span class="n">clasificador</span><span class="p">,</span><span class="n">fp</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">categories</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+
+
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Funcion integradora para clasificar la capa raster</span>
+<span class="sd">    </span>
+<span class="sd">    :param path_capa: ruta de la capa raster</span>
+<span class="sd">    :type path_capa: str </span>
+
+<span class="sd">    :param clasificador: nombre del clasificador</span>
+<span class="sd">    :type clasificador: str</span>
+
+<span class="sd">    :param fp: factor de progresión </span>
+<span class="sd">    :type fp: float</span>
+<span class="sd">    </span>
+<span class="sd">    :param categories: número de categorias </span>
+<span class="sd">    :type categories: int </span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">v_min</span><span class="p">,</span><span class="n">v_max</span><span class="o">=</span><span class="n">raster_min_max</span><span class="p">(</span><span class="n">path_capa</span><span class="p">)</span>
+    <span class="n">cortes</span><span class="p">,</span><span class="n">nombre</span> <span class="o">=</span> <span class="n">tipo_clasificador</span><span class="p">(</span><span class="n">clasificador</span><span class="p">,</span><span class="n">path_capa</span><span class="p">,</span><span class="n">fp</span><span class="p">,</span><span class="n">categories</span><span class="p">,</span><span class="nb">min</span><span class="o">=</span><span class="n">v_min</span><span class="p">,</span><span class="nb">max</span><span class="o">=</span><span class="n">v_max</span><span class="p">)</span>
+    <span class="n">ecuacion</span> <span class="o">=</span> <span class="n">ecuacion_class</span><span class="p">(</span><span class="n">cortes</span><span class="p">)</span>
+    <span class="n">path_salida_tp</span> <span class="o">=</span> <span class="n">path_capa</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot;tp_&quot;</span><span class="o">+</span><span class="n">nombre</span><span class="o">+</span><span class="s2">&quot;.tif&quot;</span>
+    <span class="n">path_salida</span> <span class="o">=</span> <span class="n">path_capa</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot;_&quot;</span><span class="o">+</span><span class="n">nombre</span><span class="o">+</span><span class="s2">&quot;.tif&quot;</span>
+    <span class="n">dicc</span> <span class="o">=</span><span class="p">{</span>        
+        <span class="s1">&#39;INPUT_A&#39;</span><span class="p">:</span><span class="n">path_capa</span><span class="p">,</span>
+        <span class="s1">&#39;BAND_A&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+        <span class="s1">&#39;FORMULA&#39;</span><span class="p">:</span><span class="n">ecuacion</span><span class="p">,</span>
+        <span class="s1">&#39;NO_DATA&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">9999</span><span class="p">,</span>
+        <span class="s1">&#39;RTYPE&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+        <span class="s1">&#39;EXTRA&#39;</span><span class="p">:</span><span class="s1">&#39;--co=&quot;COMPRESS=LZW&quot;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;OUTPUT&#39;</span><span class="p">:</span><span class="n">path_salida_tp</span><span class="p">,}</span>
+    <span class="n">pr</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;gdal:rastercalculator&quot;</span><span class="p">,</span><span class="n">dicc</span><span class="p">)</span>
+
+    <span class="n">set_nulls</span><span class="p">(</span><span class="n">path_salida_tp</span><span class="p">,</span><span class="n">path_salida</span><span class="p">)</span>
+    <span class="n">remove_raster</span><span class="p">(</span><span class="n">path_salida_tp</span><span class="p">)</span>
+    <span class="n">cargar_raster</span><span class="p">(</span><span class="n">path_salida</span><span class="p">)</span></div>
+
+    
+<div class="viewcode-block" id="nombre_capa"><a class="viewcode-back" href="../layerclassifier.html#layerclassifier_raster.nombre_capa">[documentos]</a><span class="k">def</span> <span class="nf">nombre_capa</span><span class="p">(</span><span class="n">path_capa</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Esta función regresa el nombre de una capa sin extensión </span>
+
+<span class="sd">    :param path_capa: ruta de la capa</span>
+<span class="sd">    :type path_capa: str </span>
+
+
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">nombre_capa</span><span class="o">=</span><span class="p">(</span><span class="n">path_capa</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">:])[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">nombre_capa</span></div>
+
+<div class="viewcode-block" id="ecuacion_class"><a class="viewcode-back" href="../layerclassifier.html#layerclassifier_raster.ecuacion_class">[documentos]</a><span class="k">def</span> <span class="nf">ecuacion_class</span><span class="p">(</span><span class="n">cortes</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Esta funcion regresa en formato de cadena la ecuación </span>
+<span class="sd">    para utilizarse en la calculadora de gdal a partir de una lista de cortes</span>
+
+<span class="sd">    :param cortes: lista con los puntos de corte</span>
+<span class="sd">    :type cortes: list </span>
+
+
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">n_cortes</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">cortes</span><span class="p">)</span>
+    <span class="n">ecuacion</span> <span class="o">=</span><span class="s1">&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_cortes</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n_cortes</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span> 
+            <span class="n">ecuacion</span><span class="o">+=</span><span class="s1">&#39;logical_and(A&gt;=&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">cortes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">+</span><span class="s1">&#39;,A&lt;&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">cortes</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span><span class="o">+</span><span class="s1">&#39;)*&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39; + &#39;</span>
+        <span class="k">elif</span> <span class="n">i</span><span class="o">==</span> <span class="n">n_cortes</span><span class="o">-</span><span class="mi">2</span> <span class="p">:</span>
+            <span class="n">ecuacion</span><span class="o">+=</span><span class="s1">&#39;logical_and(A&gt;=&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">cortes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">+</span><span class="s1">&#39;, A&lt;=&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">cortes</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span><span class="o">+</span><span class="s1">&#39;)*&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">ecuacion</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ecuacion</span></div>
+
+<div class="viewcode-block" id="cargar_raster"><a class="viewcode-back" href="../layerclassifier.html#layerclassifier_raster.cargar_raster">[documentos]</a><span class="k">def</span> <span class="nf">cargar_raster</span><span class="p">(</span><span class="n">path_raster</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Esta función carga una capa raster a un proyecto </span>
+<span class="sd">    de qgis </span>
+
+<span class="sd">    :param path_raster: ruta de la capa raster</span>
+<span class="sd">    :type path_raster: str</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>  
+    <span class="n">nombre</span> <span class="o">=</span> <span class="n">nombre_capa</span><span class="p">(</span><span class="n">path_raster</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">rlayer</span> <span class="o">=</span> <span class="n">QgsRasterLayer</span><span class="p">(</span><span class="n">path_raster</span><span class="p">,</span> <span class="n">nombre</span><span class="p">)</span>
+    <span class="n">QgsProject</span><span class="o">.</span><span class="n">instance</span><span class="p">()</span><span class="o">.</span><span class="n">addMapLayer</span><span class="p">(</span><span class="n">rlayer</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="get_region"><a class="viewcode-back" href="../layerclassifier.html#layerclassifier_raster.get_region">[documentos]</a><span class="k">def</span> <span class="nf">get_region</span><span class="p">(</span><span class="n">path_layer</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Esta función regresa en forma de cadena de texto </span>
+<span class="sd">    las coordenadas de la extensión de una capa raster</span>
+
+<span class="sd">    :param path_layer: ruta de la capa raster</span>
+<span class="sd">    :type path_layer: str</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">layer</span> <span class="o">=</span> <span class="n">QgsRasterLayer</span><span class="p">(</span><span class="n">path_layer</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="n">ext</span> <span class="o">=</span> <span class="n">layer</span><span class="o">.</span><span class="n">extent</span><span class="p">()</span>
+    <span class="n">xmin</span> <span class="o">=</span> <span class="n">ext</span><span class="o">.</span><span class="n">xMinimum</span><span class="p">()</span>
+    <span class="n">xmax</span> <span class="o">=</span> <span class="n">ext</span><span class="o">.</span><span class="n">xMaximum</span><span class="p">()</span>
+    <span class="n">ymin</span> <span class="o">=</span> <span class="n">ext</span><span class="o">.</span><span class="n">yMinimum</span><span class="p">()</span>
+    <span class="n">ymax</span> <span class="o">=</span> <span class="n">ext</span><span class="o">.</span><span class="n">yMaximum</span><span class="p">()</span>
+
+    <span class="n">region</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%f</span><span class="s2">,</span><span class="si">%f</span><span class="s2">,</span><span class="si">%f</span><span class="s2">,</span><span class="si">%f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">,</span> <span class="n">ymin</span><span class="p">,</span> <span class="n">ymax</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">region</span> </div>
+<div class="viewcode-block" id="set_nulls"><a class="viewcode-back" href="../layerclassifier.html#layerclassifier_raster.set_nulls">[documentos]</a><span class="k">def</span> <span class="nf">set_nulls</span><span class="p">(</span><span class="nb">map</span><span class="p">,</span><span class="n">output</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Esta función asigna un valor de cero a los no_data de la capa</span>
+<span class="sd">    </span>
+<span class="sd">    :param map: ruta de la capa raster</span>
+<span class="sd">    :type map: str</span>
+
+<span class="sd">    :param output:ruta de la capa resultante</span>
+<span class="sd">    :type output: str</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">region</span><span class="o">=</span><span class="n">get_region</span><span class="p">(</span><span class="nb">map</span><span class="p">)</span>
+    <span class="n">dicc</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;map&#39;</span><span class="p">:</span><span class="nb">map</span><span class="p">,</span>
+            <span class="s1">&#39;setnull&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+            <span class="s1">&#39;output&#39;</span><span class="p">:</span><span class="n">output</span><span class="p">,</span>
+            <span class="s1">&#39;GRASS_REGION_PARAMETER&#39;</span><span class="p">:</span><span class="n">region</span><span class="p">,</span>
+            <span class="s1">&#39;GRASS_REGION_CELLSIZE_PARAMETER&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+    <span class="n">pr</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;grass7:r.null&quot;</span><span class="p">,</span><span class="n">dicc</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="remove_raster"><a class="viewcode-back" href="../layerclassifier.html#layerclassifier_raster.remove_raster">[documentos]</a><span class="k">def</span> <span class="nf">remove_raster</span><span class="p">(</span><span class="n">path_r</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Esta función elimina una capa del sistema</span>
+
+<span class="sd">    :param path_r: ruta de la capa </span>
+<span class="sd">    :type path_r: str</span>
+
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">path_r</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, LANCIS
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
