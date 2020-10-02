@@ -6,8 +6,8 @@ Objetivo del curso
 
 Realizar un análisis de aptitud a través del módulo SIGindex de la plataforma SIGplanning. 
 
-Objetivo de aprendizaje
-***********************
+Objetivos de aprendizaje
+************************
 
 Diseñar un procedimiento para elaborar un análisis de aptitud en un entorno colaborativo. 
 

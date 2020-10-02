@@ -117,6 +117,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#mover-el-mapa">3.2.1 Mover el mapa</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#rotar-el-mapa">3.2.2 Rotar el mapa</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#hacer-acercamientos">3.2.3 Hacer acercamientos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#visualizar-valores-de-los-grupos-de-corte">3.2.4 Visualizar valores de los grupos de corte</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#ajustes-de-despliegue-de-capas">3.3     Ajustes de despliegue de capas</a><ul>
@@ -135,9 +136,9 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#barra-de-herramientas">3.5     Barra de herramientas</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#atributos">3.5.1 Atributos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cortes">3.5.1 Cortes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#factor-de-progresion">3.5.2 Factor de progresión</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#paleta-de-colores">3.5.3 Paleta de colores</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#paleta-de-colores">3.5.4 Paleta de colores</a></li>
 </ul>
 </li>
 </ul>
@@ -233,8 +234,12 @@
 </div>
 <div class="section" id="introduccion">
 <h2>1 Introducción<a class="headerlink" href="#introduccion" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>SIGzoning es una herramienta computacional que combina técnicas de análisis espacial con métodos de toma de decisiones y geovisualización para realizar el análisis de aptitud del territorio.</p>
+<p>SIGzoning integra más de aptitud sectoriales en un análisis multiobjetivo de clasificación numérica y ganancia de homogeneidad para identificar grupos de aptitud.</p>
+<p>La clasificación numérica utiliza un método geoespacial recursivo politético-divisivo acoplado a técnicas de visualización que faciliten la traducción y comunicación de resultados.</p>
 <div class="section" id="por-que-es-necesario-sigzoning">
 <h3>1.1     ¿Por qué es necesario SIGzoning?<a class="headerlink" href="#por-que-es-necesario-sigzoning" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>SIGzoning es necesario durante la realización de estudios de ordenamiento ecológico, en la etapa de diagnóstico, para minimizar los conflictos sectoriales que resultan de actividades incompatibles den el territorio.</p>
 </div>
 </div>
 <div class="section" id="organizacion-del-manual">
@@ -260,17 +265,17 @@
 </div>
 <div class="section" id="exportar-residuales">
 <h4>3.1.3 Exportar residuales<a class="headerlink" href="#exportar-residuales" title="Enlazar permanentemente con este título">¶</a></h4>
-<p>Al hacer clic en el botón de exportar residuales <a class="reference internal" href="_images/fi_b_export_residual.png"><img alt="b_exportar_residual" src="_images/fi_b_export_residual.png" style="width: 48.800000000000004px; height: 11.200000000000001px;" /></a>, se descarga un archivo <strong>.xls</strong>, con los valores de los residuales de los grupos de cortes elegidos (ver apartado 3.5.1.1).</p>
+<p>Al hacer clic en el botón de exportar residuales <a class="reference internal" href="_images/fi_b_export_residual.png"><img alt="b_exportar_residual" src="_images/fi_b_export_residual.png" style="width: 48.800000000000004px; height: 11.200000000000001px;" /></a>, se descarga un archivo <strong>.xls</strong>, con los valores de los residuales de los grupos de cortes elegidos (ver apartado <em>3.5.1.1</em> y <em>3.5.2.2</em>).</p>
 <img alt="_images/mapa_b_export_residuales.png" src="_images/mapa_b_export_residuales.png" />
 </div>
 <div class="section" id="exportar-promedios">
 <h4>3.1.4 Exportar promedios<a class="headerlink" href="#exportar-promedios" title="Enlazar permanentemente con este título">¶</a></h4>
-<p>Al hacer clic en el botón de exportar promedios <a class="reference internal" href="_images/fi_b_export_promedio.png"><img alt="b_exportar_promedio" src="_images/fi_b_export_promedio.png" style="width: 51.2px; height: 11.200000000000001px;" /></a>, se descarga un archivo <strong>.xls</strong>, con los valores de los promedios de los grupos de cortes elegidos por actividad (ver apartado 3.5.1.1).</p>
+<p>Al hacer clic en el botón de exportar promedios <a class="reference internal" href="_images/fi_b_export_promedio.png"><img alt="b_exportar_promedio" src="_images/fi_b_export_promedio.png" style="width: 51.2px; height: 11.200000000000001px;" /></a>, se descarga un archivo <strong>.xls</strong>, con los valores de los promedios de los grupos de cortes elegidos por sector (ver apartado <em>3.5.1.1</em> y <em>3.5.2.2</em>).</p>
 <img alt="_images/mapa_b_export_promedio.png" src="_images/mapa_b_export_promedio.png" />
 </div>
 <div class="section" id="numero-de-cortes">
 <h4>3.1.5 Número de cortes<a class="headerlink" href="#numero-de-cortes" title="Enlazar permanentemente con este título">¶</a></h4>
-<p>Al hacer clic en el botón de cortes <a class="reference internal" href="_images/fi_b_num_cortes.png"><img alt="b_num_cortes" src="_images/fi_b_num_cortes.png" style="width: 40.0px; height: 11.200000000000001px;" /></a>,</p>
+<p>El ícono <a class="reference internal" href="_images/fi_b_num_cortes.png"><img alt="b_num_cortes" src="_images/fi_b_num_cortes.png" style="width: 40.0px; height: 11.200000000000001px;" /></a> muestra el nivel de avance en la clasificación numérica. SIGzoning permite el análisis de resultados una vez terminado 15 cortes (o menos si los insumos no permiten una desagregación mayor).</p>
 <img alt="_images/mapa_b_num_cortes.png" src="_images/mapa_b_num_cortes.png" />
 </div>
 <div class="section" id="regresar">
@@ -298,6 +303,11 @@ Al rotar el mapa, <a class="reference internal" href="_images/fi_uno.png"><img a
 <h4>3.2.3 Hacer acercamientos<a class="headerlink" href="#hacer-acercamientos" title="Enlazar permanentemente con este título">¶</a></h4>
 <p>Al hacer clic en cualquier parte del visualizador de capas, mover la barra de desplazamiento del ratón para acercarse o alejarse.</p>
 <img alt="_images/mapa_acercar_sigzoning.png" src="_images/mapa_acercar_sigzoning.png" />
+</div>
+<div class="section" id="visualizar-valores-de-los-grupos-de-corte">
+<h4>3.2.4 Visualizar valores de los grupos de corte<a class="headerlink" href="#visualizar-valores-de-los-grupos-de-corte" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Al hacer clic <a class="reference internal" href="_images/fi_uno.png"><img alt="no_1" src="_images/fi_uno.png" style="width: 22.5px; height: 26.5px;" /></a> en un pixel del mapa de grupo del proyecto, se despliega <a class="reference internal" href="_images/fi_dos.png"><img alt="no_2" src="_images/fi_dos.png" style="width: 22.0px; height: 27.0px;" /></a> una ventana con los valores de los pixeles de las capas de aptitud de las actividades seleccionadas por grupo de corte elegido (ver apartado <em>3.5.1.1</em>).</p>
+<img alt="_images/mapa_vis_valores_sigzoning.png" src="_images/mapa_vis_valores_sigzoning.png" />
 </div>
 </div>
 <div class="section" id="ajustes-de-despliegue-de-capas">
@@ -362,14 +372,12 @@ Al hacer clic sobre el botón de alejar <a class="reference internal" href="_ima
 </div>
 <div class="section" id="barra-de-herramientas">
 <h3>3.5     Barra de herramientas<a class="headerlink" href="#barra-de-herramientas" title="Enlazar permanentemente con este título">¶</a></h3>
-<p>Cuenta con tres herramientas, <a class="reference internal" href="_images/fi_uno.png"><img alt="no_1" src="_images/fi_uno.png" style="width: 22.5px; height: 26.5px;" /></a> Atributos <a class="reference internal" href="_images/fi_b_atributos.png"><img alt="b_atributos" src="_images/fi_b_atributos.png" style="width: 25px; height: 25px;" /></a>, <a class="reference internal" href="_images/fi_dos.png"><img alt="no_2" src="_images/fi_dos.png" style="width: 22.0px; height: 27.0px;" /></a> Clasificación progresiva <a class="reference internal" href="_images/fi_b_factorp_sigindex.png"><img alt="b_clas_progre" src="_images/fi_b_factorp_sigindex.png" style="width: 25px; height: 25px;" /></a> y <a class="reference internal" href="_images/fi_tres.png"><img alt="no_3" src="_images/fi_tres.png" style="width: 22.5px; height: 27.0px;" /></a> Paleta de colores <a class="reference internal" href="_images/fi_b_paleta.png"><img alt="b_paleta" src="_images/fi_b_paleta.png" style="width: 25px; height: 25px;" /></a>.</p>
-<img alt="_images/mapa_barra_herramienta.png" src="_images/mapa_barra_herramienta.png" />
-<div class="section" id="atributos">
-<h4>3.5.1 Atributos<a class="headerlink" href="#atributos" title="Enlazar permanentemente con este título">¶</a></h4>
-<p>Al hacer clic en el botón <strong>Atributos</strong> <a class="reference internal" href="_images/fi_b_atributos.png"><img alt="b_atributos" src="_images/fi_b_atributos.png" style="width: 25px; height: 25px;" /></a> se despliega una ventana con seis secciones: <a class="reference internal" href="_images/fi_uno.png"><img alt="no_1" src="_images/fi_uno.png" style="width: 22.5px; height: 26.5px;" /></a> nombre generado por el sistema, <a class="reference internal" href="_images/fi_dos.png"><img alt="no_2" src="_images/fi_dos.png" style="width: 22.0px; height: 27.0px;" /></a> lista de despliegue de modos de decisión, <a class="reference internal" href="_images/fi_tres.png"><img alt="no_3" src="_images/fi_tres.png" style="width: 22.5px; height: 27.0px;" /></a> atributos o funciones de valor, <a class="reference internal" href="_images/fi_cuatro.png"><img alt="no_4" src="_images/fi_cuatro.png" style="width: 22.5px; height: 27.0px;" /></a> lista de pesos asignados a cada función de valor, <a class="reference internal" href="_images/fi_cinco.png"><img alt="no_5" src="_images/fi_cinco.png" style="width: 22.5px; height: 27.0px;" /></a> casillas de verificación de los atributos seleccionados para integrar análisis de aptitud y <a class="reference internal" href="_images/fi_seis.png"><img alt="no_6" src="_images/fi_seis.png" style="width: 22.5px; height: 26.5px;" /></a> botón de Generar mapa de aptitud.</p>
-<img alt="_images/fi_ventana_atributos.png" src="_images/fi_ventana_atributos.png" />
-<div class="section" id="modos-de-decision">
-<h5>3.5.1.1 Modos de decisión<a class="headerlink" href="#modos-de-decision" title="Enlazar permanentemente con este título">¶</a></h5>
+<div class="section" id="cortes">
+<h4>3.5.1 Cortes<a class="headerlink" href="#cortes" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Al hace clic en el botón de <strong>Cortes</strong> <a href="#id1"><span class="problematic" id="id2">|b_cortes|</span></a>, se despliega una ventana con dos botones: <a class="reference internal" href="_images/fi_uno.png"><img alt="no_1" src="_images/fi_uno.png" style="width: 22.5px; height: 26.5px;" /></a> <strong>Ver mapa de grupos del proyecto</strong> y <a class="reference internal" href="_images/fi_dos.png"><img alt="no_2" src="_images/fi_dos.png" style="width: 22.0px; height: 27.0px;" /></a> <strong>Ver gráficas de residuales del proyecto</strong>, y el listado de los cortes: <a class="reference internal" href="_images/fi_tres.png"><img alt="no_3" src="_images/fi_tres.png" style="width: 22.5px; height: 27.0px;" /></a> <strong>Mapas generados</strong>.</p>
+<img alt="_images/mapa_cortes.png" src="_images/mapa_cortes.png" />
+<div class="section" id="seleccionar-los-mapas-de-los-cortes">
+<h5>3.5.1.1 Seleccionar los mapas de los cortes<a class="headerlink" href="#seleccionar-los-mapas-de-los-cortes" title="Enlazar permanentemente con este título">¶</a></h5>
 <p>Al hacer clic en la lista de despliegue <a class="reference internal" href="_images/fi_lista_despliegue.png"><img alt="b_list" src="_images/fi_lista_despliegue.png" style="width: 25px; height: 25px;" /></a> se muestran cuatro opciones: <a class="reference internal" href="_images/fi_uno.png"><img alt="no_1" src="_images/fi_uno.png" style="width: 22.5px; height: 26.5px;" /></a> Compensatorio, <a class="reference internal" href="_images/fi_dos.png"><img alt="no_2" src="_images/fi_dos.png" style="width: 22.0px; height: 27.0px;" /></a> Parcialmente compensatorio, <a class="reference internal" href="_images/fi_tres.png"><img alt="no_3" src="_images/fi_tres.png" style="width: 22.5px; height: 27.0px;" /></a> No compensatorio, <a class="reference internal" href="_images/fi_cuatro.png"><img alt="no_4" src="_images/fi_cuatro.png" style="width: 22.5px; height: 27.0px;" /></a> Combinación lineal ponderada.</p>
 <img alt="_images/fi_ventana_decision.png" src="_images/fi_ventana_decision.png" />
 </div>
@@ -391,13 +399,13 @@ Al hacer clic sobre el botón de alejar <a class="reference internal" href="_ima
 <img alt="_images/fi_ventana_fprogresion.png" src="_images/fi_ventana_fprogresion.png" />
 </div>
 <div class="section" id="paleta-de-colores">
-<h4>3.5.3 Paleta de colores<a class="headerlink" href="#paleta-de-colores" title="Enlazar permanentemente con este título">¶</a></h4>
-<p>Al hacer clic en el botón <a class="reference internal" href="_images/fi_b_paleta.png"><img alt="b_paleta" src="_images/fi_b_paleta.png" style="width: 25px; height: 25px;" /></a> se despliega una ventana que muestra la gama de color en la que aparece la capa original y la capa resultado invitando a seleccionar un color.</p>
-<img alt="_images/mapa_paleta_sigclassifier.png" src="_images/mapa_paleta_sigclassifier.png" />
+<h4>3.5.4 Paleta de colores<a class="headerlink" href="#paleta-de-colores" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Al hacer clic en el botón <a class="reference internal" href="_images/fi_b_paleta.png"><img alt="b_paleta" src="_images/fi_b_paleta.png" style="width: 25px; height: 25px;" /></a> se despliega una ventana que muestra la gama de color en la que aparecen las capas de las actividades invitando a seleccionar un color.</p>
+<img alt="_images/mapa_paleta_sigzoning.png" src="_images/mapa_paleta_sigzoning.png" />
 <div class="section" id="cambiar-el-color-de-las-capas">
-<h5>3.5.3.1 Cambiar el color de las capas<a class="headerlink" href="#cambiar-el-color-de-las-capas" title="Enlazar permanentemente con este título">¶</a></h5>
+<h5>3.5.4.1 Cambiar el color de las capas<a class="headerlink" href="#cambiar-el-color-de-las-capas" title="Enlazar permanentemente con este título">¶</a></h5>
 <p>Al hacer clic en el botón <a class="reference internal" href="_images/fi_lista_despliegue.png"><img alt="b_list" src="_images/fi_lista_despliegue.png" style="width: 25px; height: 25px;" /></a> aparece <a class="reference internal" href="_images/fi_uno.png"><img alt="no_1" src="_images/fi_uno.png" style="width: 22.5px; height: 26.5px;" /></a> una lista de despliegue con 12 paletas de colores a elegir, <a class="reference internal" href="_images/fi_dos.png"><img alt="no_2" src="_images/fi_dos.png" style="width: 22.0px; height: 27.0px;" /></a> al hacer clic en el control deslizante hacia arriba y abajo se puede <a class="reference internal" href="_images/fi_tres.png"><img alt="no_3" src="_images/fi_tres.png" style="width: 22.5px; height: 27.0px;" /></a> seleccionar una paleta para representar los valores de la capa en el visualizador.</p>
-<img alt="_images/fi_ventana_paleta_sigclassifier.png" src="_images/fi_ventana_paleta_sigclassifier.png" />
+<img alt="_images/fi_ventana_paleta_sigzoning.png" src="_images/fi_ventana_paleta_sigzoning.png" />
 </div>
 </div>
 </div>

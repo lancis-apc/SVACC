@@ -1,17 +1,25 @@
 SIGzoning
-########
+#########
 
 Guía de usuario de SIGzoning
-***************************
+****************************
 
 1 Introducción
-****************
+**************
+
+SIGzoning es una herramienta computacional que combina técnicas de análisis espacial con métodos de toma de decisiones y geovisualización para realizar el análisis de aptitud del territorio.
+
+SIGzoning integra más de aptitud sectoriales en un análisis multiobjetivo de clasificación numérica y ganancia de homogeneidad para identificar grupos de aptitud. 
+
+La clasificación numérica utiliza un método geoespacial recursivo politético-divisivo acoplado a técnicas de visualización que faciliten la traducción y comunicación de resultados. 
 
 1.1	¿Por qué es necesario SIGzoning?
-===================================
+====================================
+
+SIGzoning es necesario durante la realización de estudios de ordenamiento ecológico, en la etapa de diagnóstico, para minimizar los conflictos sectoriales que resultan de actividades incompatibles den el territorio. 
 
 2 Organización del manual 
-***************************
+*************************
 
 Este manual tiene el propósito de mostrar el uso del módulo SIGzoning mediante (1) la explicación de todas las funciones de la plataforma (Sección 3. Organización de la Interfaz) y (2) la ilustración de un ejemplo de uso (Sección 4. Ejemplo de uso). Asimismo, se incluye bibliografía relevante como complemento teórico.
 
@@ -44,21 +52,21 @@ Al hacer clic en el botón de exportar |b_exportar|, se descarga un archivo en f
 3.1.3 Exportar residuales
 -------------------------
 
-Al hacer clic en el botón de exportar residuales |b_exportar_residual|, se descarga un archivo **.xls**, con los valores de los residuales de los grupos de cortes elegidos (ver apartado 3.5.1.1).
+Al hacer clic en el botón de exportar residuales |b_exportar_residual|, se descarga un archivo **.xls**, con los valores de los residuales de los grupos de cortes elegidos (ver apartado *3.5.1.1* y *3.5.2.2*).
 
 .. imagen:: /imagenes/mapa_b_export_residuales.png
 
 3.1.4 Exportar promedios
 ------------------------
 
-Al hacer clic en el botón de exportar promedios |b_exportar_promedio|, se descarga un archivo **.xls**, con los valores de los promedios de los grupos de cortes elegidos por actividad (ver apartado 3.5.1.1).
+Al hacer clic en el botón de exportar promedios |b_exportar_promedio|, se descarga un archivo **.xls**, con los valores de los promedios de los grupos de cortes elegidos por sector (ver apartado *3.5.1.1* y *3.5.2.2*).
 
 .. imagen:: /imagenes/mapa_b_export_promedio.png
 
 3.1.5 Número de cortes
 ----------------------
 
-Al hacer clic en el botón de cortes |b_num_cortes|,
+El ícono |b_num_cortes| muestra el nivel de avance en la clasificación numérica. SIGzoning permite el análisis de resultados una vez terminado 15 cortes (o menos si los insumos no permiten una desagregación mayor).  
 
 .. imagen:: /imagenes/mapa_b_num_cortes.png
 
@@ -97,6 +105,13 @@ Al rotar el mapa, |no_1| aparece el botón del norte geográfico rotado |b_norte
 Al hacer clic en cualquier parte del visualizador de capas, mover la barra de desplazamiento del ratón para acercarse o alejarse. 
 
 .. imagen:: /imagenes/mapa_acercar_sigzoning.png
+
+3.2.4 Visualizar valores de los grupos de corte
+-----------------------------------------------
+
+Al hacer clic |no_1| en un pixel del mapa de grupo del proyecto, se despliega |no_2| una ventana con los valores de los pixeles de las capas de aptitud de las actividades seleccionadas por grupo de corte elegido (ver apartado *3.5.1.1*).
+
+.. imagen:: /imagenes/mapa_vis_valores_sigzoning.png
 
 3.3	Ajustes de despliegue de capas
 ====================================
@@ -154,7 +169,7 @@ Al hacer clic |no_1| en el botón de pantalla completa |b_pantalla_comp|, |no_2|
 Para salir de la pantalla completa, volver a oprimir el botón de los ajustes de visualización o la tecla Esc. 
 
 3.4.2 Acercarse o alejarse del mapa 
--------------------------------------
+-----------------------------------
  
 Al hacer clic sobre el botón de acercar |b_mas|, |no_1| se aumenta el zoom en el visualizador de capas. 
 Al hacer clic sobre el botón de alejar |b_menos|, |no_2| se disminuye el zoom en el visualizador de capas. 
@@ -162,21 +177,21 @@ Al hacer clic sobre el botón de alejar |b_menos|, |no_2| se disminuye el zoom e
 .. imagen:: /imagenes/mapa_acercar_alejar_sigzoning.png
  
 3.4.3 Ajustar el norte del mapa 
----------------------------------
+-------------------------------
 
 Al hacer clic en el botón de norte geográfico |b_norte|, se reajusta la orientación del visualizador de capas a la posición original.  
 
 .. imagen:: /imagenes/mapa_ajustar_norte_sigzoning.png
 
 3.4.4 Guía rápida de ajustes de visualización 
------------------------------------------------
+---------------------------------------------
  
 Al hacer clic en el botón de guía rápida de controles de despliegue |b_interrogacion|, se despliega una ventana con dos opciones: |no_1| rotar el mapa y |no_2| hacer zoom a una ventana específica. 
 
 .. imagen:: /imagenes/mapa_guia_sigzoning.png
  
 3.4.5 Ocultar gradientes de capas
------------------------------------
+---------------------------------
 
 Al hacer clic |no_1| en el botón mostrar/ocultar gradientes de capas |b_gradiente_azul|, |no_2| el fondo del botón cambia a verde desplegando la ventana de gradientes |b_gradiente_verde|. 
 
@@ -185,28 +200,24 @@ Al hacer clic |no_1| en el botón mostrar/ocultar gradientes de capas |b_gradien
 .. imagen:: /imagenes/mapa_gradientes2.png
 
 3.5	Barra de herramientas 
-===========================
+=========================
 
-Cuenta con tres herramientas, |no_1| Atributos |b_atributos|, |no_2| Clasificación progresiva |b_clas_progre| y |no_3| Paleta de colores |b_paleta|.
-  
-.. imagen:: /imagenes/mapa_barra_herramienta.png
+3.5.1 Cortes
+------------
 
-3.5.1 Atributos
------------------
+Al hace clic en el botón de **Cortes** |b_cortes|, se despliega una ventana con dos botones: |no_1| **Ver mapa de grupos del proyecto** y |no_2| **Ver gráficas de residuales del proyecto**, y el listado de los cortes: |no_3| **Mapas generados**.
 
-Al hacer clic en el botón **Atributos** |b_atributos| se despliega una ventana con seis secciones: |no_1| nombre generado por el sistema, |no_2| lista de despliegue de modos de decisión, |no_3| atributos o funciones de valor, |no_4| lista de pesos asignados a cada función de valor, |no_5| casillas de verificación de los atributos seleccionados para integrar análisis de aptitud y |no_6| botón de Generar mapa de aptitud.
+.. imagen:: /imagenes/mapa_cortes.png
 
-.. imagen:: /imagenes/fi_ventana_atributos.png
-
-3.5.1.1	Modos de decisión
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+3.5.1.1	Seleccionar los mapas de los cortes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Al hacer clic en la lista de despliegue |b_list| se muestran cuatro opciones: |no_1| Compensatorio, |no_2| Parcialmente compensatorio, |no_3| No compensatorio, |no_4| Combinación lineal ponderada.
 
 .. imagen:: /imagenes/fi_ventana_decision.png 
 
 3.5.1.2	Selección y ponderación de atributos
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 En la ventana |no_1| se despliegan todos los atributos (funciones de valor) preseleccionados y su ponderación, |no_2| al seleccionar/deseleccionar haciendo clic en la casilla de verificación |no_3| se modifican los pesos de los atributos seleccionados automáticamente.   
 
@@ -228,19 +239,19 @@ Al hacer clic en el botón **clasificación progresiva** se despliega una ventan
 
 .. imagen:: /imagenes/fi_ventana_fprogresion.png 
 
-3.5.3 Paleta de colores
--------------------------
+3.5.4 Paleta de colores
+-----------------------
 
-Al hacer clic en el botón |b_paleta| se despliega una ventana que muestra la gama de color en la que aparece la capa original y la capa resultado invitando a seleccionar un color. 
+Al hacer clic en el botón |b_paleta| se despliega una ventana que muestra la gama de color en la que aparecen las capas de las actividades invitando a seleccionar un color. 
 
-.. imagen:: /imagenes/mapa_paleta_sigclassifier.png
+.. imagen:: /imagenes/mapa_paleta_sigzoning.png
  
-3.5.3.1	Cambiar el color de las capas
+3.5.4.1	Cambiar el color de las capas
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Al hacer clic en el botón |b_list| aparece |no_1| una lista de despliegue con 12 paletas de colores a elegir, |no_2| al hacer clic en el control deslizante hacia arriba y abajo se puede |no_3| seleccionar una paleta para representar los valores de la capa en el visualizador. 
 
-.. imagen:: /imagenes/fi_ventana_paleta_sigclassifier.png   
+.. imagen:: /imagenes/fi_ventana_paleta_sigzoning.png   
 
 4 Requerimientos
 ****************
