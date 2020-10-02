@@ -80,7 +80,7 @@ def ecuacion_vulnerabilidad_no_lineal(n=2):
     .. math::
         vulnerabilidad = \exp^{( 1 - sus)^{(1 + ca)}}
 
-        donde: **exp** corresponde el índice de exposición, **sus** al índice de susceptibilidad y **ca** al índice de capacidad adaptativa
+    donde **exp** corresponde el índice de exposición, **sus** al índice de susceptibilidad y **ca** al índice de capacidad adaptativa
 
     :returns: la ecuación  de la vulnerabilidad no líneal en formato de texto para gdal
     :rtype: str 
