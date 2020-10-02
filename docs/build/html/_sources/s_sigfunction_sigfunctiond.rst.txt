@@ -6,8 +6,8 @@ Objetivo del curso
 
 Realizar un análisis colaborativo de generación de funciones de valor los módulos SIGfunction y SIGfunctionD de la plataforma SIGplanning.
 
-Objetivo de aprendizaje
-***********************
+Objetivos de aprendizaje
+************************
 
 Diseñar un procedimiento para elaborar un análisis colaborativo de generación de funciones de valor.  
 

@@ -6,8 +6,8 @@ Objetivo del curso
 
 Integrar un conjunto de datos geográficos en el sistema de metadatos GeoNetwork.
 
-Objetivo de aprendizaje
-***********************
+Objetivos de aprendizaje
+************************
 
 Demostrar el uso de Geonetwork para la creación metadatos de capas geográficas.
 

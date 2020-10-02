@@ -6,8 +6,8 @@ Objetivo del curso
 
 Realizar un proyecto de visualización de capas con Lizmap-QGIS. 
 
-Objetivo de aprendizaje
-***********************
+Objetivos de aprendizaje
+************************
 
 Diseñar un procedimiento para publicar un visualizador de capas con Lizmap-QGIS.
 

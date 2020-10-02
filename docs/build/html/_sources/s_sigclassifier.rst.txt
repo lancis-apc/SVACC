@@ -6,8 +6,8 @@ Objetivo del curso
 
 Realizar un análisis colaborativo de clasificación de atributos espaciales con el módulo SIGclassifier de la plataforma SIGplanning. 
 
-Objetivo de aprendizaje
-***********************
+Objetivos de aprendizaje
+************************
 
 Diseñar un procedimiento para elaborar un análisis colaborativo de clasificación de atributos espaciales. 
 
