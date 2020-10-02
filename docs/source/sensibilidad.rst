@@ -6,9 +6,7 @@ Este análisis, sirve para estimar el grado de influencia de cada capa que sirve
 
 
 
-Descargar el código de ejemplo 
-
-:download:`sensibilidad.py <../../codigos/sensibilidad.py>`.
+Descargar el código :download:`sensibilidad.py <../../codigos/sensibilidad.py>`.
 
 
 Requerimientos generales 
