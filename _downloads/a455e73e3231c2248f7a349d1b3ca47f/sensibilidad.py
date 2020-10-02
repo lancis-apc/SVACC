@@ -113,9 +113,9 @@ def lista_criterios(dicc):
     '''
     Esta función regresa una lista de los criterios de un diccionario
 
-    :param dicc: Diccionario que contiene nombres, rutas y pesos para el
-    análisis de vulnerabilidad / sensibilidad
+    :param dicc: Diccionario que contiene nombres, rutas y pesos para el análisis de vulnerabilidad / sensibilidad
     :type dicc: diccionario python
+    
     '''
     criterios = []
     for k1,v1 in dicc.items():
