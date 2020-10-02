@@ -73,19 +73,18 @@ def pesos_factores_vulnerabilidad(dicc):
         lista.append(dicc[k]['w'])
     return lista
 
-def ecuacion_vulnerabilidad(n):
+def ecuacion_vulnerabilidad_no_lineal(n=2):
     '''
-    Esta función expresa la ecuación para el cálculo de la vulnerabilidad
+    Esta función expresa la ecuación para el cálculo de la vulnerabilidad no lineal
 
     .. math::
         vulnerabilidad = \exp^{( 1 - sus)^{(1 + ca)}}
 
+        donde: **exp** corresponde el índice de exposición, **sus** al índice de susceptibilidad y **ca** al índice de capacidad adaptativa
 
-        | exp = Exposición
-        | sus = Susceptibilidad
-        | ca = Capacidad adaptativa
+    :returns: la ecuación  de la vulnerabilidad no líneal en formato de texto para gdal
+    :rtype: str 
 
-    :returns: str ecuacion
     '''
     if n==1:
         ecuacion = 'pow(A,(1-B))'
