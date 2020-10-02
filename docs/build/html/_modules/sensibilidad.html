@@ -244,19 +244,18 @@
         <span class="n">lista</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dicc</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="s1">&#39;w&#39;</span><span class="p">])</span>
     <span class="k">return</span> <span class="n">lista</span>
 
-<div class="viewcode-block" id="ecuacion_vulnerabilidad"><a class="viewcode-back" href="../sensibilidad.html#sensibilidad.ecuacion_vulnerabilidad">[documentos]</a><span class="k">def</span> <span class="nf">ecuacion_vulnerabilidad</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="viewcode-block" id="ecuacion_vulnerabilidad_no_lineal"><a class="viewcode-back" href="../sensibilidad.html#sensibilidad.ecuacion_vulnerabilidad_no_lineal">[documentos]</a><span class="k">def</span> <span class="nf">ecuacion_vulnerabilidad_no_lineal</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    Esta función expresa la ecuación para el cálculo de la vulnerabilidad</span>
+<span class="sd">    Esta función expresa la ecuación para el cálculo de la vulnerabilidad no lineal</span>
 
 <span class="sd">    .. math::</span>
 <span class="sd">        vulnerabilidad = \exp^{( 1 - sus)^{(1 + ca)}}</span>
 
+<span class="sd">        donde: **exp** corresponde el índice de exposición, **sus** al índice de susceptibilidad y **ca** al índice de capacidad adaptativa</span>
 
-<span class="sd">        | exp = Exposición</span>
-<span class="sd">        | sus = Susceptibilidad</span>
-<span class="sd">        | ca = Capacidad adaptativa</span>
+<span class="sd">    :returns: la ecuación  de la vulnerabilidad no líneal en formato de texto para gdal</span>
+<span class="sd">    :rtype: str </span>
 
-<span class="sd">    :returns: str ecuacion</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="k">if</span> <span class="n">n</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
         <span class="n">ecuacion</span> <span class="o">=</span> <span class="s1">&#39;pow(A,(1-B))&#39;</span>

@@ -304,18 +304,19 @@ en la estructura requerida por gdal para la combinación lineal ponderada.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="sensibilidad.ecuacion_vulnerabilidad">
-<code class="descclassname">sensibilidad.</code><code class="descname">ecuacion_vulnerabilidad</code><span class="sig-paren">(</span><em>n</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensibilidad.html#ecuacion_vulnerabilidad"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#sensibilidad.ecuacion_vulnerabilidad" title="Enlazar permanentemente con esta definición">¶</a></dt>
-<dd><p>Esta función expresa la ecuación para el cálculo de la vulnerabilidad</p>
+<dt id="sensibilidad.ecuacion_vulnerabilidad_no_lineal">
+<code class="descclassname">sensibilidad.</code><code class="descname">ecuacion_vulnerabilidad_no_lineal</code><span class="sig-paren">(</span><em>n=2</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sensibilidad.html#ecuacion_vulnerabilidad_no_lineal"><span class="viewcode-link">[fuente]</span></a><a class="headerlink" href="#sensibilidad.ecuacion_vulnerabilidad_no_lineal" title="Enlazar permanentemente con esta definición">¶</a></dt>
+<dd><p>Esta función expresa la ecuación para el cálculo de la vulnerabilidad no lineal</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}vulnerabilidad = \exp^{( 1 - sus)^{(1 + ca)}}\\| exp = Exposición
-| sus = Susceptibilidad
-| ca = Capacidad adaptativa\end{aligned}\end{align} \]</div>
+\[ \begin{align}\begin{aligned}vulnerabilidad = \exp^{( 1 - sus)^{(1 + ca)}}\\donde: **exp** corresponde el índice de exposición, **sus** al índice de susceptibilidad y **ca** al índice de capacidad adaptativa\end{aligned}\end{align} \]</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Devuelve:</th><td class="field-body">str ecuacion</td>
+<tr class="field-odd field"><th class="field-name">Devuelve:</th><td class="field-body">la ecuación  de la vulnerabilidad no líneal en formato de texto para gdal</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Tipo del valor devuelto:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(en Python versión 3.8)">str</a></td>
 </tr>
 </tbody>
 </table>
