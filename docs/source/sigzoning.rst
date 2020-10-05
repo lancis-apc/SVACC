@@ -16,7 +16,7 @@ La clasificación numérica utiliza un método geoespacial recursivo politético
 1.1	¿Por qué es necesario SIGzoning?
 ====================================
 
-SIGzoning es necesario durante la realización de estudios de ordenamiento ecológico, en la etapa de diagnóstico, para minimizar los conflictos sectoriales que resultan de actividades incompatibles den el territorio. 
+SIGzoning es necesario durante la realización de estudios de ordenamiento ecológico, en la etapa de diagnóstico, para minimizar los conflictos sectoriales que resultan de actividades incompatibles en el territorio. 
 
 2 Organización del manual 
 *************************
@@ -209,64 +209,65 @@ Al hace clic en el botón de **Cortes** |b_cortes|, se despliega una ventana con
 
 .. imagen:: /imagenes/mapa_cortes.png
 
-3.5.1.1	Seleccionar los mapas de los cortes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+3.5.1.1	Seleccionar mapas de los cortes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Al hacer clic en la lista de despliegue |b_list| se muestran cuatro opciones: |no_1| Compensatorio, |no_2| Parcialmente compensatorio, |no_3| No compensatorio, |no_4| Combinación lineal ponderada.
+Al hacer clic |no_1| sobre un número se muestra |no_2| el resultado de los cortes (la clasificación numérica a ese nivel) en dos grupos 1 y 2.
 
-.. imagen:: /imagenes/fi_ventana_decision.png 
+.. imagen:: /imagenes/mapa_mapa.png
 
-3.5.1.2	Selección y ponderación de atributos
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+3.5.1.2	Ver mapa de grupo de proyectos
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-En la ventana |no_1| se despliegan todos los atributos (funciones de valor) preseleccionados y su ponderación, |no_2| al seleccionar/deseleccionar haciendo clic en la casilla de verificación |no_3| se modifican los pesos de los atributos seleccionados automáticamente.   
+Al hacer clic en el botón de mapa de grupo del proyecto |b_mapa|, se despliega el mapa de grupos vigente. El mapa de grupos vigente es el que resulta del análisis inicial o de la selección específica de agregados (ver sección *3.5.1.1*).
+   
+.. imagen:: /imagenes/mapa_mapa_sigzoning.png 
 
-.. imagen:: /imagenes/fi_selec_atributos.png 
+3.5.1.3	Ver gráficas de residuales del proyecto
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Obsérvese que la suma de los pesos debe ser igual a 1 
+Al hacer clic en el botón de gráficas de residuales del proyecto |b_residuales|, |no_1| se abre automáticamente la herramienta de **Residuales de gower** y |no_2| se despliegan las gráficas de los residuales del proyecto. Al hacer clic |no_3| en el control deslizante hacia arriba y abajo se pueden ver todas las gráficas generadas por cada grupo seleccionado. Los residuales mostrados corresponden a los que resultan del análisis inicial o del conjunto de agregados seleccionados en la herramienta **Análisis de cortes** |b_analisis|. Al hacer clic en el botón Actualizar residuales |b_actualizar|, se actualizan los residuales de una nueva selección de agregados. 
 
-3.5.1.3	Generar mapa de aptitud
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. imagen:: /imagenes/fi_ventana_residuales.png 
 
-Al hacer clic en el botón |no_1| **Generar mapa de aptitud** |no_2| se desplegará en el visualizador de capas, el mapa de aptitud con el nombre |no_3| **Capa resultado**.
+3.5.2 Análisis de cortes
+------------------------
 
-.. imagen:: /imagenes/mapa_actitud.png 
+Al hacer clic en el botón de **Análisis de cortes** |b_analisis|, se despliega una ventana con cuatro botones: |no_1| **Evaluar selección**, |no_2| **Ver mapa de grupos de la evaluación**, |no_3| **Ver gráficas de residuales de la evaluación**, |no_4| **Aplicar configuración** y |no_5| el listado de **selección de cortes/agregados** a evaluar. 
+ 
+.. imagen:: /imagenes/mapa_analisis.png 
 
-3.5.2 Factor de progresión
-----------------------------
+3.5.2.1	Evaluar selección
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Al hacer clic en el botón **clasificación progresiva** se despliega una ventana con el control deslizante. Al hacer clic en el botón del control deslizante y deslizar hacia la izquierda o derecha |b_factor_progre|, |no_1| se selecciona el factor de progresión. C.E. |no_2| corresponde a una **clasificación equidistante**. 
+Al hacer clic en la pestaña |b_list| se despliega |no_1| los diferentes niveles de cortes y agregados resultantes. Para seleccionar los agregados a evaluar, |no_2| hacer clic en el botón |b_paloma_g| de cada nivel, los cuales se van marcando con el botón |b_paloma|.  
+Al volver hacer clic en el botón |b_paloma| se deselecciona un agregado. |no_3| Al hacer clic en el botón evaluar selección |b_evaluar|, el conjunto de agregados seleccionados se convierte en el mapa de grupos vigente. 
+|no_4| Al hacer clic en el botón mapa de grupos de evaluación |b_mapa|, se despliega el mapa de grupos (si es que no está desplegado). |no_5| Al hacer clic en el botón gráficas de residuales de la evaluación |b_residuales|, se actualizan los residuales de gower de los agregados seleccionados y se pueden analizar (ver sección *3.5.1.3*). |no_6| Al hacer clic en el botón aplicar configuración |b_aplicar|, se guarda la selección de agregados en el servidor y se actualizan los archivos de salida (mapa de grupos, promedios de aptitud por grupo y residuales de gower).
 
-.. imagen:: /imagenes/fi_ventana_fprogresion.png 
+.. imagen:: /imagenes/mapa_evaluacion.png 
 
-3.5.4 Paleta de colores
+3.5.2.2	Exportar resultados
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+|no_1| Al hacer clic en el botón de aplicar configuración en la sección de Análisis de cortes |b_analisis|, se guardan los resultados de los agregados seleccionados en el servidor y se puede exportar |no_2| los promedios de grupos de aptitud por sector, |no_3| los residuales de gower y |no_4| la capa de grupos de aptitud. 
+
+.. imagen:: /imagenes/mapa_aplica_config.png 
+
+3.5.3 Paleta de colores
 -----------------------
 
 Al hacer clic en el botón |b_paleta| se despliega una ventana que muestra la gama de color en la que aparecen las capas de las actividades invitando a seleccionar un color. 
 
 .. imagen:: /imagenes/mapa_paleta_sigzoning.png
  
-3.5.4.1	Cambiar el color de las capas
+3.5.3.1	Cambiar el color de las capas
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Al hacer clic en el botón |b_list| aparece |no_1| una lista de despliegue con 12 paletas de colores a elegir, |no_2| al hacer clic en el control deslizante hacia arriba y abajo se puede |no_3| seleccionar una paleta para representar los valores de la capa en el visualizador. 
 
 .. imagen:: /imagenes/fi_ventana_paleta_sigzoning.png   
 
-4 Requerimientos
-****************
 
-5 Herramientas 
-**************
-
-5.1	Crear un proyecto nuevo
-===========================
-
-6 Ejemplo de uso 
-****************
- 
-7 Referencias
-*************
 
 .. |no_1| image:: /imagenes/fi_uno.png
             :scale: 50
@@ -295,6 +296,42 @@ Al hacer clic en el botón |b_list| aparece |no_1| una lista de despliegue con 1
 .. |b_inicio| image:: /imagenes/boton_inicio.png            
             :height: 25px
             :width: 25px
+
+.. |b_cortes| image:: /imagenes/fi_b_cortes.png            
+            :height: 25px
+            :width: 25px
+
+.. |b_mapa| image:: /imagenes/fi_b_mapa.png            
+            :height: 25px
+            :width: 50px
+
+.. |b_residuales| image:: /imagenes/fi_b_residuales.png            
+            :height: 25px
+            :width: 50px
+
+.. |b_analisis| image:: /imagenes/fi_b_analisis.png            
+            :height: 25px
+            :width: 25px
+
+.. |b_actualizar| image:: /imagenes/fi_b_actualizar.png            
+            :height: 25px
+            :width: 50px
+
+.. |b_paloma_g| image:: /imagenes/fi_b_paloma_g.png            
+            :height: 25px
+            :width: 50px
+
+.. |b_paloma| image:: /imagenes/fi_b_paloma.png            
+            :height: 25px
+            :width: 50px
+
+.. |b_evaluar| image:: /imagenes/fi_b_evaluar.png            
+            :height: 25px
+            :width: 50px
+
+.. |b_aplicar| image:: /imagenes/fi_b_aplicar_config.png            
+            :height: 25px
+            :width: 50px
 
 .. |b_gradiente_azul| image:: /imagenes/boton_gradientea.png            
             :height: 25px
@@ -348,13 +385,13 @@ Al hacer clic en el botón |b_list| aparece |no_1| una lista de despliegue con 1
             :scale: 40
 
 .. |b_exportar_residual| image:: /imagenes/fi_b_export_residual.png
-            :scale: 40
+            :scale: 85
 
 .. |b_exportar_promedio| image:: /imagenes/fi_b_export_promedio.png
-            :scale: 40
+            :scale: 85
 
 .. |b_num_cortes| image:: /imagenes/fi_b_num_cortes.png
-            :scale: 40
+            :scale: 80
 
 .. |b_seleccion| image:: /imagenes/fi_b_cambiarcapab.png
             :height: 25px
